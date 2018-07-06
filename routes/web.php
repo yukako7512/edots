@@ -30,7 +30,7 @@ Route::get('aboutus',  function () {return view('aboutus');})->name('aboutus.get
 
 // カテゴリー
 Route::get('sport_index', 'EventController@sports')->name('sport.get');
-Route::get('art_index', 'EventController@art')->name('art.get');
+Route::get('art_index', 'EventController@arts')->name('art.get');
 Route::get('beauty_index', 'EventController@beauty')->name('beauty.get');
 Route::get('technology_index', 'EventController@technology')->name('technology.get');
 Route::get('food_index', 'EventController@food')->name('food.get');
@@ -41,4 +41,5 @@ Route::get('others_index', 'EventController@others')->name('others.get');
 // イベント詳細
 Route::get('eventshow/{id}', 'EventController@eventshow')->name('eventshow.get');
 
-Route::get('post',  function () {return view('events.post');})->name('post.get');
+Route::get('post',  'EventController@create')->name('post.get');
+Route::post('items',  'EventController@store')->name('post.post');

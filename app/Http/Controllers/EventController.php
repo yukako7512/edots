@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Event;
+// use App\User;
+// use App\Http\Controllers\Auth;
 
 class EventController extends Controller
 {
@@ -46,5 +48,25 @@ class EventController extends Controller
         $items = Event::where('category', 'others')->get();
         return view ('events.categories.others_index', ['items' => $items]);
         
+    }
+
+    public function create(){
+        $item = new Event;
+        
+        return view ('events.post', ['item' => $item]);
+    }
+    
+    public function store(Request $request){
+        $item = new Event;
+        $item->title = $request->title;
+        $item->content = $request->content;
+        $item->category = $request->category;
+        $item->place = $request->place;
+        $item->date = $request->date;
+        $user = \Auth::user();
+        $item->user_id=$user->id;
+        $item->point = $request->point;
+        $item->save();
+        return view ('events.postdone', ['item' => $item]);
     }
 }
