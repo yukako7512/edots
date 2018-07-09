@@ -44,4 +44,5 @@ Route::get('eventshow/{id}', 'EventController@eventshow')->name('eventshow.get')
 Route::get('user/{id}', 'UserController@usershow')->name('usershow.get');
 Route::get('requestdone/{id}', 'EventController@requestdone')->name('requestdone.get');
 
-Route::get('post',  function () {return view('events.post');})->name('post.get');
+Route::get('post',  'EventController@create')->name('post.get');
+Route::post('items',  'EventController@store')->name('post.post');
