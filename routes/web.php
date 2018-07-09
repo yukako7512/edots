@@ -44,5 +44,14 @@ Route::get('eventshow/{id}', 'EventController@eventshow')->name('eventshow.get')
 Route::get('user/{id}', 'UserController@usershow')->name('usershow.get');
 Route::get('requestdone/{id}', 'EventController@requestdone')->name('requestdone.get');
 
+// ポスト機能
 Route::get('post',  'EventController@create')->name('post.get');
 Route::post('items',  'EventController@store')->name('post.post');
+
+// レビューと編集のダミー
+Route::get('profile_edit', function () {
+    return view('users.profileedit');
+})->name('profileedit.get');
+Route::get('review', function () {
+    return view('review.review');
+})->name('review.get');
