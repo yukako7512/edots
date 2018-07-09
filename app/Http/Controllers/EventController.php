@@ -7,6 +7,7 @@ use App\Event;
 
 class EventController extends Controller
 {
+    // 各カテゴリーページへ行くためのファンクション
     public function sports(){
         $items = Event::where('category', 'sports')->get();
         return view ('events.categories.sport_index', ['items' => $items]);
@@ -46,5 +47,32 @@ class EventController extends Controller
         $items = Event::where('category', 'others')->get();
         return view ('events.categories.others_index', ['items' => $items]);
         
+    }
+    
+    // event detailに行くためのファンクション
+    public function eventshow($id){
+        $event = Event::find($id);
+        $user = $event->user;
+        return view ('events.eventinfo', ['event' => $event, 'user' => $user]);
+    }
+    
+    public function requestdone($id){
+        $user_id = \Auth::user()->id;
+        $event_id = $id;
+        $transactions = Event::find($id)->point;
+        
+        $user_events_param = ['user_id'=> $user_id,
+                              'event_id'=> $event_id];
+                              
+        $transactions_param = ['user_id'=> $user_id,
+                        'event_id'=> $event_id,
+                        'transactions' => -$transactions,
+                        'rate' => 1
+                  ];
+                  
+        \DB::table('user_events')->insert($user_events_param);
+        \DB::table('transactions')->insert($transactions_param);
+        
+        return view('events.requestdone');
     }
 }
