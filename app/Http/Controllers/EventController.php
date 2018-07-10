@@ -71,7 +71,7 @@ class EventController extends Controller
         return view ('events.postdone', ['item' => $item]);
     }
     
-    // event detailに行くためのファンクション
+    // event infoに行くためのファンクション
     public function eventshow($id){
         $event = Event::find($id);
         $user = $event->user;
@@ -84,13 +84,14 @@ class EventController extends Controller
         $transactions = Event::find($id)->point;
         
         $user_events_param = ['user_id'=> $user_id,
-                              'event_id'=> $event_id];
+                              'event_id'=> $event_id,
+                              'relationship'=>'ongoing'
+                              ];
                               
         $transactions_param = ['user_id'=> $user_id,
                         'event_id'=> $event_id,
                         'transactions' => -$transactions,
-                        'rate' => 1
-                  ];
+                        ];
                   
         \DB::table('user_events')->insert($user_events_param);
         \DB::table('transactions')->insert($transactions_param);

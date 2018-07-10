@@ -28,8 +28,34 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
     public function events()
-    {return $this -> HasMany(Event::class);
-    }    public function have_items()
+    {
+        return $this -> HasMany(Event::class);
+    }  
+     public function user_events()
+    {
+        return $this ->BelongsToMany(UserEvent::class);
+    }
+     public function transactions()
+    {
+        return $this ->BelongsToMany(Transaction::class);
+    }  
+     public function reviews()
+    {
+        return $this ->BelongsToMany(Review::class);
+    }  
+
+     public function reviews_through_events()
+    {
+        return $this ->hasManyThrough(Review::class, Event::class);
+    }  
+
+     public function events_through_user_events()
+    {
+        return $this ->hasManyThrough(Event::class, UserEvent::class, 'user_id', 'id');
+    }     
+    
+// リクエストのチェっク   
+    public function have_items()
         {
             return $this->items()->where('type', 'have');
         }

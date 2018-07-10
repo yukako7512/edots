@@ -1,9 +1,58 @@
 @extends('layouts.app')
 @section('content')
-<a href = "{{route ('profileedit.get')}}">
+
+@if (Auth::user()->id == $user->id)
+<p>{{$review_round}}{{$stars}}</p>
+
+<p>{{$user->name}}</p>
+<a href = "{{route ('review.get', $user->id) }}">
     <p>edit</p>
 </a>
-<a href = "{{route ('review.get') }}">
+<p>{{$user->introduction}}</p>
+<p>{{$points}}ポイント</p>
+
+<p>------arranging events------</p>
+@foreach($arranging_events as $arranging_event)
+<p>{{$arranging_event->title}}</p>
+<p>{{$arranging_event->date}}</p>
+<!--<a href = "{{route ('review.get', $user->id) }}">-->
+    <!--<p>完了</p>-->
+<!--</a> -->
+<p>----------------------------</p>
+@endforeach
+
+<p>------joining events------</p>
+@foreach($joining_events as $joining_event)
+<p>{{$joining_event->title}}</p>
+<p>{{$joining_event->date}}</p>
+<a href = "{{route ('profileedit.get', $joining_event->id) }}">
     <p>完了</p>
-</a>    
+</a> 
+<p>----------------------------</p>
+@endforeach
+
+
+
+ 
+@else
+<p>{{$review_round}}{{$stars}}</p>
+
+<p>{{$user->name}}</p>
+<p>{{$user->introduction}}</p>
+<p>{{$points}}ポイント</p>
+
+<p>------arranging events------</p>
+@foreach($arranging_events as $arranging_event)
+<p>{{$arranging_event->title}}</p>
+<p>{{$arranging_event->date}}</p>
+<p>----------------------------</p>
+@endforeach
+
+<p>------joining events------</p>
+@foreach($joining_events as $joining_event)
+<p>{{$joining_event->title}}</p>
+<p>{{$joining_event->date}}</p>
+<p>----------------------------</p>
+@endforeach
+@endif
 @endsection
