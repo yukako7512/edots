@@ -10,5 +10,6 @@
 <p>{{$item->place}}</p> 
 <p>{{$item->point}}ポイント</p> 
 <p>----------------------</p>
+
 @endforeach
 @endsection
