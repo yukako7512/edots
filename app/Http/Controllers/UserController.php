@@ -32,4 +32,24 @@ class UserController extends Controller
                                     'stars' => $stars
                                     ]);
     }
+    
+    public function create(){
+        $introduction = new User;
+        
+        return view ('users.profileedit', ['introduction' => $introduction]);
+    }
+    
+    public function store(Request $request){
+        $introduction = new User;
+        $introduction->introduction = $request->introduction;
+        $user = \Auth::user();
+        $introduction->user_id=$user->id;
+        $introduction->save();
+        return view ('users.user', ['introduction' => $introduction,'user' => $user]);
+    }
+
+    public function mypage(){
+        
+        return view ('users.user');
+    }
 }

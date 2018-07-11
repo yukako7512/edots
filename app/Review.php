@@ -14,6 +14,7 @@ class Review extends Model
     {
         return $this ->BelongsTo(Event::class);
     }
+    
 // 星表示   
     public static function stars($review_round)
     {

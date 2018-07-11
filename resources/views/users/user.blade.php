@@ -5,7 +5,7 @@
 <p>{{$review_round}}{{$stars}}</p>
 
 <p>{{$user->name}}</p>
-<a href = "{{route ('review.get', $user->id) }}">
+<a href = "{{route ('profileedit.get', $user->id) }}">
     <p>edit</p>
 </a>
 <p>{{$user->introduction}}</p>
@@ -25,7 +25,7 @@
 @foreach($joining_events as $joining_event)
 <p>{{$joining_event->title}}</p>
 <p>{{$joining_event->date}}</p>
-<a href = "{{route ('profileedit.get', $joining_event->id) }}">
+<a href = "{{route ('review.get', $joining_event->id) }}">
     <p>完了</p>
 </a> 
 <p>----------------------------</p>

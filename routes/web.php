@@ -48,10 +48,22 @@ Route::get('requestdone/{id}', 'EventController@requestdone')->name('requestdone
 Route::get('post',  'EventController@create')->name('post.get');
 Route::post('items',  'EventController@store')->name('post.post');
 
-// レビューと編集のダミー
-Route::get('profile_edit', function () {
-    return view('users.profileedit');
-})->name('profileedit.get');
-Route::get('review', function () {
-    return view('review.review');
-})->name('review.get');
+// レビュー
+Route::get('review/{id}',  'ReviewController@create')->name('review.get');
+Route::post('review/{id}',  'ReviewController@store')->name('review.post');
+
+// レビューDONE
+Route::get('reviewdone', 'ReviewController@reviewdone')->name('reviewdone.get');
+
+// レビューDONEからMy page
+
+Route::get('user', 'UserController@editdone')->name('user.get');
+
+// プロフィール編集
+Route::get('profileedit/{id}',  'UserController@create')->name('profileedit.get');
+Route::post('profileedit/{id}',  'UserController@store')->name('profileedit.post');
+
+
+
+
+
