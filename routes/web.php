@@ -54,7 +54,7 @@ Route::post('review/{id}',  'ReviewController@store')->name('review.post');
 
 // レビューDONE
 Route::get('reviewdone', 'ReviewController@reviewdone')->name('reviewdone.get');
-
+Route::post('reviewdone', 'ReviewController@reviewdone')->name('reviewdone.post');
 // レビューDONEからMy page
 
 Route::get('user', 'UserController@editdone')->name('user.get');
