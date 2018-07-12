@@ -24,7 +24,7 @@
 <p>リクエスト済み</p>
     
 @else
-<a href = "{{route ('usershow.get', $user->id) }}">
+<a href = "{{route ('usershow.get', $user->id) }}"><>
     <p>{{$user->name}}さん</p>
 </a>
 <p>{{$event->date}}</p> 

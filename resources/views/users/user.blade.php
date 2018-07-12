@@ -2,6 +2,7 @@
 @section('content')
 
 @if (Auth::user()->id == $user->id)
+
 <p>{{$review_round}}{{$stars}}</p>
 
 <p>{{$user->name}}</p>
@@ -15,9 +16,11 @@
 @foreach($arranging_events as $arranging_event)
 <p>{{$arranging_event->title}}</p>
 <p>{{$arranging_event->date}}</p>
-<!--<a href = "{{route ('review.get', $user->id) }}">-->
-    <!--<p>完了</p>-->
-<!--</a> -->
+
+<a href = "{{route ('arrangedone.get', $arranging_event->id) }}">
+    <p>arrange完了</p>
+</a> 
+
 <p>----------------------------</p>
 @endforeach
 
@@ -28,6 +31,13 @@
 <a href = "{{route ('review.get', $joining_event->id) }}">
     <p>完了</p>
 </a> 
+<p>----------------------------</p>
+@endforeach
+
+<p>------History------</p>
+@foreach($history_events as $history_event)
+<p>{{$history_event->title}}</p>
+<p>{{$history_event->date}}</p>
 <p>----------------------------</p>
 @endforeach
 
@@ -54,5 +64,14 @@
 <p>{{$joining_event->date}}</p>
 <p>----------------------------</p>
 @endforeach
+
+<p>------History------</p>
+@foreach($history_events as $history_event)
+<p>{{$history_event->title}}</p>
+<p>{{$history_event->date}}</p>
+<p>----------------------------</p>
+@endforeach
+
+
 @endif
 @endsection

@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Event;
-// use App\User;
+
+use App\Transaction;
+use App\Review;
+use App\User;
 // use App\Http\Controllers\Auth;
 
 class EventController extends Controller
@@ -67,9 +70,30 @@ class EventController extends Controller
         $user = \Auth::user();
         $item->user_id=$user->id;
         $item->point = $request->point;
+        $item->status = 'ongoing';
         $item->save();
         return view ('events.postdone', ['item' => $item]);
     }
+    
+    public function arrangedone($id){
+        
+               
+        $user = \Auth::user();
+
+        $event = Event::where('user_id', $user->id)->where('id', $id);
+        
+        $arranging_events = $user->events->where('status','ongoing');
+        $joining_events = $user->events_through_user_events->where('relationship','ongoing');
+        $history_events = $user->events->where('status','done');
+        
+        $event->update(['status'=>'done']);
+        
+        return redirect()->back();
+        
+    }
+    
+    
+    
     
     // event infoに行くためのファンクション
     public function eventshow($id){

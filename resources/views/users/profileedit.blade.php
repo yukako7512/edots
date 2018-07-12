@@ -7,8 +7,12 @@
     {!! Form::textarea('introduction') !!}
     </div>
     
-    <a href = "{{route ('user.get')}}">
+    
+    
+    <a href = "{{route ('user.get') }}">
     <p>Submit</p>
     </a>
+
+    
 
 @endsection

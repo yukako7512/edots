@@ -10,7 +10,21 @@ class ReviewController extends Controller
 {
     public function create() {
         $reviews = new Review;
-        return view('review.review', ['reviews' => $reviews]) ;
+        
+        $user_event = \Auth::user();
+
+        $user_event = UserEvent::where('user_id', $user->id)->where('id', $id);
+        
+        $joining_events = $user_event->events_through_user_events->where('relationship','ongoing');
+        $history_events = $user_event->events->where('relationship','done');
+        
+        $user_event->update(['relationship'=>'done']);
+        
+        return view('review.review', ['reviews' => $reviews,
+                                    'user' => $user,
+                                    'arranging_events'=> $arranging_events,
+                                    'joining_events'=>$joining_events,
+                                    'history_events'=>$history_events,]) ;
     }
     
     public function store(Request $request) {
