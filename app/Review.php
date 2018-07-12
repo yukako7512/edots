@@ -16,7 +16,7 @@ class Review extends Model
     }
     
 // 星表示   
-    public static function stars($review_round)
+    public function stars($review_round)
     {
         if ($review_round<1.25){
             $stars='☆';

@@ -50,20 +50,19 @@ Route::post('items',  'EventController@store')->name('post.post');
 
 // レビュー
 Route::get('review/{id}',  'ReviewController@create')->name('review.get');
-Route::post('review/{id}',  'ReviewController@store')->name('review.post');
 
 // レビューDONE
-Route::get('reviewdone', 'ReviewController@reviewdone')->name('reviewdone.get');
-Route::post('reviewdone', 'ReviewController@reviewdone')->name('reviewdone.post');
+Route::post('reviewdone/{id}', 'ReviewController@reviewdone')->name('reviewdone.post');
 // レビューDONEからMy page
 
 Route::get('user', 'UserController@editdone')->name('user.get');
 
 // プロフィール編集
 Route::get('profileedit/{id}',  'UserController@create')->name('profileedit.get');
-Route::post('profileedit/{id}',  'UserController@store')->name('profileedit.post');
+Route::post('editdone/{id}', 'UserController@editdone')->name('editdone.post');
+// Route::post('profileedit/{id}',  'UserController@store')->name('profileedit.post');
 
-
+Route::get('reviewhistory/{id}',  'ReviewController@review_history')->name('reviewhistory.get');
 
 
 

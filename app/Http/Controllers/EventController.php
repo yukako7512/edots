@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Event;
+use App\Transaction;
 // use App\User;
 // use App\Http\Controllers\Auth;
 
@@ -67,35 +68,49 @@ class EventController extends Controller
         $user = \Auth::user();
         $item->user_id=$user->id;
         $item->point = $request->point;
+        $item->status = 'ongoing';
         $item->save();
         return view ('events.postdone', ['item' => $item]);
     }
     
     // event infoに行くためのファンクション
     public function eventshow($id){
+        
         $event = Event::find($id);
         $user = $event->user;
-        return view ('events.eventinfo', ['event' => $event, 'user' => $user]);
+        $negative_or_positive = Transaction::points_compare($event);
+        return view ('events.eventinfo', ['event' => $event, 
+                                          'user' => $user, 
+                                          'negative_or_positive' => $negative_or_positive
+                                          ]);
     }
     
     public function requestdone($id){
-        $user_id = \Auth::user()->id;
-        $event_id = $id;
-        $transactions = Event::find($id)->point;
-        
-        $user_events_param = ['user_id'=> $user_id,
-                              'event_id'=> $event_id,
-                              'relationship'=>'ongoing'
-                              ];
-                              
-        $transactions_param = ['user_id'=> $user_id,
-                        'event_id'=> $event_id,
-                        'transactions' => -$transactions,
-                        ];
-                  
-        \DB::table('user_events')->insert($user_events_param);
-        \DB::table('transactions')->insert($transactions_param);
-        
-        return view('events.requestdone');
+
+        if ($negative_or_positive){
+            $user_id = \Auth::user()->id;
+            $event_id = $id;
+            $transactions = Event::find($id)->point;
+            $negative_or_positive = Transaction::points_compare($event);
+            
+            $user_events_param = ['user_id'=> $user_id,
+                                  'event_id'=> $event_id,
+                                  'relationship'=>'ongoing'
+                                  ];
+                                  
+            $transactions_param = ['user_id'=> $user_id,
+                            'event_id'=> $event_id,
+                            'transactions' => -$transactions,
+                            ];
+                      
+            \DB::table('user_events')->insert($user_events_param);
+            \DB::table('transactions')->insert($transactions_param);
+            
+            return view('events.requestdone');
+                
+            }
+         else{  
+                return redirect()->back();
+         }   
     }
 }

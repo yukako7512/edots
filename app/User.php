@@ -65,5 +65,4 @@ class User extends Authenticatable
         $exist_or_not = $requesting_events->where('event_id', $event->id)->exists();
         return $exist_or_not;
     } 
-    
 }

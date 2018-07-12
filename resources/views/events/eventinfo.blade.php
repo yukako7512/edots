@@ -30,11 +30,16 @@
 <p>{{$event->date}}</p> 
 <p>{{$event->place}}</p> 
 <p>{{$event->content}}</p>
-<p>{{$event->point}}ポイント</p> 
-<a href = "{{route ('requestdone.get', $event->id)}}">    
-    <p>リクエスト</p>
-</a> 
-    
+<p>{{$event->point}}ポイント</p>
+
+    @if ($negative_or_positive)
+    <a href = "{{route ('requestdone.get', $event->id)}}">    
+        <p>リクエスト</p>
+    </a>
+    @else
+    <p>ポイントが足りないよ～ｗｗｗｗｗｗｗｗｗ</p>
+    @endif
+        
 @endif
    
 <p>----------------------</p>

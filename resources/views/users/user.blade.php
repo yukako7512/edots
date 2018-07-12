@@ -2,7 +2,10 @@
 @section('content')
 
 @if (Auth::user()->id == $user->id)
-<p>{{$review_round}}{{$stars}}</p>
+<a href = "{{route ('reviewhistory.get', $user->id) }}">
+    <p>{{$review_round}}</p>
+</a>    
+<p>{{$stars}}</p>
 
 <p>{{$user->name}}</p>
 <a href = "{{route ('profileedit.get', $user->id) }}">

@@ -11,15 +11,15 @@ use App\Event;
 class UserController extends Controller
 {
     public function usershow($id){
-        $user = User::find($id);
         
+        $user = User::find($id);
         $points = Transaction::where('user_id', $id)->sum('transactions');
         
         $my_reviews = $user->reviews_through_events();
         $review_avg = $my_reviews->avg('rating');
         $review_round = round($review_avg, 2);
-        
-        $stars = Review::stars($review_round);
+        $review = new Review;
+        $stars = $review->stars($review_round);
         
         $arranging_events = $user->events;
         $joining_events = $user->events_through_user_events;
@@ -33,10 +33,11 @@ class UserController extends Controller
                                     ]);
     }
     
-    public function create(){
+    public function create($id){
         $introduction = new User;
         
-        return view ('users.profileedit', ['introduction' => $introduction]);
+        return view ('users.profileedit', ['introduction' => $introduction,
+                                            'id' => $id]);
     }
     
     public function store(Request $request){
@@ -48,8 +49,12 @@ class UserController extends Controller
         return view ('users.user', ['introduction' => $introduction,'user' => $user]);
     }
 
-    public function mypage(){
+    public function editdone(Request $request, $id) {
+
+        $user = \Auth::user();
+        $user->introduction = $request->introduction;
+        $user->save();
         
-        return view ('users.user');
+        return view ('review.reviewdone', ['user' => $user]);
     }
 }

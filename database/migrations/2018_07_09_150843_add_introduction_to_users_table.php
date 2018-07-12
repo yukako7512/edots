@@ -14,7 +14,7 @@ class AddIntroductionToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->text('introduction');
+            $table->text('introduction')->nullable();
         });
     }
 
