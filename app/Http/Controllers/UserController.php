@@ -21,14 +21,16 @@ class UserController extends Controller
         $review = new Review;
         $stars = $review->stars($review_round);
         
-        $arranging_events = $user->events;
-        $joining_events = $user->events_through_user_events;
+        $arranging_events = $user->events->where('status','ongoing');
+        $joining_events = $user->events_through_user_events->where('relationship','ongoing');
+        $history_events = $user->events->where('status','done');
         
         return view ('users.user', ['user' => $user,
                                     'review_round' => $review_round,
                                     'points' => $points,
                                     'arranging_events'=> $arranging_events,
                                     'joining_events'=>$joining_events,
+                                    'history_events'=>$history_events,
                                     'stars' => $stars
                                     ]);
     }

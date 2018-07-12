@@ -53,9 +53,15 @@ Route::get('review/{id}',  'ReviewController@create')->name('review.get');
 
 // レビューDONE
 Route::post('reviewdone/{id}', 'ReviewController@reviewdone')->name('reviewdone.post');
+// Route::get('reviewdone', 'ReviewController@reviewdone')->name('reviewdone.get');
+
+// ArrangeDONE
+Route::get('arrangedone/{id}','EventController@arrangedone')->name('arrangedone.get');
+
+
 // レビューDONEからMy page
 
-Route::get('user', 'UserController@editdone')->name('user.get');
+Route::get('user', 'UserController@mypage')->name('user.get');
 
 // プロフィール編集
 Route::get('profileedit/{id}',  'UserController@create')->name('profileedit.get');

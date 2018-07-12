@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Event;
+
 use App\Transaction;
-// use App\User;
+use App\Review;
+use App\User;
 // use App\Http\Controllers\Auth;
 
 class EventController extends Controller
@@ -73,6 +75,26 @@ class EventController extends Controller
         return view ('events.postdone', ['item' => $item]);
     }
     
+    public function arrangedone($id){
+        
+               
+        $user = \Auth::user();
+
+        $event = Event::where('user_id', $user->id)->where('id', $id);
+        
+        $arranging_events = $user->events->where('status','ongoing');
+        $joining_events = $user->events_through_user_events->where('relationship','ongoing');
+        $history_events = $user->events->where('status','done');
+        
+        $event->update(['status'=>'done']);
+        
+        return redirect()->back();
+        
+    }
+    
+    
+    
+    
     // event infoに行くためのファンクション
     public function eventshow($id){
         
@@ -87,11 +109,11 @@ class EventController extends Controller
     
     public function requestdone($id){
 
-        if ($negative_or_positive){
+        
             $user_id = \Auth::user()->id;
             $event_id = $id;
             $transactions = Event::find($id)->point;
-            $negative_or_positive = Transaction::points_compare($event);
+            
             
             $user_events_param = ['user_id'=> $user_id,
                                   'event_id'=> $event_id,
@@ -107,10 +129,6 @@ class EventController extends Controller
             \DB::table('transactions')->insert($transactions_param);
             
             return view('events.requestdone');
-                
-            }
-         else{  
-                return redirect()->back();
-         }   
+  
     }
 }
