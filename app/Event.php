@@ -23,7 +23,7 @@ class Event extends Model
     
      public function reviews()
     {
-        return $this ->BelongsToMany(Review::class);
+        return $this ->hasMany(Review::class);
     } 
     
     public function users_through_reviews()

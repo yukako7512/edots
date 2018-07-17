@@ -11,50 +11,38 @@ use App\User;
 
 class ReviewController extends Controller
 {
-    public function create($id) {
-        $reviews = new Review;
-        return view('review.review', ['reviews' => $reviews,
-                                      'id' => $id]) ;
-        
-        // $user_event = \Auth::user();
-
-        // $user_event = UserEvent::where('user_id', $user->id)->where('id', $id);
-        
-        // $joining_events = $user_event->events_through_user_events->where('relationship','ongoing');
-        // $history_events = $user_event->events->where('relationship','done');
-        
-        // $user_event->update(['relationship'=>'done']);
-        
-        // return view('review.review', ['reviews' => $reviews,
-        //                             'user' => $user,
-        //                             'arranging_events'=> $arranging_events,
-        //                             'joining_events'=>$joining_events,
-        //                             'history_events'=>$history_events,]) ;
+    public function create($event_id, $attendiee_id) {
+        $points = $this->point_sum();
+        return view('review.review', ['attendiee_id' => $attendiee_id,
+                                      'event_id' => $event_id,
+                                      'points' => $points]) ;
     }
     
-    public function reviewdone(Request $request, $id) {
+    public function reviewdone(Request $request, $event_id, $attendiee_id) {
         
+        $points = $this->point_sum();
         $reviews = new Review;
         $reviews->rating = $request->rating;
         $reviews->comment = $request->comment;
-        $reviews->event_id = $id;
-        $user = \Auth::user();
-        $reviews->user_id = $user->id;
+        $reviews->event_id = $event_id;
+        $attendiee = UserEvent::where('event_id', $event_id)->get();
+        $reviews->user_id = $attendiee_id;
         $reviews->save();
         
-        $user_event = UserEvent::where('user_id', $user->id)->where('event_id',$id);
+        $user_event = UserEvent::where('user_id', $attendiee_id)->where('event_id', $event_id);
         $user_event->update(['relationship'=>'done']);
         
-        return view ('review.reviewdone', ['user' => $user]);
+        return view ('review.reviewdone'
+        ,['attendiee_id' => $attendiee_id,
+          'points' => $points]);
     }
         
         public function review_history($id) {
+
+        $points = $this->point_sum();
         $user = User::find($id);
-        $events = $user->events;
-        $reviewers = $events->users_through_reviews()->name;
-        
-        $my_reviews = $user->reviews_through_events;
-        return view ('review.review_history', ['my_reviews' => $my_reviews,
-                                                'reviewer' => $reviewers]);
+        $my_events = $user->events()->orderBy('created_at', 'desc')->get();
+        return view ('review.review_history', ['my_events' => $my_events,
+                                                'points' => $points]);
     }
 }

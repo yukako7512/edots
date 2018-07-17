@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-    {!! Form::open(['url' => 'reviewdone/'.$id])!!}
+    {!! Form::open(['url' => 'reviewdone/'.$event_id.'/'.$attendiee_id])!!}
     <p>Please rate this event:</p>
     <div class="form-group">
     {!! Form::label('rating', 'Rating:') !!}    

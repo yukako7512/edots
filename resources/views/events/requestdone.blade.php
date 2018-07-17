@@ -8,7 +8,7 @@
   </body>
   
    <div align="center">
-       <a href="{{route('index.get')}}">
+       <a href="{{ route('usershow.get', Auth::user()->id) }}">
   <p>My page</p>
   </a>
   <a href="{{route('index.get')}}">

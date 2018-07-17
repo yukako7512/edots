@@ -6,7 +6,7 @@
 
 @if (Auth::user()->id == $user->id)
 <a href = "{{route ('usershow.get', $user->id) }}">
-    <p>お前</p>
+    <p>あなた</p>
 </a>
 <p>{{$event->date}}</p> 
 <p>{{$event->place}}</p> 
@@ -24,7 +24,7 @@
 <p>リクエスト済み</p>
     
 @else
-<a href = "{{route ('usershow.get', $user->id) }}"><>
+<a href = "{{route ('usershow.get', $user->id) }}">
     <p>{{$user->name}}さん</p>
 </a>
 <p>{{$event->date}}</p> 
@@ -37,7 +37,7 @@
         <p>リクエスト</p>
     </a>
     @else
-    <p>ポイントが足りないよ～ｗｗｗｗｗｗｗｗｗ</p>
+    <p>ポイントが不足しています</p>
     @endif
         
 @endif

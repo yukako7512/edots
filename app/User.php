@@ -43,72 +43,7 @@ class User extends Authenticatable
         
         return $this->events()->where('status','done');
     }
-    
-    //     public function ongoing($eventId)
-    // {
-        
-    //     $exist = $this->is_ongoinging($eventId);
-
-    //     if ($exist) {
-    //         // do nothing
-    //         return false;
-    //     } else {
-            
-    //         $this->events()->attach($eventId, ['status' => 'ongoing']);
-    //         return true;
-    //     }
-    // }
-
-    // public function dont_ongoing($eventId)
-    // {
-    //     $exist = $this->is_ongoinging($eventId);
-
-    //     if ($exist) {
-            
-    //         \DB::delete("DELETE FROM events WHERE status = 'ongoing'", [$this->id, $eventId]);
-    //     } else {
-            
-    //         return false;
-    //     }
-    // }
-
-    // public function is_wanting($itemIdOrCode)
-    // {
-    //     if (is_numeric($itemIdOrCode)) {
-    //         $item_id_exists = $this->want_items()->where('item_id', $itemIdOrCode)->exists();
-    //         return $item_id_exists;
-    //     } else {
-    //         $item_code_exists = $this->want_items()->where('code', $itemIdOrCode)->exists();
-    //         return $item_code_exists;
-    //     }
-    // }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+  
      public function user_events(){
          
         return $this ->BelongsToMany(UserEvent::class);
@@ -124,7 +59,7 @@ class User extends Authenticatable
 
      public function reviews_through_events()
     {
-        return $this ->hasManyThrough(Review::class, Event::class);
+        return $this ->hasManyThrough(Review::class, Event::class, 'user_id', 'event_id');
     }  
 
      public function events_through_user_events()

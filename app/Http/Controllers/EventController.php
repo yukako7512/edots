@@ -11,56 +11,80 @@ use App\User;
 // use App\Http\Controllers\Auth;
 
 class EventController extends Controller
-{
+{       
+        public function index(){
+        
+        $points = $this->point_sum();
+        return view ('events.index', ['points' => $points]);
+    }
     // 各カテゴリーページへ行くためのファンクション
     public function sports(){
-        $items = Event::where('category', 'sports')->get();
-        return view ('events.categories.sport_index', ['items' => $items]);
+        
+        $points = $this->point_sum();
+        $items = Event::where('category', 'sports')->orderBy('created_at', 'desc')->get();
+        return view ('events.categories.sport_index', ['items' => $items, 'points' => $points]);
         
     } 
     public function beauty(){
-        $items = Event::where('category', 'beauty')->get();
-        return view ('events.categories.beauty_index', ['items' => $items]);
+        
+        $points = $this->point_sum();
+        $items = Event::where('category', 'beauty')->orderBy('created_at', 'desc')->get();
+        return view ('events.categories.beauty_index', ['items' => $items, 'points' => $points]);
         
     }
     public function arts(){
-        $items = Event::where('category', 'arts')->get();
-        return view ('events.categories.art_index', ['items' => $items]);
+        
+        $points = $this->point_sum();
+        $items = Event::where('category', 'arts')->orderBy('created_at', 'desc')->get();
+        return view ('events.categories.art_index', ['items' => $items, 'points' => $points]);
         
     }
     public function technology(){
-        $items = Event::where('category', 'technology')->get();
-        return view ('events.categories.technology_index', ['items' => $items]);
+        
+        $points = $this->point_sum();
+        $items = Event::where('category', 'technology')->orderBy('created_at', 'desc')->get();
+        return view ('events.categories.technology_index', ['items' => $items, 'points' => $points]);
         
     }
     public function nature(){
-        $items = Event::where('category', 'nature')->get();
-        return view ('events.categories.nature_index', ['items' => $items]);
+        
+        $points = $this->point_sum();
+        $items = Event::where('category', 'nature')->orderBy('created_at', 'desc')->get();
+        return view ('events.categories.nature_index', ['items' => $items, 'points' => $points]);
         
     }
     public function language(){
-        $items = Event::where('category', 'language')->get();
-        return view ('events.categories.language_index', ['items' => $items]);
+        
+        $points = $this->point_sum();
+        $items = Event::where('category', 'language')->orderBy('created_at', 'desc')->get();
+        return view ('events.categories.language_index', ['items' => $items, 'points' => $points]);
         
     }
     public function food(){
-        $items = Event::where('category', 'food')->get();
-        return view ('events.categories.food_index', ['items' => $items]);
+        
+        $points = $this->point_sum();
+        $items = Event::where('category', 'food')->orderBy('created_at', 'desc')->get();
+        return view ('events.categories.food_index', ['items' => $items, 'points' => $points]);
         
     }
     public function others(){
-        $items = Event::where('category', 'others')->get();
-        return view ('events.categories.others_index', ['items' => $items]);
+        
+        $points = $this->point_sum();
+        $items = Event::where('category', 'others')->orderBy('created_at', 'desc')->get();
+        return view ('events.categories.others_index', ['items' => $items, 'points' => $points]);
         
     }
 
     public function create(){
-        $item = new Event;
         
-        return view ('events.post', ['item' => $item]);
+        $points = $this->point_sum();
+        $item = new Event;
+        return view ('events.post', ['item' => $item, 'points' => $points]);
     }
     
     public function store(Request $request){
+        
+        $points = $this->point_sum();
         $item = new Event;
         $item->title = $request->title;
         $item->content = $request->content;
@@ -72,48 +96,38 @@ class EventController extends Controller
         $item->point = $request->point;
         $item->status = 'ongoing';
         $item->save();
-        return view ('events.postdone', ['item' => $item]);
+        return view ('events.postdone', ['item' => $item, 'points' => $points]);
     }
     
-    public function arrangedone($id){
+    public function arrangedone($event_id, $attendiee_id){
         
-               
-        $user = \Auth::user();
-
-        $event = Event::where('user_id', $user->id)->where('id', $id);
-        
-        $arranging_events = $user->events->where('status','ongoing');
-        $joining_events = $user->events_through_user_events->where('relationship','ongoing');
-        $history_events = $user->events->where('status','done');
-        
+        $event = Event::where('id', $event_id);
         $event->update(['status'=>'done']);
         
         return redirect()->back();
         
     }
     
-    
-    
-    
     // event infoに行くためのファンクション
     public function eventshow($id){
         
+        $points = $this->point_sum();
         $event = Event::find($id);
         $user = $event->user;
         $negative_or_positive = Transaction::points_compare($event);
         return view ('events.eventinfo', ['event' => $event, 
                                           'user' => $user, 
-                                          'negative_or_positive' => $negative_or_positive
+                                          'negative_or_positive' => $negative_or_positive,
+                                          'points' => $points
                                           ]);
     }
     
     public function requestdone($id){
-
-        
+            
+            $points = $this->point_sum();
             $user_id = \Auth::user()->id;
             $event_id = $id;
             $transactions = Event::find($id)->point;
-            
             
             $user_events_param = ['user_id'=> $user_id,
                                   'event_id'=> $event_id,
@@ -122,13 +136,13 @@ class EventController extends Controller
                                   
             $transactions_param = ['user_id'=> $user_id,
                             'event_id'=> $event_id,
-                            'transactions' => -$transactions,
+                            'transactions' => -$transactions
                             ];
                       
             \DB::table('user_events')->insert($user_events_param);
             \DB::table('transactions')->insert($transactions_param);
             
-            return view('events.requestdone');
-  
-    }
+            return view('events.requestdone', ['points' => $points]);
+                
+            }
 }
