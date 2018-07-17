@@ -1,5 +1,6 @@
 <header>
-    <nav class="navbar navbar-default navbar-static-top">
+    
+     <nav class="navbar navbar-toggleable-md navbar-dark fixed-top scrolling-navbar navbar-transparent">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -19,28 +20,15 @@
                                 Post
                              </a>
                         </li>
-
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                <span class="gravatar">
-                                    <img src="{{ Gravatar::src(Auth::user()->email, 20) . '&d=mm' }}" alt="" class="img-circle">
-                                </span>
-                                {{ Auth::user()->name }}
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="{{ route('usershow.get', Auth::user()->id) }}">My Page</a>
-                                </li>
-                                <li role="separator" class="divider"></li>
-                                <li>
-                                    <a href="{{ route('logout.get') }}">Log out</a>
-                                </li>
-                            </ul>
-                        </li>
+                        
+                        <li><a href="{{ route('aboutus.get') }}">About Us</a></li>  
+                        <li><a href="{{ route('usershow.get', Auth::user()->id) }}">My Page</a></li>
+                        <li><a href="{{ route('logout.get') }}">Log out</a></li>
                     @else
+                        <li><a href="{{ route('aboutus.get') }}">About Us</a></li>   
                         <li><a href="{{ route('signup.get') }}">Sign Up</a></li>
                         <li><a href="{{ route('login') }}">Log in</a></li>
+                        
                     @endif
                 </ul>
             </div>
