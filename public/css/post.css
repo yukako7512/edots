@@ -1,7 +1,8 @@
 @charset "utf-8";
 
 body {
-    background:#ffffff;
+    background: url("/images/post.jpg");
+    background-size: cover;
 }
 
 .navbar {
@@ -10,31 +11,32 @@ body {
 
 .cover {
     width:100%;
-    background: url("/images/post.jpg");
-    background-size: cover;
-    height: 350px;
+    /*background: url("/images/post.jpg");*/
+    /*background-size: cover;*/
+    /*height: 350px;*/
     position: relative;
 }
 .cover-contents {
     font-family: "游ゴシック";
-    height: 250px;
+    /*height: 250px;*/
     width: 60%;
     border: solid 1px #000000;
     background: #ffffff;
-    opacity: 0.7;
+    opacity: 0.9;
     text-align: center;
-    padding-top: 30px;
+    padding-top: 20px;
     text-align: center;
     margin: 0 auto;
     display: table;
     position: absolute;
-    top: 50px;
+    top: 10px;
     left: 20%;
+    margin-bottom: 20px;
 }
 
 #form {
     margin-top: 30px;
-    
+
 }
 
 .form-group {
@@ -43,10 +45,33 @@ body {
 }
 
 label {
-    width:80px;
+    width:100px;
+}
+
+text {
+    width: 385px;
 }
 
 select {
-    width: 180px;
+    width: 385px;
 }
 
+#title {
+    width: 385px;
+}
+
+#date {
+    width: 385px;
+}
+
+#place{
+    width: 385px;
+}
+
+#point {
+    width: 385px;
+}
+
+textarea {
+    width: 385px;
+}

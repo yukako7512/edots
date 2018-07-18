@@ -1,7 +1,8 @@
 @charset "utf-8";
 
 body {
-    background:#ffffff;
+    background:url("/images/review.jpg");
+    background-size: cover;
 }
 
 .navbar {
@@ -10,9 +11,9 @@ body {
 
 .cover {
     width:100%;
-    background: url("/images/review.jpg");
-    background-size: cover;
-    height: 350px;
+    /*background: url("/images/review.jpg");*/
+    /*background-size: cover;*/
+    /*height: 350px;*/
     position: relative;
 }
 .cover-contents {
@@ -21,7 +22,7 @@ body {
     width: 60%;
     border: solid 1px #000000;
     background: #ffffff;
-    opacity: 0.7;
+    opacity: 0.9;
     text-align: center;
     padding-top: 30px;
     text-align: center;

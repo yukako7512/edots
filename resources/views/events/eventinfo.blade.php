@@ -25,7 +25,7 @@
  <aside class="col-xs-5">
 <div class="panel panel-default">
     <div class="panel-body" id="image">
-        <img class="media-object img-rounded img-responsive" src="/images/art/art1.jpg" alt="">
+        <img class="media-object img-rounded img-responsive" src="/images/{{$icon}}" alt="">
     </div>
     
 </div>
@@ -33,13 +33,14 @@
 
 
     <div class = "event">
+        <hr class="style1">
         <a href = "{{route ('usershow.get', $user->id) }}">
             <p>お前</p>
         </a>
         
-    <p>日時　{{$event->date}}</p> 
-    <p>場所　{{$event->place}}</p> 
-    <p>必要なポイント数　{{$event->point}}ポイント</p> 
+    <p>日時　{{$event->date}}</p>
+    <p>場所　{{$event->place}}</p>
+    <p>必要なポイント数　{{$event->point}}ポイント</p>
     </div>
     
     <aside class="col-xs-7">
@@ -56,7 +57,7 @@
 <aside class="col-xs-5">
 <div class="panel panel-default">
     <div class="panel-body" id="image">
-        <img class="media-object img-rounded img-responsive" src="/images/art/art1.jpg" alt="">
+        <img class="media-object img-rounded img-responsive" src="/images/{{$icon}}" alt="">
     </div>
 
 <div class ="warning">
@@ -67,11 +68,12 @@
 </aside>
 
 <div class = "event">
+    <hr class="style1">
 <a href = "{{route ('usershow.get', $user->id) }}">
     <p>{{$user->name}}さん</p>
 </a>
-<p>日時　{{$event->date}}</p> 
-<p>場所　{{$event->place}}</p> 
+<p>日時　{{$event->date}}</p>
+<p>場所　{{$event->place}}</p>
 <p>必要なポイント数　{{$event->point}}ポイント</p>
 </div>
 
@@ -91,7 +93,7 @@
  <aside class="col-xs-5">
 <div class="panel panel-default">
     <div class="panel-body" id="image">
-        <img class="media-object img-rounded img-responsive" src="/images/art/art1.jpg" alt="">
+        <img class="media-object img-rounded img-responsive" src="/images/{{$icon}}" alt="">
     </div>
     
     @if ($negative_or_positive)
@@ -109,8 +111,8 @@
     <a href = "{{route ('usershow.get', $user->id) }}">
         <p>{{$user->name}}さん</p>
     </a>
-    <p>日時　{{$event->date}}</p> 
-    <p>場所　{{$event->place}}</p> 
+    <p>日時　{{$event->date}}</p>
+    <p>場所　{{$event->place}}</p>
     <p>必要なポイント数　{{$event->point}}ポイント</p>
 </div>
 
