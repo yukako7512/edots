@@ -12,10 +12,32 @@ use App\User;
 
 class EventController extends Controller
 {       
-        public function index(){
+        public function int_p(){
+            $points = $this->point_sum();
+            $exist_or_not = User::int_p_check();
+            return view ('auth.int_p', ['points' => $points,
+                                        'exist_or_not'=>$exist_or_not]);
+        }
         
+        public function firstindex(){
+        $user = \Auth::user();
+
+        $transaction = new Transaction;
+        $transaction->event_id = 0;
+        $transaction->user_id = $user->id;
+        $transaction->transactions = 1000;
+        $transaction->save();
+        return redirect('/index');
+
+    }
+        
+        public function index(){
+        if(\Auth::check()){
         $points = $this->point_sum();
         return view ('events.index', ['points' => $points]);
+        }else{
+            return view('welcome');
+        }
     }
     // 各カテゴリーページへ行くためのファンクション
     public function sports(){

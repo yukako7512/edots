@@ -25,7 +25,7 @@
  <aside class="col-xs-5">
 <div class="panel panel-default">
     <div class="panel-body" id="image">
-        <img class="media-object img-rounded img-responsive" src="{{ Gravatar::src($user->email, 500) }}" alt="">
+        <img class="media-object img-rounded img-responsive" src="/images/art/art1.jpg" alt="">
     </div>
     
 </div>
@@ -56,7 +56,7 @@
 <aside class="col-xs-5">
 <div class="panel panel-default">
     <div class="panel-body" id="image">
-        <img class="media-object img-rounded img-responsive" src="{{ Gravatar::src($user->email, 500) }}" alt="">
+        <img class="media-object img-rounded img-responsive" src="/images/art/art1.jpg" alt="">
     </div>
 
 <div class ="warning">
@@ -91,7 +91,7 @@
  <aside class="col-xs-5">
 <div class="panel panel-default">
     <div class="panel-body" id="image">
-        <img class="media-object img-rounded img-responsive" src="{{ Gravatar::src($user->personal_id, 500) }}" alt="">
+        <img class="media-object img-rounded img-responsive" src="/images/art/art1.jpg" alt="">
     </div>
     
     @if ($negative_or_positive)

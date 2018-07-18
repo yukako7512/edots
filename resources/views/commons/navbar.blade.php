@@ -8,20 +8,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
+                    
                 </button>
                 <a href="{{route('index.get')}}"><img src="{{ secure_asset("images/logo.png") }}" alt="Share"></a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::check())
+                        <li><a>{{$points}}pt</a></li>
                         <li>
                             <a href="{{ route('post.get') }}">
                                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                                 Post
                              </a>
-                        <li>
-                            {{$points}}pt
-                        </li>     
                         </li>
                         
                         <li><a href="{{ route('aboutus.get') }}">About Us</a></li>  

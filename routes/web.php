@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', 'EventController@index');
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
@@ -25,7 +22,9 @@ Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login')->name('login.post');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
+Route::get('int_p', 'EventController@int_p')->name('int_p.get');
 Route::get('index', 'EventController@index')->name('index.get');
+Route::get('firstindex', 'EventController@firstindex')->name('firstindex.get');
 Route::get('aboutus',  function () {return view('aboutus');})->name('aboutus.get');
 
 // カテゴリー

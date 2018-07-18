@@ -66,16 +66,15 @@ class User extends Authenticatable
     {
         return $this ->hasManyThrough(Event::class, UserEvent::class, 'user_id', 'id');
     }     
-    
-// リクエストのチェっク   
-    // public function have_items()
-    //     {
-    //         return $this->items()->where('type', 'have');
-    //     }
         
     public function request_check($event){
         $requesting_events = UserEvent::where('user_id', $this->id);
         $exist_or_not = $requesting_events->where('event_id', $event->id)->exists();
         return $exist_or_not;
     } 
+    public static function int_p_check(){
+        $user = \Auth::user();
+        $exist_or_not = Transaction::where('user_id',$user->id)->where('event_id', 0)->exists();
+        return $exist_or_not;
+    }
 }
