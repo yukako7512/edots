@@ -1,0 +1,58 @@
+body {
+  background-image: url("/images/welcome.jpg");
+  background-size:cover;
+  
+}
+
+#box1 { color: #ffffff;
+font-size: 500%;
+font-family:"Meiryo";
+font-weight: 900;
+padding-top:300px;
+margin-left:10px;
+
+}
+
+#box2 { color: #ffffff;
+font-size: 250%;
+font-family:"Meiryo";
+margin-left:45px;
+}
+
+.demo1{
+   
+margin-left:105px;
+  display: inline-block;
+  padding: 20px 80px;
+  border: solid 2px #fff;
+  border-radius: 3px;
+  background: rgba(0,0,0,0.2);
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 130%;
+  font-family: Helvetica, Arial, sans-serif;
+}
+.demo1:hover{
+  color: #333;
+  background: #fff;
+}
+
+.demo2{
+   
+margin-left:25px;
+  display: inline-block;
+  padding: 20px 80px;
+  border: solid 2px #fff;
+  border-radius: 3px;
+  background: rgba(0,0,0,0.2);
+  color: #fff;
+  text-decoration: none;
+  font-size:130%;
+  font-weight: bold;
+  font-family: Helvetica, Arial, sans-serif;
+}
+.demo2:hover{
+  color: #333;
+  background: #fff;
+}

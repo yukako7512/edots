@@ -1,26 +1,42 @@
 @extends('layouts.app')
 @section('content')
 
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+            <title>レビュー履歴</title>
+        <link rel="stylesheet" href="review_history.css">
+    </head>
+
+<body>
 @foreach($my_events as $my_event)
-<p>---------------------------------</p>
-<p>{{$my_event->title}}</p>
 
 <?php
 $reviews = $my_event->reviews()->get();
+$exist_or_not = $my_event->review_check ($my_event);
 ?>
-
-    @foreach($reviews as $review)
-    <?php
-    $stars = $review->stars($review->rating);
-    ?>
+@if($exist_or_not)
+    <p>{{$my_event->title}}</p>
+    <div class="panel panel-info">
+        @foreach($reviews as $review)
+        <?php
+        $stars = $review->stars($review->rating);
+        ?>
         @if($review!=null)
-        <p>=====</p>
-        <p>{{$review->user()->get()->first()->name}}</p>
-        <p>{{$stars}}</p>
-        <p>{{$review->comment}}</p>
-        <p>=====</p>
+            <div class="panel-heading">    
+                <p>{{$review->user()->get()->first()->name}}</p>
+                <p>{{$stars}}</p>
+        	</div>
+            <div class="panel-body">
+                <p>{{$review->comment}}</p>
+            </div>
         @endif
-    @endforeach
-<p>---------------------------------</p>
+        @endforeach  
+    </div>
+@endif 
+</body>
 @endforeach
 @endsection
+
+
