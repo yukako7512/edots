@@ -7,7 +7,8 @@
 |
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| contains the "web" middleware group
+. Now create something great!
 |
 */
 
@@ -25,7 +26,7 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 Route::get('int_p', 'EventController@int_p')->name('int_p.get');
 Route::get('index', 'EventController@index')->name('index.get');
 Route::get('firstindex', 'EventController@firstindex')->name('firstindex.get');
-Route::get('aboutus',  function () {return view('aboutus');})->name('aboutus.get');
+Route::get('about/us',  'EventController@aboutus')->name('aboutus.get');
 
 // カテゴリー
 Route::get('sport_index', 'EventController@sports')->name('sport.get');
@@ -36,6 +37,7 @@ Route::get('food_index', 'EventController@food')->name('food.get');
 Route::get('language_index', 'EventController@language')->name('language.get');
 Route::get('nature_index', 'EventController@nature')->name('nature.get');
 Route::get('others_index', 'EventController@others')->name('others.get');
+Route::get('history_index', 'EventController@history')->name('history.get');
 
 // イベント詳細
 Route::get('eventshow/{id}', 'EventController@eventshow')->name('eventshow.get');
