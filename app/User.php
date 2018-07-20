@@ -65,7 +65,12 @@ class User extends Authenticatable
      public function events_through_user_events()
     {
         return $this ->hasManyThrough(Event::class, UserEvent::class, 'user_id', 'id');
-    }     
+    }
+    
+         public function user_events_through_events()
+    {
+        return $this ->hasManyThrough(UserEvent::class, Event::class, 'user_id', 'event_id');
+    }  
         
     public function request_check($event){
         $requesting_events = UserEvent::where('user_id', $this->id);

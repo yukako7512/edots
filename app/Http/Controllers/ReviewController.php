@@ -13,14 +13,17 @@ class ReviewController extends Controller
 {
     public function create($event_id, $attendiee_id) {
         $points = $this->point_sum();
+        $notification = $this->notification();
         return view('review.review', ['attendiee_id' => $attendiee_id,
                                       'event_id' => $event_id,
-                                      'points' => $points]) ;
+                                      'points' => $points,
+                                      'notification'=>$notification]) ;
     }
     
     public function reviewdone(Request $request, $event_id, $attendiee_id) {
         
         $points = $this->point_sum();
+        $notification = $this->notification();
         $reviews = new Review;
         $reviews->rating = $request->rating;
         $reviews->comment = $request->comment;
@@ -34,15 +37,18 @@ class ReviewController extends Controller
         
         return view ('review.reviewdone'
         ,['attendiee_id' => $attendiee_id,
-          'points' => $points]);
+          'points' => $points,
+          'notification'=>$notification]);
     }
         
         public function review_history($id) {
 
         $points = $this->point_sum();
+        $notification = $this->notification();
         $user = User::find($id);
         $my_events = $user->events()->orderBy('created_at', 'desc')->get();
         return view ('review.review_history', ['my_events' => $my_events,
-                                                'points' => $points]);
+                                                'points' => $points,
+                                                'notification'=>$notification]);
     }
 }

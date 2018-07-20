@@ -32,6 +32,27 @@
                         
                     @endif
                 </ul>
+                    @if (Auth::check())
+                <div class="collapse navbar-collapse" id="navbarEexample">
+			       <ul class="nav navbar-nav navbar-right">
+				      <li class="dropdown active">
+					   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">通知 
+					@if($notification['unread_count'])
+					   {{$notification['unread_count']}}
+					@endif<span class="caret"></span></a>
+					
+					@if($notification['unread_count'])   
+				    <ul class="dropdown-menu" role="menu">
+				    @foreach($notification['unread_events'] as $unread_event)
+						<li>{{$unread_event->name}}さんが{{$unread_event->title}}にリクエストしました。</li>
+						<li class = 'divider'></li>
+				    @endforeach
+				            <a class="btn btn-default btn-xs" href="{{route('notification.read')}}" role="button">OK</a>
+				    @endif
+				    </ul>
+				   </ul>
+				</div>
+				    @endif
             </div>
         </div>
     </nav>

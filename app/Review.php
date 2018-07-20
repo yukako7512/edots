@@ -19,13 +19,18 @@ class Review extends Model
 // 星表示   
     public function stars($review_round)
     {
-        if ($review_round<1.25){
+        if ($review_round==0){
+            $stars= '<img src="/images/stars/star_empty.png" alt="">'.
+                    '<img src="/images/stars/star_empty.png" alt="">'.
+                    '<img src="/images/stars/star_empty.png" alt="">'.
+                    '<img src="/images/stars/star_empty.png" alt="">'.
+                    '<img src="/images/stars/star_empty.png" alt="">';
+        }elseif ($review_round<1.25){
             $stars= '<img src="/images/stars/star_filled.png" alt="">'.
                     '<img src="/images/stars/star_empty.png" alt="">'.
                     '<img src="/images/stars/star_empty.png" alt="">'.
                     '<img src="/images/stars/star_empty.png" alt="">'.
                     '<img src="/images/stars/star_empty.png" alt="">';
-
         }elseif ($review_round<1.75){
             $stars= '<img src="/images/stars/star_filled.png" alt="">'.
                     '<img src="/images/stars/star_half.png" alt="">'.
@@ -57,7 +62,7 @@ class Review extends Model
                     '<img src="/images/stars/star_half.png" alt="">'.
                     '<img src="/images/stars/star_empty.png" alt="">';
         }elseif ($review_round<4.25){
-            $$stars= '<img src="/images/stars/star_filled.png" alt="">'.
+            $stars= '<img src="/images/stars/star_filled.png" alt="">'.
                     '<img src="/images/stars/star_filled.png" alt="">'.
                     '<img src="/images/stars/star_filled.png" alt="">'.
                     '<img src="/images/stars/star_filled.png" alt="">'.

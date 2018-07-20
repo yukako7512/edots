@@ -15,7 +15,7 @@
     <title>Share</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="{{ secure_asset('categorydetail/categorydetailcss/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('categorydetail/categorydetailcss/vendor/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="{{ secure_asset('categorydetail/categorydetailcss/css/3-col-portfolio.css') }}" rel="stylesheet">
@@ -47,7 +47,7 @@ if($id%5==0){
     }if($id%5==3){
         $icon="food/food4.jpeg";
     }if($id%5==4){
-        $icon="food/beauty5.jpeg";
+        $icon="food/food5.jpeg";
     };
 ?>
         <div class="col-lg-4 col-sm-6 portfolio-item">

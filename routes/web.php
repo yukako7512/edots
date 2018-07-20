@@ -70,5 +70,7 @@ Route::post('editdone/{id}', 'UserController@editdone')->name('editdone.post');
 
 Route::get('reviewhistory/{id}',  'ReviewController@review_history')->name('reviewhistory.get');
 
+Route::get('notification/read',  'UserController@notification_read')->name('notification.read');
+
 
 
