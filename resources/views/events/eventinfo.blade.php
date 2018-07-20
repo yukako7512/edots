@@ -100,7 +100,7 @@
     <a href = "{{route ('requestdone.get', $event->id)}}" class="square_btn">参加をリクエスト</a>
     @else
     <div class="warning">
-    <p>ポイントが足りないよ～ｗｗｗｗｗｗｗｗｗ</p>
+    <p>必要なポイント数　{{$event->point}}ポイント</p>
     </div>
     @endif
 </div>

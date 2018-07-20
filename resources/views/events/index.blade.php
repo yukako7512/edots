@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('content')
+
 
 
 <!DOCTYPE html>
@@ -17,6 +17,7 @@
   
   <div class="category-wrapper" class="clearfix">
     <div class='container'>
+    @section('content')
       <div class="heading">
           <h1>Category Index<span>.</span></h1>
           <p>Find the category you like to join or share!</p>

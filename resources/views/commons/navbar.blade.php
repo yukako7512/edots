@@ -22,8 +22,7 @@
                                 Post
                              </a>
                         </li>
-                        
-                        <li><a href="{{ route('aboutus.get') }}">About Us</a></li>  
+                    
                         <li><a href="{{ route('usershow.get', Auth::user()->id) }}">My Page</a></li>
                         <li><a href="{{ route('logout.get') }}">Log out</a></li>
                     @else

@@ -34,10 +34,10 @@ class UserController extends Controller
             $icon="url5";
         };
         
-        $arranging_events = $user->events()->where('status','ongoing')->orderBy('created_at', 'desc')->get();
-        $joining_events = \DB::table('users')->join('user_events', 'users.id', '=', 'user_events.user_id')->join('events', 'user_events.event_id', '=', 'events.id')->select('*')->where('relationship', 'ongoing')->paginate(10);
-        $joined_histories = \DB::table('users')->join('user_events', 'users.id', '=', 'user_events.user_id')->join('events', 'user_events.event_id', '=', 'events.id')->select('*')->where('relationship', 'done')->paginate(10);
-        $arrnged_histories = $user->events->where('status','done');
+        $arranging_events = $user->events()->where('status','ongoing')->orderBy('date', 'asc')->get();
+        $joining_events = \DB::table('users')->join('user_events', 'users.id', '=', 'user_events.user_id')->join('events', 'user_events.event_id', '=', 'events.id')->select('*')->where('relationship', 'ongoing')->orderBy('date', 'asc')->paginate(10);
+        $joined_histories = \DB::table('users')->join('user_events', 'users.id', '=', 'user_events.user_id')->join('events', 'user_events.event_id', '=', 'events.id')->select('*')->where('relationship', 'done')->orderBy('date', 'desc')->paginate(10);
+        $arrnged_histories = $user->events()->where('status','done')->orderBy('date', 'desc')->get();
       
         
         return view ('users.user', ['user' => $user,
@@ -63,18 +63,18 @@ class UserController extends Controller
                                             'points' => $points]);
     }
     
-    public function store(Request $request){
+    // public function store(Request $request){
         
-        $points = $this->point_sum();
-        $introduction = new User;
-        $introduction->introduction = $request->introduction;
-        $user = \Auth::user();
-        $introduction->user_id=$user->id;
-        $introduction->save();
-        return view ('users.user', ['introduction' => $introduction,
-                                    'user' => $user,
-                                    'points' => $points]);
-    }
+    //     $points = $this->point_sum();
+    //     $introduction = new User;
+    //     $introduction->introduction = $request->introduction;
+    //     $user = \Auth::user();
+    //     $introduction->user_id=$user->id;
+    //     $introduction->save();
+    //     return view ('users.user', ['introduction' => $introduction,
+    //                                 'user' => $user,
+    //                                 'points' => $points]);
+    // }
 
     public function editdone(Request $request, $id) {
         
@@ -83,7 +83,6 @@ class UserController extends Controller
         $user->introduction = $request->introduction;
         $user->save();
         
-        return redirect('review.reviewdone', ['user' => $user,
-                                              'points' => $points]);
+        return redirect("user/$id");
     }
 }

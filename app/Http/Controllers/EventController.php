@@ -13,8 +13,7 @@ use App\User;
 class EventController extends Controller
 {       
         public function aboutus(){
-            $points = $this->point_sum();
-            return view('aboutus',['points' => $points]);
+            return view('aboutus');
         }
         
         public function int_p(){

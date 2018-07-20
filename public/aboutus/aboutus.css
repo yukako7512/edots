@@ -69,42 +69,42 @@ a {
   margin-right: 5px;
 }
 
-header {
-  height: 65px;
-  width: 100%;
-  background-color: rgba(34, 49, 52, 0.9);
+/*header {*/
+/*  height: 65px;*/
+/*  width: 100%;*/
+/*  background-color: rgba(34, 49, 52, 0.9);*/
   /* positionプロパティをfixedに、topを0に指定してください */
   
   
   /* z-indexを10に指定してください */
   
-}
+/*}*/
 
 .logo {
   width: 124px;
   margin-top: 20px;
 }
 
-.header-left {
-  float: left;
-}
+/*.header-left {*/
+/*  float: left;*/
+/*}*/
 
-.header-right {
-  float: right;
-  background-color: rgba(255, 255, 255, 0.3);
-  transition: all 0.5s;
-}
+/*.header-right {*/
+/*  float: right;*/
+/*  background-color: rgba(255, 255, 255, 0.3);*/
+/*  transition: all 0.5s;*/
+/*}*/
 
-.header-right:hover {
-  background-color: rgba(255, 255, 255, 0.5);
-}
+/*.header-right:hover {*/
+/*  background-color: rgba(255, 255, 255, 0.5);*/
+/*}*/
 
-.header-right a {
-  line-height: 65px;
-  padding: 0 25px;
-  color: white;
-  display: block;
-}
+/*.header-right a {*/
+/*  line-height: 65px;*/
+/*  padding: 0 25px;*/
+/*  color: white;*/
+/*  display: block;*/
+/*}*/
 
 .lesson-wrapper {
   height: 300px;
@@ -234,11 +234,11 @@ button {
     font-size: 18px;
 }
 
-a {
-    text-decoration: none;
-    font-size: 22px;
-    color: black;
-}
+/*a {*/
+/*    text-decoration: none;*/
+/*    font-size: 22px;*/
+/*    color: black;*/
+/*}*/
 
 button:hover, a:hover {
     opacity: 0.7;

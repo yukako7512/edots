@@ -23,7 +23,7 @@
     </div>
     <br>
     
-<a href="{{route('index.get')}}" class="demo1">START</a><a href="{{route('aboutus.get')}}" class="demo2">ABOUT US</a>
+<a href="{{route('signup.get')}}" class="demo1">START</a><a href="{{route('aboutus.get')}}" class="demo2">ABOUT US</a>
     
   </body>
   

@@ -37,7 +37,8 @@
     </div>
     <div class="form-group">    
         {!! Form::label('date', 'Date') !!}
-        {!! Form::text('date','', array('rows'=>'3','class'=>'span6','placeholder'=>'例）20180727')) !!}
+        {!! Form::text('date','yyyy/mm/dd --:--') !!}
+        <p>例）2018/07/27 10:00</p>
     </div>
     <div class="form-group">    
         {!! Form::label('place', 'Place') !!}
