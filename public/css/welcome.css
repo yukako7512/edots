@@ -1,15 +1,23 @@
 body {
-  background-image: url("/images/welcome.jpg");
+  background-image: url("/images/top1.png");
   background-size:cover;
+  list-style:none;
+  text-decoration: none;
+  color:white;
+  
   
 }
+
+
 
 #box1 { color: #ffffff;
 font-size: 500%;
 font-family:"Meiryo";
 font-weight: 900;
-padding-top:300px;
+padding-top:150px;
 margin-left:10px;
+
+
 
 }
 
@@ -17,6 +25,7 @@ margin-left:10px;
 font-size: 250%;
 font-family:"Meiryo";
 margin-left:45px;
+
 }
 
 .demo1{
@@ -26,7 +35,7 @@ margin-left:105px;
   padding: 20px 80px;
   border: solid 2px #fff;
   border-radius: 3px;
-  background: rgba(0,0,0,0.2);
+  background: rgba(0,0,0,0);
   color: #fff;
   text-decoration: none;
   font-weight: bold;
@@ -36,6 +45,7 @@ margin-left:105px;
 .demo1:hover{
   color: #333;
   background: #fff;
+  text-decoration: none;
 }
 
 .demo2{
@@ -45,7 +55,7 @@ margin-left:25px;
   padding: 20px 80px;
   border: solid 2px #fff;
   border-radius: 3px;
-  background: rgba(0,0,0,0.2);
+  background: rgba(0,0,0,0);
   color: #fff;
   text-decoration: none;
   font-size:130%;
@@ -55,4 +65,10 @@ margin-left:25px;
 .demo2:hover{
   color: #333;
   background: #fff;
+  text-decoration: none;
+}
+
+.text {
+  padding-bottom: 100px;
+  text-decoration: none;
 }

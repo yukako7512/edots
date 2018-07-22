@@ -14,10 +14,10 @@
   </head>
   
   <body>
-  
+    @section('content')
   <div class="category-wrapper" class="clearfix">
     <div class='container'>
-    @section('content')
+  
       <div class="heading">
           <h1>Category Index<span>.</span></h1>
           <p>Find the category you like to join or share!</p>
@@ -93,6 +93,7 @@
   <img src="{{ secure_asset('category/others1.jpg') }}" alt="Avatar" class="image">
   <div class="overlay">OTHERS</div>
   </div>
+  </a>
   </div>
   </div>
   </div>

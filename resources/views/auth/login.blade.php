@@ -9,7 +9,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="wrap">
                  <p class="form-title">
-                    Log in, please!!</p>
+                    Sign in</p>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">

@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 body {
-    background: url("/images/post.jpg");
+    background: url("/images/top.png");
     background-size: cover;
 }
 
@@ -17,12 +17,12 @@ body {
     position: relative;
 }
 .cover-contents {
-    font-family: "游ゴシック";
+    /*font-family: "游ゴシック";*/
     /*height: 250px;*/
     width: 60%;
-    border: solid 1px #000000;
-    background: #ffffff;
-    opacity: 0.9;
+    /*border: solid 1px #000000;*/
+    background: #fff;
+    opacity: 0.8;
     text-align: center;
     padding-top: 20px;
     text-align: center;

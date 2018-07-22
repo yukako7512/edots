@@ -1,7 +1,6 @@
 
 @extends('layouts.app')
 @section('content')
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,7 +11,7 @@
 
 @if (Auth::user()->id == $user->id)    
 <br><br><br><br>
-<img src="/images/stars/star_filled.png" alt="画像"class="sample2"> 
+<img src="/images/icons/{{$icon}}" alt="画像"class="sample2"> 
 
 <p class="name">{{$user->name}}</p>
 <p class="review">REVIEW&nbsp;&nbsp;{!!$stars!!} 
@@ -131,7 +130,7 @@ MY PROFILE&nbsp;&nbsp;<a class="btn btn-default" href="{{route ('profileedit.get
 @else
 
 <br><br><br><br>
-<img src="/images/stars/star_filled.png" alt="画像"class="sample2"> 
+<img src="/images/icons/{{$icon}}" alt="画像"class="sample2"> 
 
 <p class="name">{{$user->name}}</p>
 <p class="review">REVIEW&nbsp;&nbsp;{!!$stars!!} 

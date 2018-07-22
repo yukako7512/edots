@@ -1,4 +1,3 @@
-
 @extends('layouts.app')  
 @section('content')
 
@@ -18,7 +17,7 @@
     <link href="{{ secure_asset('categorydetail/categorydetailcss/vendor/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="{{ secure_asset('categorydetail/categorydetailcss/css/3-col-portfolio.css') }}" rel="stylesheet">
+    <!--<link href="{{ secure_asset('categorydetail/categorydetailcss/css/3-col-portfolio.css') }}" rel="stylesheet">-->
 
   </head>
 
@@ -72,5 +71,6 @@ if($id%5==0){
 
 </html>
 
-@endsection
 
+
+@endsection

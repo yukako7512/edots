@@ -1,24 +1,24 @@
 @charset "utf-8";
 
 body {
-    background: url("/images/s_postdone.jpg");
+    background: url("/images/top.png");
     background-repeat: no-repeat;
 }
 
 .cover {
     height: 250px;
     width: 60%;
-    border: solid 1px #000000;
+    /*border: solid 1px #000000;*/
     background: #ffffff;
-    opacity: 0.7;
+    opacity: 0.8;
     text-align: center;
     margin: 0 auto;
     padding-top: 30px;
     text-align: center;
     display: table;
-    margin-top: 200px;
+    margin-top: 110px;
 }
-}
+
 
 .cover cover-contents {
      font-family: "游ゴシック";
