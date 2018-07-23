@@ -119,10 +119,9 @@ display: inline-block;
 }
 .box1 {
     margin-left:600px;
-    padding: 0.3em 2em;
+    padding: 2em 2em;
     margin: 1em 5em;
-    font-weight: bold;
-    border: solid 2px #000000;
+    border: solid 0.5px #000000;
     width:1000px;
 }
 .box1 p {
@@ -216,3 +215,8 @@ img.sample2{
     height: 250px;       /* ※縦横を同値に */
 }
 
+hr {
+  height: 1px;
+  border: none;
+  border-top: 1px #000000 solid;
+}

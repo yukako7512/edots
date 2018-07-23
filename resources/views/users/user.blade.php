@@ -53,13 +53,13 @@ MY PROFILE&nbsp;&nbsp;<a class="btn btn-default" href="{{route ('profileedit.get
  
    
 @foreach($joining_events as $joining_event)
- <div class="box2">
+
 <p>{{$joining_event->title}}</p>
 <p>{{$joining_event->date}}</p>
 <a href = "{{route ('review.get', [$joining_event->id, $user->id]) }}">
     <p>完了</p>
 </a> 
-</div>
+<hr>
 @endforeach</p>
 
 
@@ -74,14 +74,14 @@ MY PROFILE&nbsp;&nbsp;<a class="btn btn-default" href="{{route ('profileedit.get
 
    
    @foreach($arranging_events as $arranging_event)
-   <div class="box2"> 
+
 <p>{{$arranging_event->title}}</p>
 <p>{{$arranging_event->date}}</p>
 <a href = "{{route ('arrangedone.get', [$arranging_event->id,  $user->id]) }}">
     <p>イベントを締め切る</p>
 </a> 
 
-</div>
+<hr>
 @endforeach
 
 
@@ -96,10 +96,10 @@ MY PROFILE&nbsp;&nbsp;<a class="btn btn-default" href="{{route ('profileedit.get
  
  
   @foreach($joined_histories as $joined_history)
-   <div class="box2">  
+
 <p>{{$joined_history->title}}</p>
 <p>{{$joined_history->date}}</p>
-</div>
+<hr>
 @endforeach
 
 
@@ -113,10 +113,10 @@ MY PROFILE&nbsp;&nbsp;<a class="btn btn-default" href="{{route ('profileedit.get
 
 
 @foreach($arrnged_histories as $arrnged_history)
-<div class="box2">  
+ 
 <p>{{$arrnged_history->title}}</p>
 <p>{{$arrnged_history->date}}</p>
-</div>
+<hr>
 @endforeach
 
 
@@ -172,10 +172,10 @@ MY PROFILE&nbsp;&nbsp;</p></form>
 
 
 @foreach($joining_events as $joining_event)
-<div class="box2">
+
 <p>{{$joining_event->title}}</p>
 <p>{{$joining_event->date}}</p>
-</div>
+<hr>
 @endforeach</p>
 
  
@@ -187,12 +187,12 @@ MY PROFILE&nbsp;&nbsp;</p></form>
 <p class="c-txtsp">
 
 
-   @foreach($arranging_events as $arranging_event)
-   <div class="box2">  
+    @foreach($arranging_events as $arranging_event)
+ 
 <p>{{$arranging_event->title}}</p>
 <p>{{$arranging_event->date}}</p>
-</div>
-@endforeach
+<hr>
+    @endforeach
 
  
 </p>
@@ -205,10 +205,10 @@ MY PROFILE&nbsp;&nbsp;</p></form>
  
 
   @foreach($joined_histories as $joined_history)
-  <div class="box2"> 
+
 <p>{{$joined_history->title}}</p>
 <p>{{$joined_history->date}}</p>
-</div>
+<hr>
 @endforeach
 
 
@@ -222,15 +222,15 @@ MY PROFILE&nbsp;&nbsp;</p></form>
 
 
 @foreach($arrnged_histories as $arrnged_history)
-<div class="box2">
+
 <p>{{$arrnged_history->title}}</p>
 <p>{{$arrnged_history->date}}</p>
-
+<hr>
 @endforeach
 
 
 </p>
-</div>
+
 </div>
 
 

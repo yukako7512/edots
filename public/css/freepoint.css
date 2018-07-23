@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+
+body {
+    /*background-image: url(/images/freepoint.jpg);*/
+    background-size: cover;
+    font-family: 游ゴシック;
+}   
+
+.callout{
+    margin-top: 120px;
+}
+
+h3 {
+    color: red;
+    font-weight: bold;
+}
+
+.box{
+    background-color: #FFFFFF;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 50px;
+    font-size: 15px;
+    text-align: center;
+    width: 300px;
+}
+
+#wrapper {
+   text-align: center;
+   margin-bottom: 100px;
+}
+
+img {
+    width: 150px;
+}

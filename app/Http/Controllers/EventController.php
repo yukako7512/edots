@@ -19,14 +19,31 @@ class EventController extends Controller
         
         public function int_p(){
             $points = $this->point_sum();
+            $notification = $this->notification();
             $exist_or_not = User::int_p_check();
-            $notification = $this->notification(); 
-            return view ('auth.int_p', ['points' => $points,
-                                        'notification'=> $notification,
-                                        'exist_or_not'=>$exist_or_not,]);
+            
+            if($exist_or_not){
+                
+                return redirect('/index');
+                
+            }else{
+                
+                return view ('auth.int_p', ['points' => $points,
+                                        'notification'=> $notification
+                                        ]);
+            }
         }
         
         public function firstindex(){
+            
+        $exist_or_not = User::int_p_check();
+        
+        if($exist_or_not){
+            
+            return redirect('/index');
+            
+        }else{    
+            
         $user = \Auth::user();
 
         $transaction = new Transaction;
@@ -36,6 +53,7 @@ class EventController extends Controller
         $transaction->save();
         
         return redirect('/index');
+        }
 
     }
         

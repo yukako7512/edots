@@ -79,7 +79,7 @@ class User extends Authenticatable
     } 
     public static function int_p_check(){
         $user = \Auth::user();
-        $exist_or_not = Transaction::where('user_id',$user->id)->where('event_id', 0)->exists();
+        $exist_or_not = Transaction::where('user_id',$user->id)->where('event_id', 1)->exists();
         return $exist_or_not;
     }
 }
