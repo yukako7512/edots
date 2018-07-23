@@ -61,7 +61,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, , section {
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 1rem;
+  : 1rem;
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
@@ -141,13 +141,13 @@ strong {
 }
 
 small {
-  font-size: 80%;
+  : 80%;
 }
 
 sub,
 sup {
   position: relative;
-  font-size: 75%;
+  : 75%;
   line-height: 0;
   vertical-align: baseline;
 }
@@ -191,7 +191,7 @@ code,
 kbd,
 samp {
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: 1em;
+  : 1em;
 }
 
 pre {
@@ -251,7 +251,7 @@ optgroup,
 textarea {
   margin: 0;
   font-family: inherit;
-  font-size: inherit;
+  : inherit;
   line-height: inherit;
 }
 
@@ -311,7 +311,7 @@ legend {
   max-width: 100%;
   padding: 0;
   margin-bottom: .5rem;
-  font-size: 1.5rem;
+  : 1.5rem;
   line-height: inherit;
   color: inherit;
   white-space: normal;
@@ -368,54 +368,54 @@ h1, h2, h3, h4, h5, h6,
 }
 
 h1, .h1 {
-  font-size: 2.5rem;
+  : 2.5rem;
 }
 
 h2, .h2 {
-  font-size: 2rem;
+  : 2rem;
 }
 
 h3, .h3 {
-  font-size: 1.75rem;
+  : 1.75rem;
 }
 
 h4, .h4 {
-  font-size: 1.5rem;
+  : 1.5rem;
 }
 
 h5, .h5 {
-  font-size: 1.25rem;
+  : 1.25rem;
 }
 
 h6, .h6 {
-  font-size: 1rem;
+  : 1rem;
 }
 
 .lead {
-  font-size: 1.25rem;
+  : 1.25rem;
   font-weight: 300;
 }
 
 .display-1 {
-  font-size: 6rem;
+  : 6rem;
   font-weight: 300;
   line-height: 1.2;
 }
 
 .display-2 {
-  font-size: 5.5rem;
+  : 5.5rem;
   font-weight: 300;
   line-height: 1.2;
 }
 
 .display-3 {
-  font-size: 4.5rem;
+  : 4.5rem;
   font-weight: 300;
   line-height: 1.2;
 }
 
 .display-4 {
-  font-size: 3.5rem;
+  : 3.5rem;
   font-weight: 300;
   line-height: 1.2;
 }
@@ -429,7 +429,7 @@ hr {
 
 small,
 .small {
-  font-size: 80%;
+  : 80%;
   font-weight: 400;
 }
 
@@ -458,18 +458,18 @@ mark,
 }
 
 .initialism {
-  font-size: 90%;
+  : 90%;
   text-transform: uppercase;
 }
 
 .blockquote {
   margin-bottom: 1rem;
-  font-size: 1.25rem;
+  : 1.25rem;
 }
 
 .blockquote-footer {
   display: block;
-  font-size: 80%;
+  : 80%;
   color: #6c757d;
 }
 
@@ -501,12 +501,12 @@ mark,
 }
 
 .figure-caption {
-  font-size: 90%;
+  : 90%;
   color: #6c757d;
 }
 
 code {
-  font-size: 87.5%;
+  : 87.5%;
   color: #e83e8c;
   word-break: break-word;
 }
@@ -517,7 +517,7 @@ a > code {
 
 kbd {
   padding: 0.2rem 0.4rem;
-  font-size: 87.5%;
+  : 87.5%;
   color: #fff;
   background-color: #212529;
   border-radius: 0.2rem;
@@ -525,18 +525,18 @@ kbd {
 
 kbd kbd {
   padding: 0;
-  font-size: 100%;
+  : 100%;
   font-weight: 700;
 }
 
 pre {
   display: block;
-  font-size: 87.5%;
+  : 87.5%;
   color: #212529;
 }
 
 pre code {
-  font-size: inherit;
+  : inherit;
   color: inherit;
   word-break: normal;
 }
@@ -1812,7 +1812,7 @@ pre code {
   display: block;
   width: 100%;
   padding: 0.375rem 0.75rem;
-  font-size: 1rem;
+  : 1rem;
   line-height: 1.5;
   color: #495057;
   background-color: #fff;
@@ -1890,21 +1890,21 @@ select.form-control:focus::-ms-value {
   padding-top: calc(0.375rem + 1px);
   padding-bottom: calc(0.375rem + 1px);
   margin-bottom: 0;
-  font-size: inherit;
+  : inherit;
   line-height: 1.5;
 }
 
 .col-form-label-lg {
   padding-top: calc(0.5rem + 1px);
   padding-bottom: calc(0.5rem + 1px);
-  font-size: 1.25rem;
+  : 1.25rem;
   line-height: 1.5;
 }
 
 .col-form-label-sm {
   padding-top: calc(0.25rem + 1px);
   padding-bottom: calc(0.25rem + 1px);
-  font-size: 0.875rem;
+  : 0.875rem;
   line-height: 1.5;
 }
 
@@ -1940,7 +1940,7 @@ select.form-control:focus::-ms-value {
 .input-group-sm > .input-group-prepend > .btn,
 .input-group-sm > .input-group-append > .btn {
   padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
+  : 0.875rem;
   line-height: 1.5;
   border-radius: 0.2rem;
 }
@@ -1959,7 +1959,7 @@ select.form-control-sm:not([size]):not([multiple]), .input-group-sm > select.for
 .input-group-lg > .input-group-prepend > .btn,
 .input-group-lg > .input-group-append > .btn {
   padding: 0.5rem 1rem;
-  font-size: 1.25rem;
+  : 1.25rem;
   line-height: 1.5;
   border-radius: 0.3rem;
 }
@@ -2036,7 +2036,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   display: none;
   width: 100%;
   margin-top: 0.25rem;
-  font-size: 80%;
+  : 80%;
   color: #28a745;
 }
 
@@ -2048,7 +2048,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   max-width: 100%;
   padding: .5rem;
   margin-top: .1rem;
-  font-size: .875rem;
+  : .875rem;
   line-height: 1;
   color: #fff;
   background-color: rgba(40, 167, 69, 0.8);
@@ -2139,7 +2139,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   display: none;
   width: 100%;
   margin-top: 0.25rem;
-  font-size: 80%;
+  : 80%;
   color: #dc3545;
 }
 
@@ -2151,7 +2151,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   max-width: 100%;
   padding: .5rem;
   margin-top: .1rem;
-  font-size: .875rem;
+  : .875rem;
   line-height: 1;
   color: #fff;
   background-color: rgba(220, 53, 69, 0.8);
@@ -2323,7 +2323,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   user-select: none;
   border: 1px solid transparent;
   padding: 0.375rem 0.75rem;
-  font-size: 1rem;
+  : 1rem;
   line-height: 1.5;
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -2931,14 +2931,14 @@ fieldset:disabled a.btn {
 
 .btn-lg, .btn-group-lg > .btn {
   padding: 0.5rem 1rem;
-  font-size: 1.25rem;
+  : 1.25rem;
   line-height: 1.5;
   border-radius: 0.3rem;
 }
 
 .btn-sm, .btn-group-sm > .btn {
   padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
+  : 0.875rem;
   line-height: 1.5;
   border-radius: 0.2rem;
 }
@@ -3023,7 +3023,7 @@ input[type="button"].btn-block {
   min-width: 10rem;
   padding: 0.5rem 0;
   margin: 0.125rem 0 0;
-  font-size: 1rem;
+  : 1rem;
   color: #212529;
   text-align: left;
   list-style: none;
@@ -3182,7 +3182,7 @@ input[type="button"].btn-block {
   display: block;
   padding: 0.5rem 1.5rem;
   margin-bottom: 0;
-  font-size: 0.875rem;
+  : 0.875rem;
   color: #6c757d;
   white-space: nowrap;
 }
@@ -3440,7 +3440,7 @@ input[type="button"].btn-block {
   align-items: center;
   padding: 0.375rem 0.75rem;
   margin-bottom: 0;
-  font-size: 1rem;
+  : 1rem;
   font-weight: 400;
   line-height: 1.5;
   color: #495057;
@@ -3642,14 +3642,14 @@ input[type="button"].btn-block {
   height: calc(1.8125rem + 2px);
   padding-top: 0.375rem;
   padding-bottom: 0.375rem;
-  font-size: 75%;
+  : 75%;
 }
 
 .custom-select-lg {
   height: calc(2.875rem + 2px);
   padding-top: 0.375rem;
   padding-bottom: 0.375rem;
-  font-size: 125%;
+  : 125%;
 }
 
 .custom-file {
@@ -3951,7 +3951,7 @@ input[type="button"].btn-block {
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
   margin-right: 1rem;
-  font-size: 1.25rem;
+  : 1.25rem;
   line-height: inherit;
   white-space: nowrap;
 }
@@ -3997,7 +3997,7 @@ input[type="button"].btn-block {
 
 .bar-toggler {
   padding: 0.25rem 0.75rem;
-  font-size: 1.25rem;
+  : 1.25rem;
   line-height: 1;
   background-color: transparent;
   border: 1px solid transparent;
@@ -4694,7 +4694,7 @@ input[type="button"].btn-block {
 
 .pagination-lg .page-link {
   padding: 0.75rem 1.5rem;
-  font-size: 1.25rem;
+  : 1.25rem;
   line-height: 1.5;
 }
 
@@ -4710,7 +4710,7 @@ input[type="button"].btn-block {
 
 .pagination-sm .page-link {
   padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
+  : 0.875rem;
   line-height: 1.5;
 }
 
@@ -4727,7 +4727,7 @@ input[type="button"].btn-block {
 .badge {
   display: inline-block;
   padding: 0.25em 0.4em;
-  font-size: 75%;
+  : 75%;
   font-weight: 700;
   line-height: 1;
   text-align: center;
@@ -5021,7 +5021,7 @@ input[type="button"].btn-block {
   display: flex;
   height: 1rem;
   overflow: hidden;
-  font-size: 0.75rem;
+  : 0.75rem;
   background-color: #e9ecef;
   border-radius: 0.25rem;
 }
@@ -5275,7 +5275,7 @@ input[type="button"].btn-block {
 
 .close {
   float: right;
-  font-size: 1.5rem;
+  : 1.5rem;
   font-weight: 700;
   line-height: 1;
   color: #000;
@@ -5483,7 +5483,7 @@ button.close {
   word-spacing: normal;
   white-space: normal;
   line-break: auto;
-  font-size: 0.875rem;
+  : 0.875rem;
   word-wrap: break-word;
   opacity: 0;
 }
@@ -5596,7 +5596,7 @@ button.close {
   word-spacing: normal;
   white-space: normal;
   line-break: auto;
-  font-size: 0.875rem;
+  : 0.875rem;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: padding-box;
@@ -5744,7 +5744,7 @@ button.close {
 .popover-header {
   padding: 0.5rem 0.75rem;
   margin-bottom: 0;
-  font-size: 1rem;
+  : 1rem;
   color: inherit;
   background-color: #f7f7f7;
   border-bottom: 1px solid #ebebeb;

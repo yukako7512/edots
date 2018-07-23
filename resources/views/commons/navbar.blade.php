@@ -10,7 +10,7 @@
                     <span class="icon-bar"></span>
                     
                 </button>
-                <a href="{{route('index.get')}}"></a>
+               <a href="{{route('index.get')}}"><img src="{{ secure_asset("images/whitelogoxxxs.png") }}" alt="Share"></a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
