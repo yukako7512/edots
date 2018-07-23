@@ -30,7 +30,7 @@ class EventController extends Controller
         $user = \Auth::user();
 
         $transaction = new Transaction;
-        $transaction->event_id = 0;
+        $transaction->event_id = 1;
         $transaction->user_id = $user->id;
         $transaction->transactions = 1000;
         $transaction->save();
@@ -57,9 +57,13 @@ class EventController extends Controller
         $points = $this->point_sum();
         $notification = $this->notification(); 
         $events = Event::where('category', 'sports')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
+        foreach ($events as $event){
+            $attendee_number=UserEvent::where('event_id', $event->id)->count();
+        }
         return view ('events.categories.sport_index', ['events' => $events, 
                                                        'points' => $points,
-                                                       'notification'=> $notification]);
+                                                       'notification'=> $notification,
+                                                       'attendee_number'=>$attendee_number]);
         
     } 
     public function beauty(){

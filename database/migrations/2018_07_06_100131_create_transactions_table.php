@@ -18,7 +18,7 @@ class CreateTransactionsTable extends Migration
             $table->integer('user_id')->unsigned()->index();
             $table->integer('event_id')->unsigned()->index();
             $table->integer('rate');
-            $table->integer('transactions')->nullable();
+            $table->integer('transactions');
             $table->timestamps();
             
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
