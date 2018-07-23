@@ -16,13 +16,13 @@ class EventsTableSeeder extends Seeder
           'id' => 1,
           'title' => 'initialpoints',
           'user_id' => 1,
-          'category' => 'Others',
+          'category' => 'Initialpoints',
           'content' => 'getting initialpoints',
           'date' => '2018/07/21 15:00:00',
           'place' => 'Nicotama',
           'point' => 1000,
           'status' => 'ongoing',
-          'max_capacity' => '500'
+          'max_capacity' => 1000
         ],
       ]);
     }
