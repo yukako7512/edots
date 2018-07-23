@@ -24,21 +24,25 @@ class UserController extends Controller
         $review = new Review;
         $stars = $review->stars($review_round);
         
-        if($user->id%5==0){
-            $icon="url1";
-        }if($user->id%5==1){
-            $icon="url2";
-        }if($user->id%5==2){
-            $icon="url3";
-        }if($user->id%5==3){
-            $icon="url4";
-        }if($user->id%5==4){
-            $icon="url5";
+        if($user->id%7==0){
+            $icon="icon1.jpg";
+        }if($user->id%7==1){
+            $icon="icon2.jpg";
+        }if($user->id%7==2){
+            $icon="icon3.jpg";
+        }if($user->id%7==3){
+            $icon="icon4.jpg";
+        }if($user->id%7==4){
+            $icon="icon5.jpg";
+        }if($user->id%7==5){
+            $icon="icon6.jpg";
+        }if($user->id%7==6){
+            $icon="icon7.jpg";
         };
         
-        $arranging_events = $user->events()->where('status','ongoing')->orderBy('date', 'asc')->get();
-        $joining_events = \DB::table('users')->join('user_events', 'users.id', '=', 'user_events.user_id')->join('events', 'user_events.event_id', '=', 'events.id')->select('*')->where('relationship', 'ongoing')->orderBy('date', 'asc')->paginate(10);
-        $joined_histories = \DB::table('users')->join('user_events', 'users.id', '=', 'user_events.user_id')->join('events', 'user_events.event_id', '=', 'events.id')->select('*')->where('relationship', 'done')->orderBy('date', 'desc')->paginate(10);
+        $arranging_events = $user->events()->where('status','ongoing')->orderBy('date', 'desc')->get();
+        $joining_events = \DB::table('users')->join('user_events', 'users.id', '=', 'user_events.user_id')->join('events', 'user_events.event_id', '=', 'events.id')->select('*')->where('relationship', 'ongoing')->orderBy('date', 'desc')->paginate(50);
+        $joined_histories = \DB::table('users')->join('user_events', 'users.id', '=', 'user_events.user_id')->join('events', 'user_events.event_id', '=', 'events.id')->select('*')->where('relationship', 'done')->orderBy('date', 'desc')->paginate(50);
         $arrnged_histories = $user->events()->where('status','done')->orderBy('date', 'desc')->get();
       
         

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddReadToUserEventsTable extends Migration
+class AddMaxPartisipantsToEventsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddReadToUserEventsTable extends Migration
      */
     public function up()
     {
-        Schema::table('user_events', function (Blueprint $table) {
-            $table->string('read');
+        Schema::table('events', function (Blueprint $table) {
+            $table->integer('max_capacity');
         });
     }
 
@@ -25,8 +25,8 @@ class AddReadToUserEventsTable extends Migration
      */
     public function down()
     {
-    Schema::table('user_events', function (Blueprint $table) {
-    $table->dropColumn('read');
+    Schema::table('events', function (Blueprint $table) {
+    $table->dropColumn('max_capacity');
     });
     }
 }

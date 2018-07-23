@@ -17,6 +17,7 @@ class CreateUserEventsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
             $table->integer('event_id')->unsigned()->index();
+            $table->unique(['user_id', 'event_id']);
             $table->timestamps();
             
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

@@ -73,6 +73,14 @@ select {
     width: 385px;
 }
 
+#point {
+    width: 385px;
+}
+
+#max_capacity {
+    width: 385px;
+}
+
 textarea {
     width: 385px;
 }

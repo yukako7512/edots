@@ -25,7 +25,7 @@
                     POSTボタンを押してください。</p>
                     
     <div id = "form">
-    {!! Form::model($item,['route' => 'post.post']) !!}
+    {!! Form::model($event,['route' => 'post.post']) !!}
     <div class="form-group">
         {!! Form::label('title', 'Title') !!}
         {!! Form::text('title','', array('rows'=>'3','class'=>'span6','placeholder'=>'例）スキューバダイビング体験')) !!}
@@ -48,6 +48,11 @@
     <div class="form-group">    
         {!! Form::label('point', 'Point') !!}
         {!! Form::select('point', ['100'=>'100', '200'=>'200', '300'=>'300','400'=>'400','500'=>'500']) !!}
+    </div>
+    
+    <div class="form-group">    
+        {!! Form::label('max_capacity', 'Max Capacity') !!}
+        {!! Form::text('max_capacity','', array('placeholder'=>'10')) !!}
     </div>
     
     <div class="form-group">

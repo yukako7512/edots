@@ -8,6 +8,7 @@ use App\Review;
 use App\Event;
 use App\UserEvent;
 use App\User;
+use App\Transaction;
 
 class ReviewController extends Controller
 {
@@ -28,12 +29,17 @@ class ReviewController extends Controller
         $reviews->rating = $request->rating;
         $reviews->comment = $request->comment;
         $reviews->event_id = $event_id;
-        $attendiee = UserEvent::where('event_id', $event_id)->get();
         $reviews->user_id = $attendiee_id;
         $reviews->save();
         
         $user_event = UserEvent::where('user_id', $attendiee_id)->where('event_id', $event_id);
         $user_event->update(['relationship'=>'done']);
+        
+        $transaction = new Transaction;
+        $transaction->user_id = Event::where('id',$event_id)->value('user_id');
+        $transaction->event_id = $event_id;
+        $transaction->transactions = Event::where('id',$event_id)->value('point');
+        $transaction->save();
         
         return view ('review.reviewdone'
         ,['attendiee_id' => $attendiee_id,
