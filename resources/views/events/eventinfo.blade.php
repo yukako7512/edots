@@ -51,6 +51,7 @@
 </aside>
 
 <aside class="col-xs-7">
+    
     <h3>参加中のメンバー</h3>
     <div class="panel-body" id="content">
         @foreach ($attendees as $attendee)

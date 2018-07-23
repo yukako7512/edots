@@ -1,5 +1,6 @@
+<link rel="stylesheet" href="{{ secure_asset('css/navbar.css') }}">
 <header>
-    
+   
      <nav class="navbar navbar-inverse">
         <div class="container">
             <div class="navbar-header">
@@ -36,9 +37,11 @@
                 <div class="collapse navbar-collapse" id="navbarEexample">
 			       <ul class="nav navbar-nav navbar-right">
 				      <li class="dropdown active">
-					   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">通知 
-					@if($notification['unread_count'])
-					   {{$notification['unread_count']}}
+				    @if($notification['unread_count'])
+					   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"> <div class='bell'><span class="glyphicon glyphicon-bell blue"></span> 
+					   {{$notification['unread_count']}}</div>
+					@else
+					    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"> <span class="glyphicon glyphicon-bell blue"></span> 
 					@endif<span class="caret"></span></a>
 					
 					@if($notification['unread_count'])   

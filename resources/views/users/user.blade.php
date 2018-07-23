@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 @section('content')
 <!DOCTYPE html>
@@ -53,8 +52,12 @@ MY PROFILE&nbsp;&nbsp;<a class="btn btn-default" href="{{route ('profileedit.get
  
    
 @foreach($joining_events as $joining_event)
-
+<a href = "{{route ('usershow.get', \App\User::find($joining_event->user_id)->id) }}">
+<p>{{\App\User::find($joining_event->user_id)->name}}</p>
+</a>
+ <a href = "{{route ('eventshow.get', $joining_event->id) }}">
 <p>{{$joining_event->title}}</p>
+</a>
 <p>{{$joining_event->date}}</p>
 <a href = "{{route ('review.get', [$joining_event->id, $user->id]) }}">
     <p>完了</p>
@@ -74,8 +77,9 @@ MY PROFILE&nbsp;&nbsp;<a class="btn btn-default" href="{{route ('profileedit.get
 
    
    @foreach($arranging_events as $arranging_event)
-
+<a href = "{{route ('eventshow.get', $arranging_event->id) }}">
 <p>{{$arranging_event->title}}</p>
+</a>
 <p>{{$arranging_event->date}}</p>
 <a href = "{{route ('arrangedone.get', [$arranging_event->id,  $user->id]) }}">
     <p>イベントを締め切る</p>
@@ -96,8 +100,12 @@ MY PROFILE&nbsp;&nbsp;<a class="btn btn-default" href="{{route ('profileedit.get
  
  
   @foreach($joined_histories as $joined_history)
-
+<a href = "{{route ('usershow.get', \App\User::find($joined_history->user_id)->id) }}">
+<p>{{\App\User::find($joined_history->user_id)->name}}</p>
+</a>
+<a href = "{{route ('eventshow.get', $joined_history->id) }}">
 <p>{{$joined_history->title}}</p>
+</a>
 <p>{{$joined_history->date}}</p>
 <hr>
 @endforeach
@@ -114,7 +122,9 @@ MY PROFILE&nbsp;&nbsp;<a class="btn btn-default" href="{{route ('profileedit.get
 
 @foreach($arrnged_histories as $arrnged_history)
  
+ <a href = "{{route ('eventshow.get', $arrnged_history->id) }}">
 <p>{{$arrnged_history->title}}</p>
+</a>
 <p>{{$arrnged_history->date}}</p>
 <hr>
 @endforeach
@@ -173,8 +183,16 @@ MY PROFILE&nbsp;&nbsp;</p></form>
 
 @foreach($joining_events as $joining_event)
 
+<a href = "{{route ('usershow.get', \App\User::find($joining_event->user_id)->id) }}">
+<p>{{\App\User::find($joining_event->user_id)->name}}</p>
+</a>
+ <a href = "{{route ('eventshow.get', $joining_event->id) }}">
 <p>{{$joining_event->title}}</p>
+</a>
 <p>{{$joining_event->date}}</p>
+<a href = "{{route ('review.get', [$joining_event->id, $user->id]) }}">
+    <p>完了</p>
+</a> 
 <hr>
 @endforeach</p>
 
@@ -189,8 +207,14 @@ MY PROFILE&nbsp;&nbsp;</p></form>
 
     @foreach($arranging_events as $arranging_event)
  
+<a href = "{{route ('eventshow.get', $arranging_event->id) }}">
 <p>{{$arranging_event->title}}</p>
+</a>
 <p>{{$arranging_event->date}}</p>
+<a href = "{{route ('arrangedone.get', [$arranging_event->id,  $user->id]) }}">
+    <p>イベントを締め切る</p>
+</a> 
+
 <hr>
     @endforeach
 
@@ -206,7 +230,12 @@ MY PROFILE&nbsp;&nbsp;</p></form>
 
   @foreach($joined_histories as $joined_history)
 
+<a href = "{{route ('usershow.get', \App\User::find($joined_history->user_id)->id) }}">
+<p>{{\App\User::find($joined_history->user_id)->name}}</p>
+</a>
+<a href = "{{route ('eventshow.get', $joined_history->id) }}">
 <p>{{$joined_history->title}}</p>
+</a>
 <p>{{$joined_history->date}}</p>
 <hr>
 @endforeach
@@ -223,7 +252,9 @@ MY PROFILE&nbsp;&nbsp;</p></form>
 
 @foreach($arrnged_histories as $arrnged_history)
 
+<a href = "{{route ('eventshow.get', $arrnged_history->id) }}">
 <p>{{$arrnged_history->title}}</p>
+</a>
 <p>{{$arrnged_history->date}}</p>
 <hr>
 @endforeach

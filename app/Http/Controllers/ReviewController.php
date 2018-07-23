@@ -25,6 +25,15 @@ class ReviewController extends Controller
         
         $points = $this->point_sum();
         $notification = $this->notification();
+        
+        if(Review::where('user_id',$attendiee_id)->where('event_id', $event_id)->exists()){
+            
+            return redirect("user/$attendiee_id");
+            
+        }else
+        
+        {
+            
         $reviews = new Review;
         $reviews->rating = $request->rating;
         $reviews->comment = $request->comment;
@@ -45,7 +54,8 @@ class ReviewController extends Controller
         ,['attendiee_id' => $attendiee_id,
           'points' => $points,
           'notification'=>$notification]);
-    }
+        }
+            }
         
         public function review_history($id) {
 
