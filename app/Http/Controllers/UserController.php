@@ -40,9 +40,9 @@ class UserController extends Controller
             $icon="icon7.jpg";
         };
         
-        $arranging_events = $user->events()->where('status','ongoing')->orderBy('date', 'desc')->get();
-        $joining_events = \DB::table('users')->join('user_events', 'users.id', '=', 'user_events.user_id')->join('events', 'user_events.event_id', '=', 'events.id')->select('*')->where('relationship', 'ongoing')->orderBy('date', 'desc')->paginate(50);
-        $joined_histories = \DB::table('users')->join('user_events', 'users.id', '=', 'user_events.user_id')->join('events', 'user_events.event_id', '=', 'events.id')->select('*')->where('relationship', 'done')->orderBy('date', 'desc')->paginate(50);
+       $arranging_events = $user->events()->where('status','ongoing')->orderBy('date', 'desc')->get();
+        $joining_events = \DB::table('users')->join('user_events', 'users.id', '=', 'user_events.user_id')->join('events', 'user_events.event_id', '=', 'events.id')->select('*')->where('user_events.user_id', $id)->where('relationship', 'ongoing')->orderBy('date', 'desc')->paginate(30);
+        $joined_histories = \DB::table('users')->join('user_events', 'users.id', '=', 'user_events.user_id')->join('events', 'user_events.event_id', '=', 'events.id')->select('*')->where('user_events.user_id', $id)->where('relationship', 'done')->orderBy('date', 'desc')->paginate(30);
         $arrnged_histories = $user->events()->where('status','done')->orderBy('date', 'desc')->get();
       
         

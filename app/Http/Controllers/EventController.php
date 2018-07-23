@@ -205,7 +205,7 @@ class EventController extends Controller
         return view ('events.post', ['event' => $event, 
                                      'points' => $points,
                                      'notification'=> $notification,
-                                     'attendee_number'=>$attendee_number]);
+                                     ]);
     }
     
     public function store(Request $request){

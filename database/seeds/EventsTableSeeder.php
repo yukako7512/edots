@@ -22,7 +22,7 @@ class EventsTableSeeder extends Seeder
           'place' => 'Nicotama',
           'point' => 1000,
           'status' => 'ongoing',
-          'max_capacity' => 500,
+          'max_capacity' => '500'
         ],
       ]);
     }
