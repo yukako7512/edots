@@ -19,23 +19,41 @@ class EventController extends Controller
         
         public function int_p(){
             $points = $this->point_sum();
+            $notification = $this->notification();
             $exist_or_not = User::int_p_check();
-            $notification = $this->notification(); 
-            return view ('auth.int_p', ['points' => $points,
-                                        'notification'=> $notification,
-                                        'exist_or_not'=>$exist_or_not,]);
+            
+            if($exist_or_not){
+                
+                return redirect('/index');
+                
+            }else{
+                
+                return view ('auth.int_p', ['points' => $points,
+                                        'notification'=> $notification
+                                        ]);
+            }
         }
         
         public function firstindex(){
+            
+        $exist_or_not = User::int_p_check();
+        
+        if($exist_or_not){
+            
+            return redirect('/index');
+            
+        }else{    
+            
         $user = \Auth::user();
 
         $transaction = new Transaction;
-        $transaction->event_id = 0;
+        $transaction->event_id = 1;
         $transaction->user_id = $user->id;
         $transaction->transactions = 1000;
         $transaction->save();
         
         return redirect('/index');
+        }
 
     }
         
@@ -51,84 +69,117 @@ class EventController extends Controller
         }
     }
     // 各カテゴリーページへ行くためのファンクション
+    
     public function sports(){
         
         $points = $this->point_sum();
         $notification = $this->notification(); 
-        $items = Event::where('category', 'sports')->orderBy('created_at', 'desc')->get();
-        return view ('events.categories.sport_index', ['items' => $items, 
+        $events = Event::where('category', 'sports')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
+        foreach ($events as $event){
+            $attendee_number=UserEvent::where('event_id', $event->id)->count();
+        }
+        return view ('events.categories.sport_index', ['events' => $events, 
                                                        'points' => $points,
-                                                       'notification'=> $notification]);
+                                                       'notification'=> $notification,
+                                                       'attendee_number'=>$attendee_number]);
         
     } 
     public function beauty(){
         
         $points = $this->point_sum();
         $notification = $this->notification(); 
-        $items = Event::where('category', 'beauty')->orderBy('created_at', 'desc')->get();
-        return view ('events.categories.beauty_index', ['items' => $items, 
+        $events = Event::where('category', 'beauty')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
+        foreach ($events as $event){
+            $attendee_number=UserEvent::where('event_id', $event->id)->count();
+        }        
+        return view ('events.categories.beauty_index', ['events' => $events, 
                                                         'points' => $points,
-                                                        'notification'=> $notification]);
+                                                        'notification'=> $notification,
+                                                        'attendee_number'=>$attendee_number]);
         
     }
     public function arts(){
         
         $points = $this->point_sum();
         $notification = $this->notification(); 
-        $items = Event::where('category', 'arts')->orderBy('created_at', 'desc')->get();
-        return view ('events.categories.art_index', ['items' => $items, 
+        $events = Event::where('category', 'arts')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
+        foreach ($events as $event){
+            $attendee_number=UserEvent::where('event_id', $event->id)->count();
+        }        
+        return view ('events.categories.art_index', ['events' => $events, 
                                                      'points' => $points,
-                                                     'notification'=> $notification]);
+                                                     'notification'=> $notification,
+                                                     'attendee_number'=>$attendee_number]);
         
     }
     public function technology(){
         
         $points = $this->point_sum();
         $notification = $this->notification(); 
-        $items = Event::where('category', 'technology')->orderBy('created_at', 'desc')->get();
-        return view ('events.categories.technology_index', ['items' => $items, 
+        $events = Event::where('category', 'technology')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
+        foreach ($events as $event){
+            $attendee_number=UserEvent::where('event_id', $event->id)->count();
+        }        
+        return view ('events.categories.technology_index', ['events' => $events, 
                                                             'points' => $points,
-                                                            'notification'=> $notification]);
+                                                            'notification'=> $notification,
+                                                            'attendee_number'=>$attendee_number]);
         
     }
     public function nature(){
         
         $points = $this->point_sum();
         $notification = $this->notification(); 
-        $items = Event::where('category', 'nature')->orderBy('created_at', 'desc')->get();
-        return view ('events.categories.nature_index', ['items' => $items, 
+        $events = Event::where('category', 'nature')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
+        foreach ($events as $event){
+            $attendee_number=UserEvent::where('event_id', $event->id)->count();
+        }        
+        return view ('events.categories.nature_index', ['events' => $events, 
                                                         'points' => $points,
-                                                        'notification'=> $notification]);
+                                                        'notification'=> $notification,
+                                                        'attendee_number'=>$attendee_number]);
         
     }
     public function language(){
         
         $points = $this->point_sum();
         $notification = $this->notification(); 
-        $items = Event::where('category', 'language')->orderBy('created_at', 'desc')->get();
-        return view ('events.categories.language_index', ['items' => $items, 
+        $events = Event::where('category', 'language')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
+        foreach ($events as $event){
+            $attendee_number=UserEvent::where('event_id', $event->id)->count();
+        }        
+        return view ('events.categories.language_index', ['events' => $events, 
                                                           'points' => $points,
-                                                          'notification'=> $notification]);
+                                                          'notification'=> $notification,
+                                                          'attendee_number'=>$attendee_number]);
         
     }
     public function food(){
         
         $points = $this->point_sum();
         $notification = $this->notification(); 
-        $items = Event::where('category', 'food')->orderBy('created_at', 'desc')->get();
-        return view ('events.categories.food_index', ['items' => $items, 
+        $events = Event::where('category', 'food')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
+        foreach ($events as $event){
+            $attendee_number=UserEvent::where('event_id', $event->id)->count();
+        }        
+        return view ('events.categories.food_index', ['events' => $events, 
                                                       'points' => $points,
-                                                      'notification'=> $notification]);
+                                                      'notification'=> $notification,
+                                                      'attendee_number'=>$attendee_number]);
         
     }
     public function others(){
         
         $points = $this->point_sum();
         $notification = $this->notification(); 
-        $items = Event::where('category', 'others')->orderBy('created_at', 'desc')->get();
-        return view ('events.categories.others_index', ['items' => $items, 
+        $events = Event::where('category', 'others')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
+        foreach ($events as $event){
+            $attendee_number=UserEvent::where('event_id', $event->id)->count();
+        }        
+        return view ('events.categories.others_index', ['events' => $events, 
                                                         'points' => $points,
-                                                        'notification'=> $notification]);
+                                                        'notification'=> $notification,
+                                                        'attendee_number'=>$attendee_number]);
         
     }
     
@@ -136,38 +187,44 @@ class EventController extends Controller
         
         $points = $this->point_sum();
         $notification = $this->notification(); 
-        $items = Event::where('category', 'history')->orderBy('created_at', 'desc')->get();
-        return view ('events.categories.history_index', ['items' => $items, 
+        $events = Event::where('category', 'history')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
+        foreach ($events as $event){
+            $attendee_number=UserEvent::where('event_id', $event->id)->count();
+        }        
+        return view ('events.categories.history_index', ['events' => $events, 
                                                          'points' => $points,
-                                                         'notification'=> $notification]);
+                                                         'notification'=> $notification,
+                                                         'attendee_number'=>$attendee_number]);
      }
 
     public function create(){
         
         $points = $this->point_sum();
         $notification = $this->notification(); 
-        $item = new Event;
-        return view ('events.post', ['item' => $item, 
+        $event = new Event;
+        return view ('events.post', ['event' => $event, 
                                      'points' => $points,
-                                     'notification'=> $notification]);
+                                     'notification'=> $notification,
+                                     'attendee_number'=>$attendee_number]);
     }
     
     public function store(Request $request){
         
         $points = $this->point_sum();
         $notification = $this->notification(); 
-        $item = new Event;
-        $item->title = $request->title;
-        $item->content = $request->content;
-        $item->category = $request->category;
-        $item->place = $request->place;
-        $item->date = $request->date;
+        $event = new Event;
+        $event->title = $request->title;
+        $event->content = $request->content;
+        $event->category = $request->category;
+        $event->place = $request->place;
+        $event->date = $request->date;
+        $event->max_capacity =$request->max_capacity;
         $user = \Auth::user();
-        $item->user_id=$user->id;
-        $item->point = $request->point;
-        $item->status = 'ongoing';
-        $item->save();
-        return view ('events.postdone', ['item' => $item, 
+        $event->user_id=$user->id;
+        $event->point = $request->point;
+        $event->status = 'ongoing';
+        $event->save();
+        return view ('events.postdone', ['event' => $event, 
                                          'points' => $points,
                                          'notification'=> $notification]);
     }
@@ -188,6 +245,7 @@ class EventController extends Controller
         $notification = $this->notification(); 
         $event = Event::find($id);
         $user = $event->user;
+        $attendees = UserEvent::where('event_id', $id)->get();
 
         if($event->category=="Arts"){
             if($id%5==0){
@@ -313,7 +371,8 @@ class EventController extends Controller
                                           'icon' =>$icon,
                                           'negative_or_positive' => $negative_or_positive,
                                           'points' => $points,
-                                          'notification'=> $notification
+                                          'notification'=> $notification,
+                                          'attendees'=> $attendees
                                           ]);
     }
     
@@ -324,11 +383,12 @@ class EventController extends Controller
             $user_id = \Auth::user()->id;
             $event_id = $id;
             $transactions = Event::find($id)->point;
-            
-            if(UserEvent::where('user_id', $user_id)->where('event_id', $event_id)->where('relationship', 'ongoing')->exists()){
+
+            if(UserEvent::where('user_id', $user_id)->where('event_id', $event_id)->where('relationship','ongoing')->exists() OR Event::where('id', $event_id)->value('status')=='done'){
                 return redirect()->back();
             }else
-            {
+            
+            {   
                 $user_events_param = ['user_id'=> $user_id,
                                       'event_id'=> $event_id,
                                       'relationship'=>'ongoing',
@@ -343,6 +403,11 @@ class EventController extends Controller
                 \DB::table('user_events')->insert($user_events_param);
                 \DB::table('transactions')->insert($transactions_param);
                 
+                $attendee_number=UserEvent::where('event_id', $event_id)->count();
+                if($attendee_number==Event::where('id', $event_id)->value('max_capacity')){
+                    $event = Event::where('id', $event_id);
+                    $event->update(['status'=>'done']);
+                }
                 
                 $points = $this->point_sum();
                 

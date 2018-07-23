@@ -35,9 +35,9 @@
       </h1>
   
       <div class="row">
-          @foreach($items as $item)
+          @foreach($events as $event)
 <?php
-$id = $item->id;
+$id = $event->id;
 if($id%5==0){
         $icon="language/language1.jpeg";
     }if($id%5==1){
@@ -50,18 +50,19 @@ if($id%5==0){
         $icon="language/language5.jpeg";
     };
 ?>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="col-lg-4 col-sm-6 portfolio-event">
           <div class="card h-100">
             <a href="#"><img class="card-img-top" src="/images/{{$icon}}" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                   <a href = "{{route ('eventshow.get', $item->id) }}">
-                   <p>{{$item->title}}</p>
+                   <a href = "{{route ('eventshow.get', $event->id) }}">
+                   <p>{{$event->title}}</p>
                    </a>
               </h4>
-               <p class="card-time">時間:　{{$item->date}}</p>
-              <p class="card-place">場所:　{{$item->place}}</p>
-              <p class="card-point">ポイント:　{{$item->point}}</p>
+               <p class="card-time">時間:　{{$event->date}}</p>
+              <p class="card-place">場所:　{{$event->place}}</p>
+              <p class="card-point">ポイント:　{{$event->point}}</p>
+              <p class="card-max_capacity">参加人数:　{{$attendee_number}}/{{$event->max_capacity}}</p>
             </div>
           </div>
         </div>

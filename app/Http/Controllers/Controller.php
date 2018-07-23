@@ -19,7 +19,8 @@ class Controller extends BaseController
     
     public function notification(){
         $user = \Auth::user();
-        $unread_events = \DB::table('users')->join('user_events', 'users.id', '=', 'user_events.user_id')->join('events', 'user_events.event_id', '=', 'events.id')->select('*')->where('read', 'unread')->orderBy('date', 'asc')->paginate(10);
+        $unread_events = \DB::table('users')->join('user_events', 'users.id', '=', 'user_events.user_id')->join('events', 'user_events.event_id', '=', 'events.id')->select('user_events.user_id','user_events.event_id','title', 'name')->where('events.user_id' , "$user->id")->where('read', 'unread')->orderBy('date', 'asc')->paginate(50);
+        
         $unread = $user->user_events_through_events()->where('read','unread')->get();
         $unread_count = count($unread);
         

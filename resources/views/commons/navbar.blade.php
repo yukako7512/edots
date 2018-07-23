@@ -44,7 +44,9 @@
 					@if($notification['unread_count'])   
 				    <ul class="dropdown-menu" role="menu">
 				    @foreach($notification['unread_events'] as $unread_event)
-						<li>{{$unread_event->name}}さんが{{$unread_event->title}}にリクエストしました。</li>
+						<li>
+						   <a href = "{{route('usershow.get', $unread_event->user_id)}}" style="display:inline"> {{$unread_event->name}}</a>さんが
+						   <a href = "{{route('eventshow.get', $unread_event->event_id)}}" style="display:inline">{{$unread_event->title}}</a>に参加しました。</li>
 						<li class = 'divider'></li>
 				    @endforeach
 				            <a class="btn btn-default btn-xs" href="{{route('notification.read')}}" role="button">OK</a>
