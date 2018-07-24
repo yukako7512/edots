@@ -14,27 +14,28 @@ body {
 .cover-contents {
     font-family: "游ゴシック";
     /*height: 250px;*/
-    width: 60%;
+    width: 80%;
     /*border: solid 1px #000000;*/
     background: #ffffff;
-    opacity: 1;
+    opacity: 0.8;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 20px;
     text-align: center;
     margin: 0 auto;
     display: table;
     position: absolute;
     top: 10px;
-    left: 20%;
+    left: 10%;
     margin-bottom: 20px;
     height: 550px;
+    margin-top: 20px;
 }
 
 textarea {
     height: 300px;
-    width: 400px;
+    width: 500px;
 }
 
 .form-group {
-    margin-top: 30px;
+    margin-top: 20px;
 }

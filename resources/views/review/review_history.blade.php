@@ -28,8 +28,11 @@ $exist_or_not = $my_event->review_check ($my_event);
         ?>
         @if($review!=null)
          <div class="panel panel-default">
-            <div class="panel-heading">    
-                <p>{{$review->user()->get()->first()->name}}さん　{!!$stars!!}</p>
+            <div class="panel-heading">
+                {!!$stars!!}　
+                <a href = "{{route ('usershow.get', \App\User::find($review->user_id)->id) }}">
+                   {{$review->user()->get()->first()->name}}さん
+                </a>
         	</div>
             <div class="panel-body">
                 <p>{{$review->comment}}</p>

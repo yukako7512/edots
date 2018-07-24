@@ -3,6 +3,7 @@
 body {
     background: url("/images/top.png");
     background-size: cover;
+    font-family: "游ゴシック";
 }
 
 .navbar {
@@ -34,12 +35,18 @@ body {
 
 .form-group {
     text-align: center;
-    font-family: "游ゴシック";
+    
+}
+
+.form-group p {
+    margin-left: -140px;
 }
 
 label {
     width:100px;
     vertical-align: top;
+    margin-bottom: 0;
+    margin-top: 3px;
 }
 
 text {

@@ -29,6 +29,17 @@
             <img class="media-object img-rounded img-responsive" src="/images/{{$icon}}" alt="">
         </div>
     </div>
+<br>
+<div class="attend">
+    <h3>参加中のメンバー</h3>
+    <div class="panel-body" id="content">
+        @foreach ($attendees as $attendee)
+        <a href = "{{route ('usershow.get', $attendee->user->id) }}">
+        {{$attendee->user->name}}さん
+        </a>
+        @endforeach
+    </div>
+</div>    
 </aside>
 
 
@@ -51,19 +62,6 @@
 <hr class="style1">
 </aside>
 
-<aside class="col-xs-7">
-    
-    <h3>参加中のメンバー</h3>
-    <div class="panel-body" id="content">
-        @foreach ($attendees as $attendee)
-        <a href = "{{route ('usershow.get', $attendee->user->id) }}">
-        {{$attendee->user->name}}さん
-        </a>
-        @endforeach
-    </div>
-    <hr class="style1">
-</aside>
-
 <!--終了している-->
 @elseif ($event->status == 'done')
 
@@ -77,6 +75,18 @@
     <p>このイベントの募集は終了しています。</p>
 </div>
 
+</div>
+
+<br>
+<div class="attend">
+    <h3>参加中のメンバー</h3>
+    <div class="panel-body" id="content">
+        @foreach ($attendees as $attendee)
+        <a href = "{{route ('usershow.get', $attendee->user->id) }}">
+        {{$attendee->user->name}}さん
+        </a>
+        @endforeach
+    </div>
 </div>
 </aside>
 
@@ -98,18 +108,6 @@
         </div>
     <hr class="style1">
     </aside>
-    
-<aside class="col-xs-7">
-    <h3>参加中のメンバー</h3>
-    <div class="panel-body" id="content">
-        @foreach ($attendees as $attendee)
-        <a href = "{{route ('usershow.get', $attendee->user->id) }}">
-        {{$attendee->user->name}}さん
-        </a>
-        @endforeach
-    </div>
-    <hr class="style1">
-</aside>
 
 <!--リクエスト済み-->
 @elseif (Auth::user()->request_check($event))
@@ -125,6 +123,18 @@
 </div>
 
 </div>
+
+<br>
+<div class="attend">
+    <h3>参加中のメンバー</h3>
+    <div class="panel-body" id="content">
+        @foreach ($attendees as $attendee)
+        <a href = "{{route ('usershow.get', $attendee->user->id) }}">
+        {{$attendee->user->name}}さん
+        </a>
+        @endforeach
+    </div>
+</div>
 </aside>
 
 <div class = "event">
@@ -145,22 +155,9 @@
         </div>
     <hr class="style1">
     </aside>
-    
-<aside class="col-xs-7">
-    <h3>参加中のメンバー</h3>
-    <div class="panel-body" id="content">
-        @foreach ($attendees as $attendee)
-        <a href = "{{route ('usershow.get', $attendee->user->id) }}">
-        {{$attendee->user->name}}さん
-        </a>
-        @endforeach
-    </div>
-    <hr class="style1">
-</aside>
 
 <!--そのほか    -->
 @else
-
 
  <aside class="col-xs-5">
 <div class="panel panel-default">
@@ -169,12 +166,24 @@
     </div>
     
     @if ($negative_or_positive)
-    <a href = "{{route ('requestdone.get', $event->id)}}" class="square_btn">参加をリクエスト</a>
+    <a href = "{{route ('requestdone.get', $event->id)}}" class="btn btn-primary">参加をリクエスト</a>
     @else
     <div class="warning">
     <p>必要なポイント数　{{$event->point}}ポイント</p>
     </div>
     @endif
+</div>
+
+<br>
+<div class="attend">
+    <h3>参加中のメンバー</h3>
+    <div class="panel-body" id="content">
+        @foreach ($attendees as $attendee)
+        <a href = "{{route ('usershow.get', $attendee->user->id) }}">
+        {{$attendee->user->name}}さん
+        </a>
+        @endforeach
+    </div>
 </div>
 </aside>
 
@@ -195,18 +204,6 @@
         <div class="panel-body" id="content2">
         <p>{{$event->content}}</p>
         </div>
-    <hr class="style1">
-</aside>
-
-<aside class="col-xs-7">
-    <h3>参加中のメンバー</h3>
-    <div class="panel-body" id="content">
-        @foreach ($attendees as $attendee)
-        <a href = "{{route ('usershow.get', $attendee->user->id) }}">
-        {{$attendee->user->name}}さん
-        </a>
-        @endforeach
-    </div>
     <hr class="style1">
 </aside>
         

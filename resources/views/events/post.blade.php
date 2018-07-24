@@ -37,37 +37,37 @@
                 <div id = "form">
                     {!! Form::model($event,['route' => 'post.post']) !!}
                 <div class="form-group">
-                    {!! Form::label('title', 'Title') !!}
+                    {!! Form::label('title', 'タイトル') !!}
                     {!! Form::text('title','', array('rows'=>'3','class'=>'span6','placeholder'=>'例）スキューバダイビング体験')) !!}
                 </div>
                 <div class="form-group">
-                    {!! Form::label('category', 'Category') !!}    
+                    {!! Form::label('category', 'カテゴリー') !!}    
                     {!! Form::select('category', ['Sports'=>'Sports', 'Arts'=>'Arts', 'Beauty'=>'Beauty','History'=>'History','Nature'=>'Nature','Food'=>'Food','Technology'=>'Technology','Language'=>'Language','Others'=>'Others']) !!} 
                 <!--{!! Form::text('category') !!}-->
                 </div>
                 <div class="form-group">    
-                    {!! Form::label('date', 'Date') !!}
-                    {!! Form::text('date','例）2018/07/27 10:00') !!}
+                    {!! Form::label('date', '日時') !!}
+                    {!! Form::text('date','yyyy/mm/dd --:--') !!}
+                    <p>例）2018/07/27 10:00</p>
                 </div>
                 <div class="form-group">    
-                    {!! Form::label('place', 'Place') !!}
+                    {!! Form::label('place', '場所') !!}
                     {!! Form::text('place','', array('rows'=>'3','class'=>'span6','placeholder'=>'例）二子玉川駅')) !!}
                 </div>
                 
                 <div class="form-group">    
-                    {!! Form::label('point', 'Point') !!}
+                    {!! Form::label('point', 'ポイント') !!}
                     {!! Form::select('point', ['100'=>'100', '200'=>'200', '300'=>'300','400'=>'400','500'=>'500']) !!}
                 </div>
                 
                 <div class="form-group">    
-                    {!! Form::label('max_capacity', 'Max Capacity') !!}
-                    {!! Form::text('max_capacity','', array('placeholder'=>'定員')) !!}
+                    {!! Form::label('max_capacity', '定員') !!}
+                    {!! Form::text('max_capacity','', array('placeholder'=>'例）10')) !!}
                 </div>
                 
                 <div class="form-group">
-                    {!! Form::label('content', 'Content') !!}
-                    {!! Form::textarea('content','', array('placeholder'=>'例）朝9時に二子玉川駅に集合して、いっしょにスキューバダイビングをしに行きましょう。
-                    水着とタオルの持参をお忘れなく！')) !!}
+                    {!! Form::label('content', '内容') !!}
+                    {!! Form::textarea('content','', array('placeholder'=>'例）二子玉川駅に集合して、いっしょにスキューバダイビングをしに行きましょう。水着とタオルの持参をお忘れなく！')) !!}
                 </div>
                 
                 <div class="form-group">
