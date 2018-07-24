@@ -42,7 +42,7 @@
                 </div>
                 <div class="form-group">
                     {!! Form::label('category', 'カテゴリー') !!}    
-                    {!! Form::select('category', ['Sports'=>'Sports', 'Arts'=>'Arts', 'Beauty'=>'Beauty','History'=>'History','Nature'=>'Nature','Food'=>'Food','Technology'=>'Technology','Language'=>'Language','Others'=>'Others']) !!} 
+                    {!! Form::select('category', ['Sports'=>'Sports', 'Arts'=>'Arts', 'Beauty'=>'Beauty','Nature'=>'Nature','Food'=>'Food','Technology'=>'Technology','Language'=>'Language','Others'=>'Others']) !!} 
                 <!--{!! Form::text('category') !!}-->
                 </div>
                 <div class="form-group">    

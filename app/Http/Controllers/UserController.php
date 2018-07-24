@@ -14,7 +14,7 @@ class UserController extends Controller
     public function usershow($id){
         
         $user = User::find($id);
-        $points = Transaction::where('user_id', $id)->sum('transactions');
+        $points = Transaction::where('user_id', \Auth::user()->id)->sum('transactions');
         
         $notification = $this->notification(); 
         

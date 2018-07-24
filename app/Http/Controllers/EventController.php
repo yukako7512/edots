@@ -195,7 +195,7 @@ class EventController extends Controller
         
         $points = $this->point_sum();
         $notification = $this->notification(); 
-        $events = Event::where('category', 'History')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
+        $events = Event::where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
         $attendee_number=0;
         foreach ($events as $event){
             $attendee_number=UserEvent::where('event_id', $event->id)->count();

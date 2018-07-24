@@ -35,7 +35,7 @@
     <div class="panel-body" id="content">
         @foreach ($attendees as $attendee)
         <a href = "{{route ('usershow.get', $attendee->user->id) }}">
-        {{$attendee->user->name}}さん
+        {{$attendee->user->name}}さん　
         </a>
         @endforeach
     </div>
@@ -83,7 +83,7 @@
     <div class="panel-body" id="content">
         @foreach ($attendees as $attendee)
         <a href = "{{route ('usershow.get', $attendee->user->id) }}">
-        {{$attendee->user->name}}さん
+        {{$attendee->user->name}}さん　
         </a>
         @endforeach
     </div>
@@ -130,7 +130,7 @@
     <div class="panel-body" id="content">
         @foreach ($attendees as $attendee)
         <a href = "{{route ('usershow.get', $attendee->user->id) }}">
-        {{$attendee->user->name}}さん
+        {{$attendee->user->name}}さん　
         </a>
         @endforeach
     </div>
@@ -180,7 +180,7 @@
     <div class="panel-body" id="content">
         @foreach ($attendees as $attendee)
         <a href = "{{route ('usershow.get', $attendee->user->id) }}">
-        {{$attendee->user->name}}さん
+        {{$attendee->user->name}}さん　
         </a>
         @endforeach
     </div>
