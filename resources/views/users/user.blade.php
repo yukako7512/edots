@@ -144,7 +144,7 @@ PROFILE&nbsp;&nbsp;
 
 @else
 
-<br><br><br><br>
+<br><br>
 <img src="/images/icons/{{$icon}}" alt="画像"class="sample2"> 
 
 <p class="name">{{$user->name}}</p>
@@ -159,7 +159,7 @@ PROFILE&nbsp;&nbsp;
 <p class="point">POINT&nbsp;&nbsp;{{$points}}ポイント</p> 
 
 </p> 
-<br><br><br><br>
+<br><br><br>
 <p class="profile">
 PROFILE&nbsp;&nbsp;</p>
 

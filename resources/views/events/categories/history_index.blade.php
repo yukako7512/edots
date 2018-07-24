@@ -37,6 +37,9 @@
 @foreach($events as $event)
     <?php
     $id = $event->id;
+        if($event->category=='initialpoints'){
+            $icon=null;
+        }
         if($event->category=="Arts"){
             if($id%5==0){
                 $icon="arts/art1.jpeg";
