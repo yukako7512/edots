@@ -102,19 +102,6 @@
                 $icon="technology/Technology5.jpeg";
             };
             
-        }if($event->category=="History"){
-            if($id%5==0){
-                $icon="history/history1.jpeg";
-            }if($id%5==1){
-                $icon="history/history2.jpeg";
-            }if($id%5==2){
-                $icon="history/history3.jpeg";
-            }if($id%5==3){
-                $icon="history/history4.jpeg";
-            }if($id%5==4){
-                $icon="history/history5.jpeg";
-            };
-            
         }if($event->category=="Beauty"){
             if($id%5==0){
                 $icon="beauty/beauty1.jpeg";
