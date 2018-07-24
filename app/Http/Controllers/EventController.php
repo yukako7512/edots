@@ -75,6 +75,7 @@ class EventController extends Controller
         $points = $this->point_sum();
         $notification = $this->notification(); 
         $events = Event::where('category', 'sports')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
+        $attendee_number = 0;
         foreach ($events as $event){
             $attendee_number=UserEvent::where('event_id', $event->id)->count();
         }
@@ -89,6 +90,7 @@ class EventController extends Controller
         $points = $this->point_sum();
         $notification = $this->notification(); 
         $events = Event::where('category', 'beauty')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
+        $attendee_number = 0;
         foreach ($events as $event){
             $attendee_number=UserEvent::where('event_id', $event->id)->count();
         }        
@@ -103,6 +105,7 @@ class EventController extends Controller
         $points = $this->point_sum();
         $notification = $this->notification(); 
         $events = Event::where('category', 'arts')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
+        $attendee_number = 0;
         foreach ($events as $event){
             $attendee_number=UserEvent::where('event_id', $event->id)->count();
         }        
@@ -117,6 +120,7 @@ class EventController extends Controller
         $points = $this->point_sum();
         $notification = $this->notification(); 
         $events = Event::where('category', 'technology')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
+        $attendee_number = 0;
         foreach ($events as $event){
             $attendee_number=UserEvent::where('event_id', $event->id)->count();
         }        
@@ -131,6 +135,7 @@ class EventController extends Controller
         $points = $this->point_sum();
         $notification = $this->notification(); 
         $events = Event::where('category', 'nature')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
+        $attendee_number = 0;
         foreach ($events as $event){
             $attendee_number=UserEvent::where('event_id', $event->id)->count();
         }        
@@ -145,6 +150,7 @@ class EventController extends Controller
         $points = $this->point_sum();
         $notification = $this->notification(); 
         $events = Event::where('category', 'language')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
+        $attendee_number = 0;
         foreach ($events as $event){
             $attendee_number=UserEvent::where('event_id', $event->id)->count();
         }        
@@ -159,6 +165,7 @@ class EventController extends Controller
         $points = $this->point_sum();
         $notification = $this->notification(); 
         $events = Event::where('category', 'food')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
+        $attendee_number = 0;
         foreach ($events as $event){
             $attendee_number=UserEvent::where('event_id', $event->id)->count();
         }        
@@ -173,6 +180,7 @@ class EventController extends Controller
         $points = $this->point_sum();
         $notification = $this->notification(); 
         $events = Event::where('category', 'others')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
+        $attendee_number=0;
         foreach ($events as $event){
             $attendee_number=UserEvent::where('event_id', $event->id)->count();
         }        
@@ -188,21 +196,14 @@ class EventController extends Controller
         $points = $this->point_sum();
         $notification = $this->notification(); 
         $events = Event::where('category', 'history')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
-        
-        if ($events==null){
-            
-            return view ('events.categories.history_index', ['events' => $events, 
-                                                             'points' => $points,
-                                                             'notification'=> $notification,]);
-        }else{
-            foreach ($events as $event){
-                $attendee_number=UserEvent::where('event_id', $event->id)->count();
-            }
-            return view ('events.categories.history_index', ['events' => $events, 
-                                                             'points' => $points,
-                                                             'notification'=> $notification,
-                                                             'attendee_number'=>$attendee_number]);
-        }
+        $attendee_number=0;
+        foreach ($events as $event){
+            $attendee_number=UserEvent::where('event_id', $event->id)->count();
+        }        
+        return view ('events.categories.history_index', ['events' => $events, 
+                                                        'points' => $points,
+                                                        'notification'=> $notification,
+                                                        'attendee_number'=>$attendee_number]);
      }
 
     public function create(){

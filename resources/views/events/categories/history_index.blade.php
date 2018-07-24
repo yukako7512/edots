@@ -34,9 +34,6 @@
     <h1 class="my-4">History Index</h1>
   
      <div class="row">
-@if ($events=null)
-    <h1>No Event has been Posted</h1>
-@else
 @foreach($events as $event)
     <?php
     $id = $event->id;
@@ -70,8 +67,6 @@
         </div>
 @endforeach
     </div>
-
-@endif
   </body>
 </html>
 

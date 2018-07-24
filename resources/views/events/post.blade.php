@@ -61,7 +61,7 @@
                 
                 <div class="form-group">    
                     {!! Form::label('max_capacity', 'Max Capacity') !!}
-                    {!! Form::text('max_capacity','', array('placeholder'=>'10')) !!}
+                    {!! Form::text('max_capacity','', array('placeholder'=>'定員')) !!}
                 </div>
                 
                 <div class="form-group">

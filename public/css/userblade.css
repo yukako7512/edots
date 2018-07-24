@@ -1,6 +1,12 @@
 /*タブ切り替え全体のスタイル*/
-.tabs {
+/*body {*/
+/*    background: url("/images/profile-background.jpg");*/
+/*    height: 10%;*/
+/*    width:100%;*/
+/*}*/
 
+
+.tabs {
 margin-left:-100px;
 margin-top: 2500px;
 padding-bottom: 200px;
@@ -8,6 +14,7 @@ background-color: #fff;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 width: 1000px;
 margin: 0 auto;}
+
 /*タブのスタイル*/
 .tab_item {
 width: calc(100%/4);

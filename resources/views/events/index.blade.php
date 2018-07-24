@@ -100,15 +100,21 @@
 </div>
 
   
-    <div class="message-wrapper">
+<div class="message-wrapper">
       <div class="container">
         <div class="heading">
-         
+       
         </div>
-         <h3>さぁ、あなたも得意な経験を同期にシェアしてみませんか?</h3>
-        <a href="{{ route('post.get') }}">
-          <span class="btn message">さっそく投稿する</span>
-        </a>
+       
+       <div class="post">
+        <a href="{{ route('post.get') }}" class='btn'>
+          
+           <p class="taikenpost">POST</p>
+<div class="plus"></div>
+          
+       </a>
+    </div>
+       
       </div>
     </div>
     
