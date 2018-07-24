@@ -16,7 +16,7 @@
         <div id = "form">
             {!! Form::open(['url' => 'editdone/'.$id])!!}
             <div class="form-group">
-            {!! Form::textarea('introduction') !!}
+            {!! Form::textarea('introduction', $user->introduction) !!}
             <br>
             <br>
             {!! Form::submit('完了', ['class' => 'btn btn-primary']) !!}

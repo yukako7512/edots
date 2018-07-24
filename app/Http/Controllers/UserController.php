@@ -65,10 +65,12 @@ class UserController extends Controller
         $points = $this->point_sum();
         $introduction = new User;
         $notification = $this->notification(); 
+        $user = \Auth::user();
         
         return view ('users.profileedit', ['introduction' => $introduction,
                                             'id' => $id,
                                             'points' => $points,
+                                            'user' => $user,
                                             'notification' => $notification,]);
     }
     

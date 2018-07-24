@@ -8,6 +8,7 @@
   </head>
   <body>
 
+<!--自分のページ-->
 @if (Auth::user()->id == $user->id)    
 <br><br><br><br>
 <img src="/images/icons/{{$icon}}" alt="画像"class="sample2"> 
@@ -63,7 +64,7 @@ MY PROFILE&nbsp;&nbsp;<a class="btn btn-default" href="{{route ('profileedit.get
     <p>完了</p>
 </a> 
 <hr>
-@endforeach</p>
+@endforeach
 
 
 
@@ -137,6 +138,7 @@ MY PROFILE&nbsp;&nbsp;<a class="btn btn-default" href="{{route ('profileedit.get
 
 </div>
 
+<!--他人のページ-->
 @else
 
 <br><br><br><br>
@@ -190,9 +192,6 @@ MY PROFILE&nbsp;&nbsp;</p></form>
 <p>{{$joining_event->title}}</p>
 </a>
 <p>{{$joining_event->date}}</p>
-<a href = "{{route ('review.get', [$joining_event->id, $user->id]) }}">
-    <p>完了</p>
-</a> 
 <hr>
 @endforeach</p>
 
@@ -211,9 +210,6 @@ MY PROFILE&nbsp;&nbsp;</p></form>
 <p>{{$arranging_event->title}}</p>
 </a>
 <p>{{$arranging_event->date}}</p>
-<a href = "{{route ('arrangedone.get', [$arranging_event->id,  $user->id]) }}">
-    <p>イベントを締め切る</p>
-</a> 
 
 <hr>
     @endforeach
