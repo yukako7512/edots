@@ -74,7 +74,7 @@ class EventController extends Controller
         
         $points = $this->point_sum();
         $notification = $this->notification(); 
-        $events = Event::where('category', 'sports')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
+        $events = Event::where('category', 'Sports')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
         $attendee_number = 0;
         foreach ($events as $event){
             $attendee_number=UserEvent::where('event_id', $event->id)->count();
@@ -89,7 +89,7 @@ class EventController extends Controller
         
         $points = $this->point_sum();
         $notification = $this->notification(); 
-        $events = Event::where('category', 'beauty')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
+        $events = Event::where('category', 'Beauty')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
         $attendee_number = 0;
         foreach ($events as $event){
             $attendee_number=UserEvent::where('event_id', $event->id)->count();
@@ -104,7 +104,7 @@ class EventController extends Controller
         
         $points = $this->point_sum();
         $notification = $this->notification(); 
-        $events = Event::where('category', 'arts')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
+        $events = Event::where('category', 'Arts')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
         $attendee_number = 0;
         foreach ($events as $event){
             $attendee_number=UserEvent::where('event_id', $event->id)->count();
@@ -119,7 +119,7 @@ class EventController extends Controller
         
         $points = $this->point_sum();
         $notification = $this->notification(); 
-        $events = Event::where('category', 'technology')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
+        $events = Event::where('category', 'Technology')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
         $attendee_number = 0;
         foreach ($events as $event){
             $attendee_number=UserEvent::where('event_id', $event->id)->count();
@@ -134,7 +134,7 @@ class EventController extends Controller
         
         $points = $this->point_sum();
         $notification = $this->notification(); 
-        $events = Event::where('category', 'nature')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
+        $events = Event::where('category', 'Nature')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
         $attendee_number = 0;
         foreach ($events as $event){
             $attendee_number=UserEvent::where('event_id', $event->id)->count();
@@ -149,7 +149,7 @@ class EventController extends Controller
         
         $points = $this->point_sum();
         $notification = $this->notification(); 
-        $events = Event::where('category', 'language')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
+        $events = Event::where('category', 'Language')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
         $attendee_number = 0;
         foreach ($events as $event){
             $attendee_number=UserEvent::where('event_id', $event->id)->count();
@@ -164,7 +164,7 @@ class EventController extends Controller
         
         $points = $this->point_sum();
         $notification = $this->notification(); 
-        $events = Event::where('category', 'food')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
+        $events = Event::where('category', 'Food')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
         $attendee_number = 0;
         foreach ($events as $event){
             $attendee_number=UserEvent::where('event_id', $event->id)->count();
@@ -179,7 +179,7 @@ class EventController extends Controller
         
         $points = $this->point_sum();
         $notification = $this->notification(); 
-        $events = Event::where('category', 'others')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
+        $events = Event::where('category', 'Others')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
         $attendee_number=0;
         foreach ($events as $event){
             $attendee_number=UserEvent::where('event_id', $event->id)->count();
@@ -195,7 +195,7 @@ class EventController extends Controller
         
         $points = $this->point_sum();
         $notification = $this->notification(); 
-        $events = Event::where('category', 'history')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
+        $events = Event::where('category', 'History')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
         $attendee_number=0;
         foreach ($events as $event){
             $attendee_number=UserEvent::where('event_id', $event->id)->count();
