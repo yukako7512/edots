@@ -157,6 +157,8 @@
               <p class="card-place">場所:　{{$event->place}}</p>
               <p class="card-point">ポイント:　{{$event->point}}</p>
               <p class="card-max_capacity">参加人数:　{{$attendee_number}}/{{$event->max_capacity}}</p>
+              <p class="category">カテゴリー:　{{$event->category}}</p>
+              
             </div>
           </div>
         </div>
