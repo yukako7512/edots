@@ -15,7 +15,7 @@ p.form-title
     font-size: 50px;
     font-weight: 600;
     text-align: center;
-    color: #000000;
+    color: gray;
     margin-top: 5%;
     text-transform: uppercase;
     letter-spacing: 4px;
@@ -80,4 +80,19 @@ form.login a:hover
 .custom{
     width:150px !important;
     height:50px;
+}
+
+.btn-ghost {
+    background: transparent;
+    border-radius: 0;
+}
+
+.btn-ghost.btn-black {
+  color: #000;
+  border: 1px solid #000;
+}
+
+.btn-ghost.btn-black:hover {
+  color: #fff;
+  background: #000;
 }

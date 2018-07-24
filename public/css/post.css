@@ -11,21 +11,14 @@ body {
 
 .cover {
     width:100%;
-    /*background: url("/images/post.jpg");*/
-    /*background-size: cover;*/
-    /*height: 350px;*/
     position: relative;
 }
 .cover-contents {
-    /*font-family: "游ゴシック";*/
-    /*height: 250px;*/
     width: 60%;
-    /*border: solid 1px #000000;*/
     background: #fff;
     opacity: 0.8;
     text-align: center;
     padding-top: 20px;
-    text-align: center;
     margin: 0 auto;
     display: table;
     position: absolute;
@@ -73,10 +66,6 @@ select {
     width: 385px;
 }
 
-#point {
-    width: 385px;
-}
-
 #max_capacity {
     width: 385px;
 }
@@ -84,3 +73,17 @@ select {
 textarea {
     width: 385px;
 }
+.errors {
+    width: 385px;
+    font-size: 12px;
+    color: #e95353;
+    border: 1px solid #e95353;
+    background-color: #f2dede;
+    display: inline-block;
+    margin-left: 100px;
+}
+.error-message {
+    text-align: left;
+	padding-top: 10px
+}
+    

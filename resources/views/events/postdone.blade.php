@@ -21,7 +21,7 @@
             </div>
             <!--<a href='#'>Back to current category</a>-->
 
-<a href = "{{route ('index.get') }}" class="square_btn">カテゴリに戻る</a>
+            <a href = "{{route ('index.get') }}" class="btn btn-primary">カテゴリに戻る</a>
         </div>
 
 

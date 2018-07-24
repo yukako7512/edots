@@ -19,7 +19,7 @@
             {!! Form::textarea('introduction') !!}
             <br>
             <br>
-            {!! Form::submit('Submit', ['class' => 'btn btn-primary']) !!}
+            {!! Form::submit('完了', ['class' => 'btn btn-primary']) !!}
             {!! Form::close() !!}
             </div>
         </div>

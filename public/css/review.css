@@ -43,7 +43,6 @@ p {
     font-family: "游ゴシック";
 }
 
-
 label {
     margin-top: 30px;
     width:50px;
@@ -55,4 +54,22 @@ select {
 
 textarea {
     height: 150px;
+}
+
+#comment {
+    width: 385px;
+}
+
+.errors {
+    width: 385px;
+    font-size: 12px;
+    color: #e95353;
+    border: 1px solid #e95353;
+    background-color: #f2dede;
+    display: inline-block;
+    margin-left: 100px;
+}
+.error-message {
+    text-align: left;
+	padding-top: 10px
 }

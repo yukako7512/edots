@@ -188,13 +188,21 @@ class EventController extends Controller
         $points = $this->point_sum();
         $notification = $this->notification(); 
         $events = Event::where('category', 'history')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
-        foreach ($events as $event){
-            $attendee_number=UserEvent::where('event_id', $event->id)->count();
-        }        
-        return view ('events.categories.history_index', ['events' => $events, 
-                                                         'points' => $points,
-                                                         'notification'=> $notification,
-                                                         'attendee_number'=>$attendee_number]);
+        
+        if ($events==null){
+            
+            return view ('events.categories.history_index', ['events' => $events, 
+                                                             'points' => $points,
+                                                             'notification'=> $notification,]);
+        }else{
+            foreach ($events as $event){
+                $attendee_number=UserEvent::where('event_id', $event->id)->count();
+            }
+            return view ('events.categories.history_index', ['events' => $events, 
+                                                             'points' => $points,
+                                                             'notification'=> $notification,
+                                                             'attendee_number'=>$attendee_number]);
+        }
      }
 
     public function create(){
@@ -209,6 +217,16 @@ class EventController extends Controller
     }
     
     public function store(Request $request){
+        
+        $request->validate([
+        'title' => 'required|max:15', 
+        'category' => 'required',               
+        'date' => 'required|date',          
+        'place' => 'required|max:20',  
+        'point' => 'required|integer', 
+        'max_capacity' => 'required|integer',
+        'content' => 'required|max:500'
+      ]);
         
         $points = $this->point_sum();
         $notification = $this->notification(); 

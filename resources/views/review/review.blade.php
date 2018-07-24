@@ -24,6 +24,16 @@
                     <p>以下の項目にご記入の上、<br>
                     POSTボタンを押してください。</p>
                     
+                @if ($errors->any())
+                   <div class="errors">
+                     <ul>
+                @foreach ($errors->all() as $error)
+                         <div class="error-message"><li>{{ $error }}</li></div>
+                @endforeach
+                     </ul>
+                   </div>
+                @endif                    
+                    
                     {!! Form::open(['url' => 'reviewdone/'.$event_id.'/'.$attendiee_id])!!}
     <div class="form-group">
     {!! Form::label('rating', '評価') !!}    
@@ -35,7 +45,7 @@
     {!! Form::textarea('comment') !!}
     </div>
      <div class="form-group">
-    {!! Form::submit('POST', ['class' => 'btn btn-primary']) !!}
+    {!! Form::submit('投稿する', ['class' => 'btn btn-primary']) !!}
     </div>
     {!! Form::close() !!}
             </div>

@@ -23,48 +23,57 @@
                     <br>
                     <p>以下の項目にご記入の上、<br>
                     POSTボタンを押してください。</p>
-                    
-    <div id = "form">
-    {!! Form::model($event,['route' => 'post.post']) !!}
-    <div class="form-group">
-        {!! Form::label('title', 'Title') !!}
-        {!! Form::text('title','', array('rows'=>'3','class'=>'span6','placeholder'=>'例）スキューバダイビング体験')) !!}
-    </div>
-    <div class="form-group">
-    {!! Form::label('category', 'Category') !!}    
-    {!! Form::select('category', ['Sports'=>'Sports', 'Arts'=>'Arts', 'Beauty'=>'Beauty','History'=>'History','Nature'=>'Nature','Food'=>'Food','Technology'=>'Technology','Language'=>'Language','Others'=>'Others']) !!} 
-    <!--{!! Form::text('category') !!}-->
-    </div>
-    <div class="form-group">    
-        {!! Form::label('date', 'Date') !!}
-        {!! Form::text('date','例）2018/07/27 10:00') !!}
-    </div>
-    <div class="form-group">    
-        {!! Form::label('place', 'Place') !!}
-        {!! Form::text('place','', array('rows'=>'3','class'=>'span6','placeholder'=>'例）二子玉川駅')) !!}
-    </div>
     
-    <div class="form-group">    
-        {!! Form::label('point', 'Point') !!}
-        {!! Form::select('point', ['100'=>'100', '200'=>'200', '300'=>'300','400'=>'400','500'=>'500']) !!}
-    </div>
-    
-    <div class="form-group">    
-        {!! Form::label('max_capacity', 'Max Capacity') !!}
-        {!! Form::text('max_capacity','', array('placeholder'=>'10')) !!}
-    </div>
-    
-    <div class="form-group">
-        {!! Form::label('content', 'Content') !!}
-        {!! Form::textarea('content','', array('placeholder'=>'例）朝9時に二子玉川駅に集合して、いっしょにスキューバダイビングをしに行きましょう。
-水着とタオルの持参をお忘れなく！')) !!}
-    </div>
-    
-    <div class="form-group">
-        {!! Form::submit('POST',  ['class' => 'btn btn-primary']) !!}
-    </div>
-    {!! Form::close() !!}
-    </id>
+        @if ($errors->any())
+               <div class="errors">
+                 <ul>
+            @foreach ($errors->all() as $error)
+                     <div class="error-message"><li>{{ $error }}</li></div>
+            @endforeach
+                 </ul>
+               </div>
+        @endif      
+        
+                <div id = "form">
+                    {!! Form::model($event,['route' => 'post.post']) !!}
+                <div class="form-group">
+                    {!! Form::label('title', 'Title') !!}
+                    {!! Form::text('title','', array('rows'=>'3','class'=>'span6','placeholder'=>'例）スキューバダイビング体験')) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('category', 'Category') !!}    
+                    {!! Form::select('category', ['Sports'=>'Sports', 'Arts'=>'Arts', 'Beauty'=>'Beauty','History'=>'History','Nature'=>'Nature','Food'=>'Food','Technology'=>'Technology','Language'=>'Language','Others'=>'Others']) !!} 
+                <!--{!! Form::text('category') !!}-->
+                </div>
+                <div class="form-group">    
+                    {!! Form::label('date', 'Date') !!}
+                    {!! Form::text('date','例）2018/07/27 10:00') !!}
+                </div>
+                <div class="form-group">    
+                    {!! Form::label('place', 'Place') !!}
+                    {!! Form::text('place','', array('rows'=>'3','class'=>'span6','placeholder'=>'例）二子玉川駅')) !!}
+                </div>
+                
+                <div class="form-group">    
+                    {!! Form::label('point', 'Point') !!}
+                    {!! Form::select('point', ['100'=>'100', '200'=>'200', '300'=>'300','400'=>'400','500'=>'500']) !!}
+                </div>
+                
+                <div class="form-group">    
+                    {!! Form::label('max_capacity', 'Max Capacity') !!}
+                    {!! Form::text('max_capacity','', array('placeholder'=>'10')) !!}
+                </div>
+                
+                <div class="form-group">
+                    {!! Form::label('content', 'Content') !!}
+                    {!! Form::textarea('content','', array('placeholder'=>'例）朝9時に二子玉川駅に集合して、いっしょにスキューバダイビングをしに行きましょう。
+                    水着とタオルの持参をお忘れなく！')) !!}
+                </div>
+                
+                <div class="form-group">
+                    {!! Form::submit('投稿する',  ['class' => 'btn btn-primary']) !!}
+                </div>
+                {!! Form::close() !!}
             </div>
         </div>
 

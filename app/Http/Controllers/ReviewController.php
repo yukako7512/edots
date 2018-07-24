@@ -13,6 +13,7 @@ use App\Transaction;
 class ReviewController extends Controller
 {
     public function create($event_id, $attendiee_id) {
+        
         $points = $this->point_sum();
         $notification = $this->notification();
         return view('review.review', ['attendiee_id' => $attendiee_id,
@@ -23,6 +24,11 @@ class ReviewController extends Controller
     
     public function reviewdone(Request $request, $event_id, $attendiee_id) {
         
+        $request->validate([
+        'rating' => 'required', 
+        'comment' => 'required'               
+      ]);
+      
         $points = $this->point_sum();
         $notification = $this->notification();
         
@@ -57,7 +63,7 @@ class ReviewController extends Controller
         }
             }
         
-        public function review_history($id) {
+    public function review_history($id) {
 
         $points = $this->point_sum();
         $notification = $this->notification();
