@@ -76,13 +76,10 @@ class EventController extends Controller
         $notification = $this->notification(); 
         $events = Event::where('category', 'Sports')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
         $attendee_number = 0;
-        foreach ($events as $event){
-            $attendee_number=UserEvent::where('event_id', $event->id)->count();
-        }
         return view ('events.categories.sport_index', ['events' => $events, 
                                                        'points' => $points,
-                                                       'notification'=> $notification,
-                                                       'attendee_number'=>$attendee_number]);
+                                                       'notification'=> $notification
+                                                                                    ]);
         
     } 
     public function beauty(){
@@ -91,13 +88,9 @@ class EventController extends Controller
         $notification = $this->notification(); 
         $events = Event::where('category', 'Beauty')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
         $attendee_number = 0;
-        foreach ($events as $event){
-            $attendee_number=UserEvent::where('event_id', $event->id)->count();
-        }        
         return view ('events.categories.beauty_index', ['events' => $events, 
                                                         'points' => $points,
-                                                        'notification'=> $notification,
-                                                        'attendee_number'=>$attendee_number]);
+                                                        'notification'=> $notification]);
         
     }
     public function arts(){
@@ -106,13 +99,9 @@ class EventController extends Controller
         $notification = $this->notification(); 
         $events = Event::where('category', 'Arts')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
         $attendee_number = 0;
-        foreach ($events as $event){
-            $attendee_number=UserEvent::where('event_id', $event->id)->count();
-        }        
         return view ('events.categories.art_index', ['events' => $events, 
                                                      'points' => $points,
-                                                     'notification'=> $notification,
-                                                     'attendee_number'=>$attendee_number]);
+                                                     'notification'=> $notification]);
         
     }
     public function technology(){
@@ -121,13 +110,9 @@ class EventController extends Controller
         $notification = $this->notification(); 
         $events = Event::where('category', 'Technology')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
         $attendee_number = 0;
-        foreach ($events as $event){
-            $attendee_number=UserEvent::where('event_id', $event->id)->count();
-        }        
         return view ('events.categories.technology_index', ['events' => $events, 
                                                             'points' => $points,
-                                                            'notification'=> $notification,
-                                                            'attendee_number'=>$attendee_number]);
+                                                            'notification'=> $notification]);
         
     }
     public function nature(){
@@ -136,13 +121,9 @@ class EventController extends Controller
         $notification = $this->notification(); 
         $events = Event::where('category', 'Nature')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
         $attendee_number = 0;
-        foreach ($events as $event){
-            $attendee_number=UserEvent::where('event_id', $event->id)->count();
-        }        
         return view ('events.categories.nature_index', ['events' => $events, 
                                                         'points' => $points,
-                                                        'notification'=> $notification,
-                                                        'attendee_number'=>$attendee_number]);
+                                                        'notification'=> $notification]);
         
     }
     public function language(){
@@ -151,13 +132,9 @@ class EventController extends Controller
         $notification = $this->notification(); 
         $events = Event::where('category', 'Language')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
         $attendee_number = 0;
-        foreach ($events as $event){
-            $attendee_number=UserEvent::where('event_id', $event->id)->count();
-        }        
         return view ('events.categories.language_index', ['events' => $events, 
                                                           'points' => $points,
-                                                          'notification'=> $notification,
-                                                          'attendee_number'=>$attendee_number]);
+                                                          'notification'=> $notification]);
         
     }
     public function food(){
@@ -166,13 +143,9 @@ class EventController extends Controller
         $notification = $this->notification(); 
         $events = Event::where('category', 'Food')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
         $attendee_number = 0;
-        foreach ($events as $event){
-            $attendee_number=UserEvent::where('event_id', $event->id)->count();
-        }        
         return view ('events.categories.food_index', ['events' => $events, 
                                                       'points' => $points,
-                                                      'notification'=> $notification,
-                                                      'attendee_number'=>$attendee_number]);
+                                                      'notification'=> $notification]);
         
     }
     public function others(){
@@ -181,13 +154,9 @@ class EventController extends Controller
         $notification = $this->notification(); 
         $events = Event::where('category', 'Others')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
         $attendee_number=0;
-        foreach ($events as $event){
-            $attendee_number=UserEvent::where('event_id', $event->id)->count();
-        }        
         return view ('events.categories.others_index', ['events' => $events, 
                                                         'points' => $points,
-                                                        'notification'=> $notification,
-                                                        'attendee_number'=>$attendee_number]);
+                                                        'notification'=> $notification]);
         
     }
     
@@ -197,13 +166,9 @@ class EventController extends Controller
         $notification = $this->notification(); 
         $events = Event::where('category','!=', 'initialpoints')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
         $attendee_number=0;
-        foreach ($events as $event){
-            $attendee_number=UserEvent::where('event_id', $event->id)->count();
-        }        
         return view ('events.categories.history_index', ['events' => $events, 
                                                         'points' => $points,
-                                                        'notification'=> $notification,
-                                                        'attendee_number'=>$attendee_number]);
+                                                        'notification'=> $notification]);
      }
 
     public function create(){

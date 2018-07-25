@@ -49,6 +49,8 @@ if($id%5==0){
     }if($id%5==4){
         $icon="beauty/beauty5.jpeg";
     };
+    
+$attendee_number=\App\UserEvent::where('event_id', $event->id)->count();
 ?>
         <div class="col-lg-4 col-sm-6 portfolio-event">
           <div class="card h-100">
