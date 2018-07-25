@@ -118,4 +118,12 @@ class UserController extends Controller
                                             'points' => $points,
                                             'notification' => $notification,]);
     }
+    public function howtouse() {
+        
+        $points = $this->point_sum();
+        $notification = $this->notification(); 
+        
+        return view ('users.howtouse', ['points' => $points,
+                                        'notification' => $notification,]);
+    }
 }

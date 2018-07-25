@@ -74,5 +74,5 @@ Route::get('pointhistory', 'UserController@point_history')->name('pointhistory.g
 
 Route::get('notification/read',  'UserController@notification_read')->name('notification.read');
 
-
-
+// HowToUseへ
+Route::get('howtouse', 'UserController@howtouse')->name('howtouse.get');

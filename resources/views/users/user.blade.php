@@ -59,13 +59,18 @@ PROFILE&nbsp;&nbsp;
  
    
 @foreach($joining_events as $joining_event)
+<p>
+    <span class="glyphicon glyphicon-leaf">　</span>
  <a href = "{{route ('eventshow.get', $joining_event->id) }}">
-<p>{{$joining_event->title}}</p>
+{{$joining_event->title}}
 </a>
-<p>{{$joining_event->date}}</p>
+</p>
+<p><span class="glyphicon glyphicon-time">　</span>{{$joining_event->date}}</p>
+<p><span class="glyphicon glyphicon-user">　</span>
 <a href = "{{route ('usershow.get', \App\User::find($joining_event->user_id)->id) }}">
-<p>{{\App\User::find($joining_event->user_id)->name}}さん</p>
+{{\App\User::find($joining_event->user_id)->name}}さん
 </a>
+</p>
 <a class="btn btn-default" href = "{{route ('review.get', [$joining_event->id, $user->id]) }}">レビューを書く</a> 
 <hr>
 @endforeach</p>
@@ -82,10 +87,13 @@ PROFILE&nbsp;&nbsp;
 
    
    @foreach($arranging_events as $arranging_event)
+<p>
+<span class="glyphicon glyphicon-leaf">　</span>
 <a href = "{{route ('eventshow.get', $arranging_event->id) }}">
-<p>{{$arranging_event->title}}</p>
+{{$arranging_event->title}}
 </a>
-<p>{{$arranging_event->date}}</p>
+</p>
+<p><span class="glyphicon glyphicon-time">　</span>{{$arranging_event->date}}</p>
 <a class="btn btn-default" href = "{{route ('arrangedone.get', [$arranging_event->id,  $user->id]) }}">イベントを締め切る</a> 
 
 <hr>
@@ -103,13 +111,18 @@ PROFILE&nbsp;&nbsp;
  
  
   @foreach($joined_histories as $joined_history)
+<p>
+    <span class="glyphicon glyphicon-leaf">　</span>
 <a href = "{{route ('eventshow.get', $joined_history->id) }}">
-<p>{{$joined_history->title}}</p>
+{{$joined_history->title}}
 </a>
-<p>{{$joined_history->date}}</p>
+</p>
+<p><span class="glyphicon glyphicon-time">　</span>{{$joined_history->date}}</p>
+<p><span class="glyphicon glyphicon-user">　</span>
 <a href = "{{route ('usershow.get', \App\User::find($joined_history->user_id)->id) }}">
-<p>{{\App\User::find($joined_history->user_id)->name}}さん</p>
+{{\App\User::find($joined_history->user_id)->name}}さん
 </a>
+</p>
 <hr>
 @endforeach
 
@@ -124,11 +137,14 @@ PROFILE&nbsp;&nbsp;
 
 
 @foreach($arrnged_histories as $arrnged_history)
- 
+<p>
+<span class="glyphicon glyphicon-leaf">　</span>
  <a href = "{{route ('eventshow.get', $arrnged_history->id) }}">
-<p>{{$arrnged_history->title}}</p>
+{{$arrnged_history->title}}
 </a>
-<p>{{$arrnged_history->date}}</p>
+</p>
+
+<p><span class="glyphicon glyphicon-time">　</span>{{$arrnged_history->date}}</p>
 <hr>
 @endforeach
 
@@ -184,14 +200,19 @@ PROFILE&nbsp;&nbsp;</p>
 
 
 @foreach($joining_events as $joining_event)
-
+<p>
+<span class="glyphicon glyphicon-leaf">　</span>
  <a href = "{{route ('eventshow.get', $joining_event->id) }}">
-<p>{{$joining_event->title}}</p>
+{{$joining_event->title}}
 </a>
-<p>{{$joining_event->date}}</p>
+</p>
+
+<p><span class="glyphicon glyphicon-time">　</span>{{$joining_event->date}}</p>
+<p><span class="glyphicon glyphicon-user">　</span>
 <a href = "{{route ('usershow.get', \App\User::find($joining_event->user_id)->id) }}">
-<p>{{\App\User::find($joining_event->user_id)->name}}さん</p>
+{{\App\User::find($joining_event->user_id)->name}}さん
 </a>
+</p>
 <hr>
 @endforeach</p>
 
@@ -205,11 +226,14 @@ PROFILE&nbsp;&nbsp;</p>
 
 
     @foreach($arranging_events as $arranging_event)
- 
+<p>
+<span class="glyphicon glyphicon-leaf">　</span> 
 <a href = "{{route ('eventshow.get', $arranging_event->id) }}">
-<p>{{$arranging_event->title}}</p>
+{{$arranging_event->title}}
 </a>
-<p>{{$arranging_event->date}}</p>
+</p>
+
+<p><span class="glyphicon glyphicon-time">　</span>{{$arranging_event->date}}</p>
 
 <hr>
     @endforeach
@@ -225,13 +249,18 @@ PROFILE&nbsp;&nbsp;</p>
  
 
   @foreach($joined_histories as $joined_history)
+<p><span class="glyphicon glyphicon-leaf">　</span> 
 <a href = "{{route ('eventshow.get', $joined_history->id) }}">
-<p>{{$joined_history->title}}</p>
+{{$joined_history->title}}
 </a>
-<p>{{$joined_history->date}}</p>
+</p>
+
+<p><span class="glyphicon glyphicon-time">　</span>{{$joined_history->date}}</p>
+<p><span class="glyphicon glyphicon-user">　</span>
 <a href = "{{route ('usershow.get', \App\User::find($joined_history->user_id)->id) }}">
-<p>{{\App\User::find($joined_history->user_id)->name}}さん</p>
+{{\App\User::find($joined_history->user_id)->name}}さん
 </a>
+</p>
 <hr>
 @endforeach
 
@@ -246,11 +275,12 @@ PROFILE&nbsp;&nbsp;</p>
 
 
 @foreach($arrnged_histories as $arrnged_history)
-
+<p><span class="glyphicon glyphicon-leaf">　</span> 
 <a href = "{{route ('eventshow.get', $arrnged_history->id) }}">
-<p>{{$arrnged_history->title}}</p>
+{{$arrnged_history->title}}
 </a>
-<p>{{$arrnged_history->date}}</p>
+</p>
+<p><span class="glyphicon glyphicon-time">　</span>{{$arrnged_history->date}}</p>
 <hr>
 @endforeach
 

@@ -54,7 +54,7 @@
         </p> 
 <p><span class="glyphicon glyphicon-time">　{{$event->date}}</p>
 <p><span class="glyphicon glyphicon-map-marker">　{{$event->place}}</p>
-<p><span class="glyphicon glyphicon-yen">　{{$event->point}}pt</p>
+<p><span class="glyphicon glyphicon-piggy-bank">　{{$event->point}}pt</p>
 </div>
     
 <aside class="col-xs-7">
@@ -105,7 +105,7 @@
 </p> 
 <p><span class="glyphicon glyphicon-time">　{{$event->date}}</p>
 <p><span class="glyphicon glyphicon-map-marker">　{{$event->place}}</p>
-<p><span class="glyphicon glyphicon-yen">　{{$event->point}}pt</p>
+<p><span class="glyphicon glyphicon-piggy-bank">　{{$event->point}}pt</p>
 </div>
 
 <aside class="col-xs-7">
@@ -156,7 +156,7 @@
 </p>    
 <p><span class="glyphicon glyphicon-time">　{{$event->date}}</p>
 <p><span class="glyphicon glyphicon-map-marker">　{{$event->place}}</p>
-<p><span class="glyphicon glyphicon-yen">　{{$event->point}}pt</p>
+<p><span class="glyphicon glyphicon-piggy-bank">　{{$event->point}}pt</p>
 </div>
 
 <aside class="col-xs-7">
@@ -210,7 +210,7 @@
         </p> 
 <p><span class="glyphicon glyphicon-time">　{{$event->date}}</p>
 <p><span class="glyphicon glyphicon-map-marker">　{{$event->place}}</p>
-<p><span class="glyphicon glyphicon-yen">　{{$event->point}}pt</p>
+<p><span class="glyphicon glyphicon-piggy-bank">　{{$event->point}}pt</p>
 </div>
 
 
