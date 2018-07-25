@@ -24,7 +24,7 @@
     </div>
     
      <div id="box2" class="box">
-      <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CONNECTING YOUR DOTS.</span>
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CONNECTING THE DOTS.</span>
     </div>
     <br>
     <div class="button">
