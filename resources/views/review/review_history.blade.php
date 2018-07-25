@@ -5,7 +5,7 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8">
-            <title>レビュー履歴</title>
+            <title>Dots.</title>
         <link rel="stylesheet" href="review_history.css">
     </head>
 

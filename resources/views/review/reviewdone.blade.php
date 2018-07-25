@@ -5,7 +5,7 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8">
-        <title>体験レビュー完了</title>
+        <title>Dots.</title>
         <!--<link rel="stylesheet" href="reviewdone.css">-->
          <link rel="stylesheet" href="{{ secure_asset('css/reviewdone.css') }}">
     </head>

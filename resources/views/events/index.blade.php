@@ -6,7 +6,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Dotslink</title>
+    <title>Dots.</title>
     <link rel="stylesheet" href="{{ secure_asset('category/index.css') }}">
 
       
@@ -27,7 +27,7 @@
   <a href="{{ route('history.get') }}">             
   <div class = "history">            
   <img src="{{ secure_asset('category/history1.jpg') }}" alt="Avatar" class="image">
-  <div class="overlay">HISTORY</div>
+  <div class="overlay">ALL</div>
   </div>
   </div>
   

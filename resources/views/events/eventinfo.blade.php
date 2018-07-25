@@ -5,7 +5,7 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8">
-        <title>イベント詳細</title>
+        <title>Dots.</title>
         <!--<link rel="stylesheet" href="requestdone.css">-->
          <link rel="stylesheet" href="{{ secure_asset('css/eventinfo.css') }}">
     </head>

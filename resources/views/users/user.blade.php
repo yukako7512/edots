@@ -66,7 +66,7 @@ PROFILE&nbsp;&nbsp;
 <a href = "{{route ('usershow.get', \App\User::find($joining_event->user_id)->id) }}">
 <p>{{\App\User::find($joining_event->user_id)->name}}さん</p>
 </a>
-<a class="btn btn-default" href = "{{route ('review.get', [$joining_event->id, $user->id]) }}">完了</a> 
+<a class="btn btn-default" href = "{{route ('review.get', [$joining_event->id, $user->id]) }}">レビューを書く</a> 
 <hr>
 @endforeach</p>
 
@@ -86,9 +86,7 @@ PROFILE&nbsp;&nbsp;
 <p>{{$arranging_event->title}}</p>
 </a>
 <p>{{$arranging_event->date}}</p>
-<a class="btn btn-default" href = "{{route ('arrangedone.get', [$arranging_event->id,  $user->id]) }}" id="event">
-    <p>イベントを締め切る</p>
-</a> 
+<a class="btn btn-default" href = "{{route ('arrangedone.get', [$arranging_event->id,  $user->id]) }}">イベントを締め切る</a> 
 
 <hr>
 @endforeach

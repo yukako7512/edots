@@ -5,7 +5,7 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8">
-        <title>体験ポスト完了</title>
+        <title>Dots.</title>
         <!--<link rel="stylesheet" href="postdone.css">-->
         <link rel="stylesheet" href="{{ secure_asset('css/postdone.css') }}">
     </head>
