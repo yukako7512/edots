@@ -30,7 +30,7 @@
                         <li><a href="{{ route('aboutus.get') }}">About Us</a></li>   
                         <li><a href="{{ route('signup.get') }}">Sign Up</a></li>
                         <li><a href="{{ route('login') }}">Log in</a></li>
-                        <li><a href="{{ route('howtouse.get') }}"><span class="glyphicon glyphicon-question-sign"></span></a></li>
+                        
                         
                     @endif
                 </ul>
