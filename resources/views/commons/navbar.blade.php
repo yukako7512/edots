@@ -25,10 +25,12 @@
                     
                         <li><a href="{{ route('usershow.get', Auth::user()->id) }}">My Page</a></li>
                         <li><a href="{{ route('logout.get') }}">Log out</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-question-sign"></span></a></li>
                     @else
                         <li><a href="{{ route('aboutus.get') }}">About Us</a></li>   
                         <li><a href="{{ route('signup.get') }}">Sign Up</a></li>
                         <li><a href="{{ route('login') }}">Log in</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-question-sign"></span></a></li>
                         
                     @endif
                 </ul>

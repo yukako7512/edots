@@ -14,15 +14,15 @@
 <img src="/images/icons/{{$icon}}" alt="画像"class="sample2"> 
 
 <p class="name">{{$user->name}}</p>
-<p class="review">REVIEW&nbsp;&nbsp;{!!$stars!!} 
+<p class="review">REVIEW&nbsp;&nbsp;
 @if($review_round!=0)
-<a href = "{{route('reviewhistory.get', $user->id)}}">
 {{$review_round}}
-</a>
 @endif
+{!!$stars!!}　<a href = "{{route('reviewhistory.get', $user->id)}}" class="btn btn-default">レビューを見る</a>
 </p>
 
-<p class="point">POINT&nbsp;&nbsp;<a href = "{{route ('pointhistory.get') }}">{{$points}}</a></p>
+<p class="point">POINT&nbsp;&nbsp;
+{{$points}}　<a href = "{{route('pointhistory.get', $user->id)}}" class="btn btn-default">ポイント履歴</a></p>
 
 <br><br><br>
 
@@ -146,12 +146,12 @@ PROFILE&nbsp;&nbsp;
 <img src="/images/icons/{{$icon}}" alt="画像"class="sample2"> 
 
 <p class="name">{{$user->name}}</p>
-<p class="review">REVIEW&nbsp;&nbsp;{!!$stars!!} 
+<p class="review">REVIEW&nbsp;&nbsp;
 @if($review_round!=0)
-<a href = "{{route('reviewhistory.get', $user->id)}}">
 {{$review_round}}
-</a>
 @endif
+{!!$stars!!}　<a href = "{{route('reviewhistory.get', $user->id)}}" class="btn btn-default">レビューを見る</a>
+</p>
 
 <br><br><br><br><br><br>
 <p class="profile">

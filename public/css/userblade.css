@@ -16,7 +16,7 @@ margin: 0 auto;}
 .tab_item {
 width: calc(100%/4);
 height: 50px;
-border-bottom: 3px solid #333333;
+border-bottom: 1px solid #333333;
 background-color: #d9d9d9;
 line-height: 50px;
 font-size: 16px;
@@ -87,8 +87,7 @@ color: #fff;
 
 p.review{
 color:#000000;
-font-size:15px;
-font-weight:bold;
+font-size:20px;
 line-height:150%;
 font-family:"Meiryo",sans-serif;
 margin-top:20px;
@@ -98,8 +97,7 @@ margin-left:350px;
 
 p.name{
 color:#000000;
-font-size:50px;
-font-weight:bold;
+font-size:60px;
 line-height:150%;
 font-family:"Meiryo",sans-serif;
 margin-top:20px;
@@ -111,7 +109,6 @@ margin-left:350px;
 p.profile{
 color:#000000;
 font-size:20px;
-font-weight:bold;
 line-height:150%;
 font-family:"Meiryo",sans-serif;
 margin-top:-15px;
@@ -159,13 +156,12 @@ width:20%;
 
 p.point{
 color:#000000;
-font-size:15px;
-font-weight:bold;
+font-size:20px;
 line-height:150%;
 font-family:"Meiryo",sans-serif;
 margin-top:30px;
 margin-left:350px;
-width:20%;
+
 }
 
 p.havepoint{

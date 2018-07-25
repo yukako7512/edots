@@ -5,7 +5,7 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8">
-        <title>Dots.</title>
+        <title>Dots</title>
         <!--<link rel="stylesheet" href="requestdone.css">-->
          <link rel="stylesheet" href="{{ secure_asset('css/eventinfo.css') }}">
     </head>
@@ -45,12 +45,16 @@
 
 <div class = "event">
     <hr class="style1">
-    <a href = "{{route ('usershow.get', $user->id) }}">
-        <p>あなた</p>
-    </a>
-    <p>日時　{{$event->date}}</p>
-    <p>場所　{{$event->place}}</p>
-    <p>必要なポイント数　{{$event->point}}ポイント</p>
+        <p>
+            <span class="glyphicon glyphicon-user">    
+                <a href = "{{route ('usershow.get', $user->id) }}">
+                あなた
+                </a>
+            </span>
+        </p> 
+<p><span class="glyphicon glyphicon-time">　{{$event->date}}</p>
+<p><span class="glyphicon glyphicon-map-marker">　{{$event->place}}</p>
+<p><span class="glyphicon glyphicon-yen">　{{$event->point}}pt</p>
 </div>
     
 <aside class="col-xs-7">
@@ -92,12 +96,16 @@
 
 <div class = "event">
     <hr class="style1">
-<a href = "{{route ('usershow.get', $user->id) }}">
-    <p>{{$user->name}}さん</p>
-</a>
-<p>日時　{{$event->date}}</p>
-<p>場所　{{$event->place}}</p>
-<p>必要なポイント数　{{$event->point}}ポイント</p>
+<p>
+    <span class="glyphicon glyphicon-user">    
+        <a href = "{{route ('usershow.get', $user->id) }}">
+        {{$user->name}}さん
+        </a>
+    </span>
+</p> 
+<p><span class="glyphicon glyphicon-time">　{{$event->date}}</p>
+<p><span class="glyphicon glyphicon-map-marker">　{{$event->place}}</p>
+<p><span class="glyphicon glyphicon-yen">　{{$event->point}}pt</p>
 </div>
 
 <aside class="col-xs-7">
@@ -139,12 +147,16 @@
 
 <div class = "event">
     <hr class="style1">
-<a href = "{{route ('usershow.get', $user->id) }}">
-    <p>{{$user->name}}さん</p>
-</a>
-<p>日時　{{$event->date}}</p>
-<p>場所　{{$event->place}}</p>
-<p>必要なポイント数　{{$event->point}}ポイント</p>
+<p>
+    <span class="glyphicon glyphicon-user">    
+        <a href = "{{route ('usershow.get', $user->id) }}">
+        {{$user->name}}さん
+        </a>
+    </span>
+</p>    
+<p><span class="glyphicon glyphicon-time">　{{$event->date}}</p>
+<p><span class="glyphicon glyphicon-map-marker">　{{$event->place}}</p>
+<p><span class="glyphicon glyphicon-yen">　{{$event->point}}pt</p>
 </div>
 
 <aside class="col-xs-7">
@@ -189,12 +201,16 @@
 
 <div class = "event">
     <hr class="style1">
-    <a href = "{{route ('usershow.get', $user->id) }}">
-        <p>{{$user->name}}さん</p>
-    </a>
-    <p>日時　{{$event->date}}</p>
-    <p>場所　{{$event->place}}</p>
-    <p>必要なポイント数　{{$event->point}}ポイント</p>
+        <p>
+            <span class="glyphicon glyphicon-user">    
+                <a href = "{{route ('usershow.get', $user->id) }}">
+                {{$user->name}}さん
+                </a>
+            </span>
+        </p> 
+<p><span class="glyphicon glyphicon-time">　{{$event->date}}</p>
+<p><span class="glyphicon glyphicon-map-marker">　{{$event->place}}</p>
+<p><span class="glyphicon glyphicon-yen">　{{$event->point}}pt</p>
 </div>
 
 

@@ -1,15 +1,13 @@
-
-
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Dots.</title>
+    <title>Progate</title>
     <link rel="stylesheet" href="{{ secure_asset('aboutus/aboutus.css') }}">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
             <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
     
      <link rel="stylesheet" href="{{ secure_asset('css/style.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -78,7 +76,8 @@
     <div class="top-wrapper">
       <!--<div class="container">-->
         <!--<h1>WELCOME TO LINKDOTS.</h1>-->
-        <h1>経験を共有し<br>同期をHAPPYに<span>.</span></h1>
+        <h1>ようこそ、ここは</h1>
+        <h1>二子玉のスクランブル交差点<span>.</span></h1>
         <!--</div>-->
       </div>
    
@@ -88,9 +87,10 @@
           <h2>OUR MISSION</h2>
           <hr>
         </div>
-         <p>同期の中には色んな才能や経験を持つ人がいます。</p>
-         <p>それをシェアすることで、交流を深めるとともに、たくさんの人に知ってもらうこと。</p>
-         <p>そして、経験することでドットを増やしてもらうことを目的としています。</p>
+         <p>同期の中にはいろんな才能や経験を持つ人がいる。</p>
+         <p>その「存在」に、近くにある「学びの可能性」に、気づいてるのに一歩を踏み出せない。そんな密かな悩みを解決したい。</p>
+         <p>そんな思いから、みんなが学べる・発見できる場所をつくりました。</p>
+         <p>誰かの才能を、そして何より、あなたの才能を。ここで見つけてみませんか。</p>
         </div>
       </div>
     
@@ -99,91 +99,51 @@
 <div class="team-wrapper">
     <!--<div class='container'>-->
       <div class="heading">
-          <h2>OUR TEAM</h2>
+          <h2>　OUR TEAM <a href="http://yamino-nicknamemaker.herokuapp.com"><img src="{{ secure_asset('images/dragonicon.png') }}" alt=''></a></h2> 
           <hr>
           
           <div class="card">
   <!--<img src="{{ secure_asset('aboutus/jay.jpg') }}" alt="John" style="width:100%">-->
   <h2>Saki Ishihara</h2>
-  <p class="title">CEO & Founder, Example</p>
-  <!--<p>Harvard University</p>-->
-  <!--<a href="#"><i class="fa fa-dribbble"></i></a> -->
-  <!--<a href="#"><i class="fa fa-twitter"></i></a> -->
-  <!--<a href="#"><i class="fa fa-linkedin"></i></a> -->
-  <!--<a href="#"><i class="fa fa-facebook"></i></a> -->
-  <!--<p><button>Contact</button></p>-->
+  <p>石原咲希</p>
+  
 </div>
 <div class="card">
   <!--<img src="{{ secure_asset('aboutus/jay.jpg') }}" alt="John" style="width:100%">-->
   <h2>Takashi One</h2>
-  <p class="title">CEO & Founder, Example</p>
-  <!--<p>Harvard University</p>-->
-  <!--<a href="#"><i class="fa fa-dribbble"></i></a> -->
-  <!--<a href="#"><i class="fa fa-twitter"></i></a> -->
-  <!--<a href="#"><i class="fa fa-linkedin"></i></a> -->
-  <!--<a href="#"><i class="fa fa-facebook"></i></a> -->
-  <!--<p><button>Contact</button></p>-->
+  <p>大根崇志</p>
+  
 </div>
 <div class="card">
   <!--<img src=src="{{ secure_asset('aboutus/jay.jpg') }}" alt="John" style="width:100%">-->
   <h2>Aki Sakurada</h2>
-  <p class="title">CEO & Founder, Example</p>
-  <!--<p>Harvard University</p>-->
-  <!--<a href="#"><i class="fa fa-dribbble"></i></a> -->
-  <!--<a href="#"><i class="fa fa-twitter"></i></a> -->
-  <!--<a href="#"><i class="fa fa-linkedin"></i></a> -->
-  <!--<a href="#"><i class="fa fa-facebook"></i></a> -->
-  <!--<p><button>Contact</button></p>-->
+  <p>櫻田明希</p>
+ 
 </div>
 <div class="card">
   <!--<img src=src="{{ secure_asset('aboutus/jay.jpg') }}" alt="John" style="width:100%">-->
   <h2>Kanai Daisuke</h2>
-  <p class="title">CEO & Founder, Example</p>
-  <!--<p>Harvard University</p>-->
-  <!--<a href="#"><i class="fa fa-dribbble"></i></a> -->
-  <!--<a href="#"><i class="fa fa-twitter"></i></a> -->
-  <!--<a href="#"><i class="fa fa-linkedin"></i></a> -->
-  <!--<a href="#"><i class="fa fa-facebook"></i></a> -->
-  <!--<p><button>Contact</button></p>-->
+  <p>金井大輔</p>
+ 
 </div>
 <div class="card">
   <!--<img src=src="{{ secure_asset('aboutus/jay.jpg') }}" alt="John" style="width:100%">-->
   <h2>Yukako Steph</h2>
-  <p class="title">CEO & Founder, Example</p>
-  <!--<p>Harvard University</p>-->
-  <!--<a href="#"><i class="fa fa-dribbble"></i></a> -->
-  <!--<a href="#"><i class="fa fa-twitter"></i></a> -->
-  <!--<a href="#"><i class="fa fa-linkedin"></i></a> -->
-  <!--<a href="#"><i class="fa fa-facebook"></i></a> -->
-  <!--<p><button>Contact</button></p>-->
+  <p>西山由佳子</p>
+ 
 </div>
 <div class="card">
   <!--<img src=src="{{ secure_asset('aboutus/jay.jpg') }}" alt="John" style="width:100%">-->
   <h2>Edward Cao</h2>
-  <p class="title">CEO & Founder, Example</p>
-  <!--<p>Harvard University</p>-->
-  <!--<a href="#"><i class="fa fa-dribbble"></i></a> -->
-  <!--<a href="#"><i class="fa fa-twitter"></i></a> -->
-  <!--<a href="#"><i class="fa fa-linkedin"></i></a> -->
-  <!--<a href="#"><i class="fa fa-facebook"></i></a> -->
-  <!--<p><button>Contact</button></p>-->
+  <p>曹亦可</p>
+ 
 </div>
 
   </div>
   </div>
 </div>
     
-    <div class="message-wrapper">
-      <!--<div class="container">-->
-        <div class="heading">
-          <h2>さぁ、あなたも得意な経験を同期にシェアしてみませんか?</h2>
-        </div>
-        <a href = "{{route ('signup.get') }}">
-          <span class="btn message">
-            さっそく投稿する
-          </span>
-        </a>
-      </div>
+   
     </div>
   </body>
 </html>

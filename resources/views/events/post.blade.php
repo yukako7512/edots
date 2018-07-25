@@ -82,7 +82,7 @@
                 
                 <div class="form-group">    
                     {!! Form::label('max_capacity', '定員') !!}
-                    {!! Form::text('max_capacity','', array('placeholder'=>'例）10')) !!}
+                    {!! Form::text('max_capacity','', array('placeholder'=>'半角数字のみ')) !!}
                 </div>
                 
                 <div class="form-group">

@@ -60,10 +60,10 @@ $attendee_number=\App\UserEvent::where('event_id', $event->id)->count();
                    <p>{{$event->title}}</p>
                    </a>
               </h4>
-               <p class="card-time">時間:　{{$event->date}}</p>
-              <p class="card-place">場所:　{{$event->place}}</p>
-              <p class="card-point">ポイント:　{{$event->point}}</p>
-              <p class="card-max_capacity">参加人数:　{{$attendee_number}}/{{$event->max_capacity}} <a class="btn btn-info" href = "{{route ('eventshow.get', $event->id) }}">詳細</a></p>
+               <p class="card-time"><span class="glyphicon glyphicon-time"></span>　{{$event->date}}</p>
+              <p class="card-place"><span class="glyphicon glyphicon-map-marker"></span>  {{$event->place}}</p>
+              <p class="card-point"><span class="glyphicon glyphicon-yen"></span>　{{$event->point}} pt</p>
+              <p class="card-max_capacity"><span class="glyphicon glyphicon-user"></span>　{{$attendee_number}}/{{$event->max_capacity}} 名 <a class="btn btn-info" href = "{{route ('eventshow.get', $event->id) }}">詳細</a></p>
             </div>
           </div>
         </div>
