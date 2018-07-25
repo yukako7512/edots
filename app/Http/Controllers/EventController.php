@@ -376,12 +376,14 @@ class EventController extends Controller
                 $user_events_param = ['user_id'=> $user_id,
                                       'event_id'=> $event_id,
                                       'relationship'=>'ongoing',
-                                      'read'=>'unread'
-                                      ];
+                                      'read'=>'unread',
+                                      'created_at'=> date('Y-m-d H:i:s')
+                                    ];
                                       
                 $transactions_param = ['user_id'=> $user_id,
                                 'event_id'=> $event_id,
-                                'transactions' => -$transactions
+                                'transactions' => -$transactions,
+                                'created_at'=> date('Y-m-d H:i:s')
                                 ];
                           
                 \DB::table('user_events')->insert($user_events_param);
