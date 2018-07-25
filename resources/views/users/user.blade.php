@@ -22,7 +22,7 @@
 @endif
 </p>
 
-<p class="point">POINT&nbsp;&nbsp;{{$points}}ポイント</p> 
+<p class="point">POINT&nbsp;&nbsp;<a href = "{{route ('pointhistory.get') }}">{{$points}}</a></p>
 
 <br><br><br>
 
@@ -154,12 +154,8 @@ PROFILE&nbsp;&nbsp;
 {{$review_round}}
 </a>
 @endif
-</p>
 
-<p class="point">POINT&nbsp;&nbsp;{{$points}}ポイント</p> 
-
-</p> 
-<br><br><br>
+<br><br><br><br><br><br>
 <p class="profile">
 PROFILE&nbsp;&nbsp;</p>
 

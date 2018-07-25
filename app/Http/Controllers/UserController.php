@@ -107,4 +107,15 @@ class UserController extends Controller
         }
             return redirect()->back();
     }
+    
+    public function point_history() {
+        
+        $points = Transaction::where('user_id', \Auth::user()->id)->sum('transactions');
+        $notification = $this->notification(); 
+        $transactions = Transaction::where('user_id', \Auth::user()->id)->orderBy('created_at', 'desc')->get();
+        
+        return view ('users.point_history', ['transactions' => $transactions,
+                                            'points' => $points,
+                                            'notification' => $notification,]);
+    }
 }

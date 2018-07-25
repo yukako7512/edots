@@ -38,9 +38,6 @@ body {
     
 }
 
-.form-group p {
-    margin-left: -140px;
-}
 
 label {
     width:100px;
@@ -61,7 +58,7 @@ select {
     width: 385px;
 }
 
-#date {
+#datetimepicker {
     width: 385px;
 }
 

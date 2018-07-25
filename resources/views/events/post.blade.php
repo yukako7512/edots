@@ -11,7 +11,21 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+        <!--datetimepicker-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" />
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker').datetimepicker();
+            });
+        </script>  
+        <!--datetimepicker-->
+        
         <link rel="stylesheet" href="{{ secure_asset('css/post.css') }}">
     </head>
     <body>
@@ -36,19 +50,18 @@
         
                 <div id = "form">
                     {!! Form::model($event,['route' => 'post.post']) !!}
+                    
                 <div class="form-group">
                     {!! Form::label('title', 'タイトル') !!}
                     {!! Form::text('title','', array('rows'=>'3','class'=>'span6','placeholder'=>'例）スキューバダイビング体験')) !!}
                 </div>
                 <div class="form-group">
                     {!! Form::label('category', 'カテゴリー') !!}    
-                    {!! Form::select('category', ['Sports'=>'Sports', 'Arts'=>'Arts', 'Beauty'=>'Beauty','Nature'=>'Nature','Food'=>'Food','Technology'=>'Technology','Language'=>'Language','Others'=>'Others']) !!} 
-                <!--{!! Form::text('category') !!}-->
+                    {!! Form::select('category', ['Sports'=>'Sports', 'Arts'=>'Arts', 'Beauty'=>'Beauty','Nature'=>'Nature','Food'=>'Food','Technology'=>'Technology','Language'=>'Language','Others'=>'Others']) !!}
                 </div>
                 <div class="form-group">    
                     {!! Form::label('date', '日時') !!}
-                    {!! Form::text('date','yyyy/mm/dd --:--') !!}
-                    <p>例）2018/07/27 10:00</p>
+                    {!! Form::text('date', date('Y-m-d'), ['id' => 'datetimepicker']) !!}   
                 </div>
                 <div class="form-group">    
                     {!! Form::label('place', '場所') !!}

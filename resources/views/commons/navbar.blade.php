@@ -16,7 +16,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::check())
-                        <li><a>{{$points}}pt</a></li>
+                        <li><a href = "{{route ('pointhistory.get') }}">{{$points}}pt</a></li>
                         <li>
                             <a href="{{ route('post.get') }}">
                                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
