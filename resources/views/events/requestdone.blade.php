@@ -13,9 +13,9 @@
     <body>
      <div class="cover">
         <div class="cover-contents">
-     <h1>リクエスト完了</h1>
+     <h1>イベントに参加しました</h1>
      <br>
-    <p>”リクエストをしていただき、ありがとうございます。</p>
+    <p>さぁ、ようこそ新しい世界の入口へ</p>
       
     <a href="{{ route('usershow.get', Auth::user()->id) }}"  class="btn btn-primary">マイページ</a> 
      <a href="{{route('index.get')}}"  class="btn btn-primary">カテゴリに戻る</a>

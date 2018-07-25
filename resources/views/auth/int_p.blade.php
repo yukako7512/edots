@@ -27,7 +27,7 @@
 <div id="wrapper">
     <div class="box">
         <h2>①</h2> 
-        My page のPlofileで
+        My page のProfileで
         <br>特技や趣味を知らせよう
     </div>
 

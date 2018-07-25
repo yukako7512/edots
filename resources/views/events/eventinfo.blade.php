@@ -127,7 +127,7 @@
     </div>
 
 <div class ="warning">
-    <p>リクエスト済みです。</p>
+    <p>参加済みです。</p>
 </div>
 
 </div>
