@@ -68,7 +68,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-black btn-ghost custom">
-                                    新規登録
+                                    Signup
                                 </button>
                             </div>
                         </div>

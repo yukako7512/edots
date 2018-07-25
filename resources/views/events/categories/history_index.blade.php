@@ -150,14 +150,13 @@
             <a href="#"><img class="card-img-top" src="/images/{{$icon}}" alt=""></a>
              <div class="card-body">
               <h4 class="card-title">
-                <a href = "{{route ('eventshow.get', $event->id) }}">
                   <p>{{$event->title}}</p>
                 </a>
               </h4>
               <p class="card-time">時間:　{{$event->date}}</p>
               <p class="card-place">場所:　{{$event->place}}</p>
               <p class="card-point">ポイント:　{{$event->point}}</p>
-              <p class="card-max_capacity">参加人数:　{{$attendee_number}}/{{$event->max_capacity}}</p>
+              <p class="card-max_capacity">参加人数:　{{$attendee_number}}/{{$event->max_capacity}} <a class="btn btn-info" href = "{{route ('eventshow.get', $event->id) }}">詳細</a></p>
               
             </div>
           </div>

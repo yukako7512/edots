@@ -4,6 +4,14 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+ .card-body .btn {
+   text-align: center;
+   display: block;
+   margin-top: 10px;
+   background-color: #17a2b8;
+  border-color: #17a2b8;
+ }
+ 
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -587,6 +595,7 @@ pre code {
 }
 
 .row {
+  font-family: 游ゴシック;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;

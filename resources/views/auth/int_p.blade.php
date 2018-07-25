@@ -27,20 +27,20 @@
 <div id="wrapper">
     <div class="box">
         <h2>①</h2> 
-        シェアしたい体験を
-        <br>フォームから登録
+        My page のPlofileで
+        <br>特技や趣味を知らせよう
     </div>
 
     <div class="box">
         <h2>②</h2>
-        イベントを実施して
-        <br>ポイントをGET!
+        主催するイベントを
+        <br>フォームから登録
     </div>
 
     <div class="box">
         <h2>③</h2> 
-        貯まったポイントで
-        <br>他のユーザーのイベントに参加
+        ポイントを使って
+        <br>いろんなイベントに参加
     </div>
 </div>
 

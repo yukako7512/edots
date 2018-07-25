@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
             <title>Dots.</title>
-        <link rel="stylesheet" href="review_history.css">
+        <link rel="stylesheet" href="css/review_history.css">
     </head>
 
 <body>
