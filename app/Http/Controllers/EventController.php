@@ -164,7 +164,7 @@ class EventController extends Controller
         
         $points = $this->point_sum();
         $notification = $this->notification(); 
-        $events = Event::where('category','!=', 'initialpoints')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
+        $events = Event::where('category','!=', 'Initialpoints')->where('status', 'ongoing')->orderBy('created_at', 'desc')->get();
         $attendee_number=0;
         return view ('events.categories.history_index', ['events' => $events, 
                                                         'points' => $points,
