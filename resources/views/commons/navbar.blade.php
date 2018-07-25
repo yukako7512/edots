@@ -9,7 +9,6 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                    
                 </button>
                <a href="{{route('index.get')}}"><img src="{{ secure_asset("images/whitelogoxxxs.png") }}" alt="Share"></a>
             </div>
@@ -41,7 +40,7 @@
 					   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"> <div class='bell'><span class="glyphicon glyphicon-bell blue"></span> 
 					   {{$notification['unread_count']}}</div>
 					@else
-					    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"> <span class="glyphicon glyphicon-bell blue"></span> 
+					    <a> <span class="glyphicon glyphicon-bell"></span> 
 					@endif<span class="caret"></span></a>
 					
 					@if($notification['unread_count'])   
