@@ -7,7 +7,7 @@
         <meta charset="utf-8">
         <title>Dots.</title>
         <!--<link rel="stylesheet" href="requestdone.css">-->
-         <link rel="stylesheet" href="{{ secure_asset('css/requestdone.css') }}">
+         <link rel="stylesheet" href="{{ asset('css/requestdone.css') }}">
     </head>
     
     <body>

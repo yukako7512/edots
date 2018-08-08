@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{ secure_asset('css/navbar.css') }}">
+<link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
 <header>
    
      <nav class="navbar navbar-inverse">
@@ -10,7 +10,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-               <a href="{{route('index.get')}}"><img src="{{ secure_asset("images/whitelogoxxxs.png") }}" alt="Share"></a>
+               <a href="{{route('index.get')}}"><img src="{{ asset("images/whitelogoxxxs.png") }}" alt="Share"></a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<link rel="stylesheet" href="{{ secure_asset('css/background.css') }}">
+<link rel="stylesheet" href="{{ asset('css/background.css') }}">
 
 <div class="container">
     <div class="row">

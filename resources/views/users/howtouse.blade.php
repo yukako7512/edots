@@ -14,7 +14,7 @@
     <title>Share</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="{{ secure_asset('css/howtouse.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/howtouse.css') }}">
 
 
   </head>

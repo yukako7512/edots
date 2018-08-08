@@ -3,7 +3,7 @@
 
     <head>
         
-        <link rel="stylesheet" href="{{ secure_asset('css/profileedit.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/profileedit.css') }}">
     </head>
     
     <body>

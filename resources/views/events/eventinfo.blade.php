@@ -7,7 +7,7 @@
         <meta charset="utf-8">
         <title>Dots</title>
         <!--<link rel="stylesheet" href="requestdone.css">-->
-         <link rel="stylesheet" href="{{ secure_asset('css/eventinfo.css') }}">
+         <link rel="stylesheet" href="{{ asset('css/eventinfo.css') }}">
     </head>
     
 

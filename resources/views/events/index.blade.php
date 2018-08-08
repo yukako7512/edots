@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8">
     <title>Dots.</title>
-    <link rel="stylesheet" href="{{ secure_asset('category/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('category/index.css') }}">
 
       
 
@@ -26,7 +26,7 @@
   <div class='category' class="clearfix">
   <a href="{{ route('history.get') }}">             
   <div class = "history">            
-  <img src="{{ secure_asset('category/history1.jpg') }}" alt="Avatar" class="image">
+  <img src="{{ asset('category/history1.jpg') }}" alt="Avatar" class="image">
   <div class="overlay">ALL</div>
   </div>
   </div>
@@ -34,7 +34,7 @@
   <div class='category' class="clearfix">
   <a href="{{ route('technology.get') }}">             
   <div class = "tech">            
-  <img src="{{ secure_asset('category/technology1.jpg') }}" alt="Avatar" class="image">
+  <img src="{{ asset('category/technology1.jpg') }}" alt="Avatar" class="image">
   <div class="overlay">TECHNOLOGY</div>
   </div>
   </div>
@@ -42,7 +42,7 @@
   <div class='category' class="clearfix">
   <a href="{{ route('food.get') }}">             
   <div class = "food">            
-  <img src="{{ secure_asset('category/food1.jpg') }}" alt="Avatar" class="image">
+  <img src="{{ asset('category/food1.jpg') }}" alt="Avatar" class="image">
   <div class="overlay">FOODS</div>
   </div>
   </div>
@@ -50,7 +50,7 @@
   <div class='category' >
   <a href="{{ route('nature.get') }}">             
   <div class = "nature">            
-  <img src="{{ secure_asset('category/nature1.jpg') }}" alt="Avatar" class="image">
+  <img src="{{ asset('category/nature1.jpg') }}" alt="Avatar" class="image">
   <div class="overlay">NATURE</div>
   </div>
   </div>
@@ -58,7 +58,7 @@
     <div class='category' >   
   <a href="{{ route('language.get') }}">  
   <div class = "language">            
-  <img src="{{ secure_asset('category/language1.jpg') }}" alt="Avatar" class="image">
+  <img src="{{ asset('category/language1.jpg') }}" alt="Avatar" class="image">
   <div class="overlay">LANGUAGE</div>
   </div>
   </div>
@@ -66,7 +66,7 @@
     <div class='category' >  
   <a href="{{ route('beauty.get') }}">  
   <div class = "beauty">            
-  <img src="{{ secure_asset('category/beauty1.jpg') }}" alt="Avatar" class="image">
+  <img src="{{ asset('category/beauty1.jpg') }}" alt="Avatar" class="image">
   <div class="overlay">BEAUTY</div>
   </div>
   </div>
@@ -74,7 +74,7 @@
   <div class='category' >
   <a href="{{ route('art.get') }}">           
   <div class = "art">            
-  <img src="{{ secure_asset('category/art1.jpg') }}" alt="Avatar" class="image">
+  <img src="{{ asset('category/art1.jpg') }}" alt="Avatar" class="image">
   <div class="overlay">ARTS</div>
   </div>
   </div>
@@ -82,7 +82,7 @@
   <div class='category' >     
   <a href="{{ route('sport.get') }}">  
   <div class = "sport">            
-  <img src="{{ secure_asset('category/sport1.jpg') }}" alt="Avatar" class="image">
+  <img src="{{ asset('category/sport1.jpg') }}" alt="Avatar" class="image">
   <div class="overlay">SPORTS</div>
   </div>
   </div>
@@ -90,7 +90,7 @@
   <div class='category' class="clearfix">
   <a href="{{ route('others.get') }}">             
   <div class = "other">            
-  <img src="{{ secure_asset('category/others1.jpg') }}" alt="Avatar" class="image">
+  <img src="{{ asset('category/others1.jpg') }}" alt="Avatar" class="image">
   <div class="overlay">OTHERS</div>
   </div>
   </a>

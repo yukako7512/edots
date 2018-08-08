@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>Progate</title>
-    <link rel="stylesheet" href="{{ secure_asset('aboutus/aboutus.css') }}">
+    <link rel="stylesheet" href="{{ asset('aboutus/aboutus.css') }}">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
             <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
     
-     <link rel="stylesheet" href="{{ secure_asset('css/style.css') }}">
+     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
@@ -26,7 +26,7 @@
                     <span class="icon-bar"></span>
                     
                 </button>
-                <a href="{{route('index.get')}}"><img src="{{ secure_asset("images/whitelogoxxxs.png") }}" alt="Share"></a>
+                <a href="{{route('index.get')}}"><img src="{{ asset("images/whitelogoxxxs.png") }}" alt="Share"></a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
@@ -99,41 +99,41 @@
 <div class="team-wrapper">
     <!--<div class='container'>-->
       <div class="heading">
-          <h2>　OUR TEAM <a href="http://yamino-nicknamemaker.herokuapp.com"><img src="{{ secure_asset('images/dragonicon.png') }}" alt=''></a></h2> 
+          <h2>　OUR TEAM <a href="http://yamino-nicknamemaker.herokuapp.com"><img src="{{ asset('images/dragonicon.png') }}" alt=''></a></h2> 
           <hr>
           
           <div class="card">
-  <!--<img src="{{ secure_asset('aboutus/jay.jpg') }}" alt="John" style="width:100%">-->
+  <!--<img src="{{ asset('aboutus/jay.jpg') }}" alt="John" style="width:100%">-->
   <h2>Saki Ishihara</h2>
   <p>石原咲希</p>
   
 </div>
 <div class="card">
-  <!--<img src="{{ secure_asset('aboutus/jay.jpg') }}" alt="John" style="width:100%">-->
+  <!--<img src="{{ asset('aboutus/jay.jpg') }}" alt="John" style="width:100%">-->
   <h2>Takashi One</h2>
   <p>大根崇志</p>
   
 </div>
 <div class="card">
-  <!--<img src=src="{{ secure_asset('aboutus/jay.jpg') }}" alt="John" style="width:100%">-->
+  <!--<img src=src="{{ asset('aboutus/jay.jpg') }}" alt="John" style="width:100%">-->
   <h2>Aki Sakurada</h2>
   <p>櫻田明希</p>
  
 </div>
 <div class="card">
-  <!--<img src=src="{{ secure_asset('aboutus/jay.jpg') }}" alt="John" style="width:100%">-->
+  <!--<img src=src="{{ asset('aboutus/jay.jpg') }}" alt="John" style="width:100%">-->
   <h2>Kanai Daisuke</h2>
   <p>金井大輔</p>
  
 </div>
 <div class="card">
-  <!--<img src=src="{{ secure_asset('aboutus/jay.jpg') }}" alt="John" style="width:100%">-->
+  <!--<img src=src="{{ asset('aboutus/jay.jpg') }}" alt="John" style="width:100%">-->
   <h2>Yukako Steph</h2>
   <p>西山由佳子</p>
  
 </div>
 <div class="card">
-  <!--<img src=src="{{ secure_asset('aboutus/jay.jpg') }}" alt="John" style="width:100%">-->
+  <!--<img src=src="{{ asset('aboutus/jay.jpg') }}" alt="John" style="width:100%">-->
   <h2>Edward Cao</h2>
   <p>曹亦可</p>
  
