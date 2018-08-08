@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Progate</title>
+    <title>eDots</title>
     <link rel="stylesheet" href="{{ asset('aboutus/aboutus.css') }}">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
             <!-- Bootstrap -->
