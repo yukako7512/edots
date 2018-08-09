@@ -126,4 +126,9 @@ class UserController extends Controller
         return view ('users.howtouse', ['points' => $points,
                                         'notification' => $notification,]);
     }
+
+
+    public function chat(){
+        return view('index');
+    }
 }

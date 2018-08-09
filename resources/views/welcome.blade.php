@@ -30,5 +30,8 @@
     <div class="button">
 <a href="{{route('signup.get')}}" class="demo1">START</a><a href="{{route('aboutus.get')}}" class="demo2">ABOUT US</a>
     </div>
+    <div class="button">
+<a href="{{route('chat.get')}}" class="demo1">CHAT</a>
+    </div>
   </body>
   

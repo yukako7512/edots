@@ -38,6 +38,7 @@ $exist_or_not = $my_event->review_check ($my_event);
                 <p>{{$review->comment}}</p>
             </div>
         </div>
+        
         @endif
         @endforeach  
     
@@ -46,7 +47,7 @@ $exist_or_not = $my_event->review_check ($my_event);
 
 @endif
 @endforeach
-
+{!!$my_events->render()!!}
 <!--<p>まだレビューはありません</p>-->
 
 </body>
