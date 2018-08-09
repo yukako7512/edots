@@ -76,3 +76,9 @@ Route::get('notification/read',  'UserController@notification_read')->name('noti
 
 // HowToUseへ
 Route::get('howtouse', 'UserController@howtouse')->name('howtouse.get');
+
+
+
+
+
+Route::get('chat', 'UserController@chat')->name('chat.get');

@@ -68,7 +68,7 @@ class ReviewController extends Controller
         $points = $this->point_sum();
         $notification = $this->notification();
         $user = User::find($id);
-        $my_events = $user->events()->orderBy('created_at', 'desc')->get();
+        $my_events = $user->events()->orderBy('created_at', 'desc')->paginate(10);
         return view ('review.review_history', ['my_events' => $my_events,
                                                 'points' => $points,
                                                 'notification'=>$notification]);
